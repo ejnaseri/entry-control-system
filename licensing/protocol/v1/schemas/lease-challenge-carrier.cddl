@@ -1,0 +1,14 @@
+; Entry Control System licensing protocol v1
+; Non-authoritative TLS-protected response from
+; POST /v1/licensing/lease-challenges.
+; The complete deterministic carrier is rejected above 4096 bytes before
+; CBOR decoding.  Challenge admission is authoritative only in Vendor state.
+
+lease-challenge-carrier = {
+  "schemaVersion": 1,
+  "carrierType": "lease-challenge",
+  "requestNonce": nonce-256,
+  "expiresInSeconds": 300
+}
+
+nonce-256 = bstr .size 32

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "checklistId": "LIC-6.2-008",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+  "role": "guardian",
+  "action": "verify",
+  "RunId": "88f7b426bdb44597b4ff534c25e6e61e",
+  "ExperimentId": "91fa20b415734ed0a9b7838c607ee709",
+  "runtime": "10.0.11",
+  "serviceIdentityMatched": true,
+  "binarySha256": "ff9cc0ad421238f2e0a94e9632c8450d7c14a5d5d4c44a755c6af33f3e2e2663",
+  "osVersion": "10.0.22000.0",
+  "processId": 10956,
+  "timeUtc": "2026-10-05T16:21:40.8524564Z",
+  "results": [
+    {
+      "Id": "guardian.restricted.reopen-policy-decrypt",
+      "Status": "FAILED_OR_UNAVAILABLE",
+      "Error": "CryptographicException:0x80090016",
+      "Stage": null
+    },
+    {
+      "Id": "guardian.restricted.private-export-denied",
+      "Status": "FAILED_OR_UNAVAILABLE",
+      "Error": "CryptographicException:0x80090016",
+      "Stage": null
+    },
+    {
+      "Id": "guardian.app-readable.reopen-policy-decrypt",
+      "Status": "FAILED_OR_UNAVAILABLE",
+      "Error": "CryptographicException:0x80090016",
+      "Stage": null
+    },
+    {
+      "Id": "guardian.app-readable.private-export-denied",
+      "Status": "FAILED_OR_UNAVAILABLE",
+      "Error": "CryptographicException:0x80090016",
+      "Stage": null
+    },
+    {
+      "Id": "guardian.envelope-negative-matrix",
+      "Status": "FAILED_OR_UNAVAILABLE",
+      "Error": "CryptographicException:0x80090016",
+      "Stage": null
+    }
+  ],
+  "productionAccepted": false,
+  "securityAccepted": false,
+  "repairProofRequiresController": true,
+  "notTested": [
+    "ORDINARY_INTERACTIVE_USER",
+    "NORMAL_REBOOT",
+    "UPGRADE",
+    "UNINSTALL_REINSTALL",
+    "POWER_LOSS",
+    "TPM_PATH",
+    "WINDOWS_MATRIX",
+    "PRODUCTION_STORE"
+  ]
+}

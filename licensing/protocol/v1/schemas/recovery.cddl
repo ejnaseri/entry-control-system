@@ -1,0 +1,89 @@
+; Entry Control System licensing protocol v1
+; Root type: a one-time RECOVERY-signed state repair or device rebind.
+
+recovery = #6.18([
+  protected: bstr .cbor recovery-protected,
+  unprotected: {},
+  payload: bstr .cbor recovery-payload,
+  signature: bstr .size 64
+])
+
+recovery-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.recovery+cbor;v=1",
+  4: key-id
+}
+
+recovery-payload = {
+  "protocolVersion": 1,
+  "tokenType": "recovery",
+  "tokenId": opaque-id,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notBefore": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "edition": edition,
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "installationId": opaque-id,
+  "incidentId": opaque-id,
+  "incidentNonce": nonce-256,
+  "requestId": opaque-id,
+  "requestHash": sha-256,
+  "expectedStateGeneration": counter,
+  "newStateGeneration": positive-counter,
+  "entitlementTokenId": opaque-id,
+  "entitlementTokenHash": sha-256,
+  "entitlementGeneration": positive-counter,
+  "controlRevision": counter,
+  (
+    "allowedTransition" => "CLEAR_TAMPER"
+  //
+    "allowedTransition" => "REPAIR_SECURE_STATE"
+  //
+    "allowedTransition" => "REBIND_DEVICE",
+    "oldDeviceKeyId": key-id,
+    "newDeviceKeyId": key-id,
+    "newAssurance": assurance
+  ),
+  "reasonCode": recovery-reason-code,
+  "maximumFeatures": [1*23 feature]
+}
+
+feature =
+  "ADMIN_USERS" /
+  "ATTENDANCE_COMPLIANCE" /
+  "ATTENDANCE_DAILY" /
+  "ATTENDANCE_DASHBOARD" /
+  "ATTENDANCE_EXPORT" /
+  "ATTENDANCE_REPORTS" /
+  "AUDIT_LOGS" /
+  "AUTH" /
+  "BACKUPS" /
+  "CUSTOMERS" /
+  "CUSTOMER_PAYMENTS" /
+  "DEVICES" /
+  "DEVICE_DIAGNOSTICS" /
+  "DOOR_CONTROL" /
+  "EMPLOYEES" /
+  "ENTRY_LOGS" /
+  "EXPENSES" /
+  "FINANCIAL_REPORTS" /
+  "INBOX" /
+  "MEMBERSHIPS" /
+  "PAYROLL" /
+  "SOUNDS" /
+  "STAFF_GROUPS"
+
+edition = "FULL" / "ATTENDANCE"
+assurance = "TPM_ATTESTED" / "SOFTWARE_BOUND"
+recovery-reason-code = 1..7
+
+opaque-id = bstr .size 16
+nonce-256 = bstr .size 32
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+counter = 0..9223372036854775807
+positive-counter = 1..9223372036854775807
+utc-second = 0..253402300799

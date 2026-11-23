@@ -1,0 +1,33 @@
+{
+  "scope": "TEST_ONLY_OWNED_KEY_METADATA",
+  "keyName": "Ecs.Lic008.ComparisonV1.TEST_ONLY.software.0d26c5c6d100431b88f6bbf5ecb31956",
+  "timeUtc": "2026-09-19T14:52:50.4879625Z",
+  "binarySha256": "525a23ba42ab594d677e75dc6a2ba3ef0e6bf3acbbad428e1b9108438986082d",
+  "result": {
+    "status": "METADATA_READ",
+    "publicIdentityMatched": true,
+    "guardianSid": "S-1-5-80-691799173-1855633879-2502259152-2798716133-3216230455",
+    "IsMachineKey": true,
+    "algorithm": "ECDSA_P256",
+    "exportPolicy": "None",
+    "usage": "Signing",
+    "sddl": "D:P(A;;0xd01f01ff;;;SY)(A;;0xd01f01ff;;;S-1-5-80-691799173-1855633879-2502259152-2798716133-3216230455)",
+    "controlFlags": "DiscretionaryAclPresent, DiscretionaryAclProtected, SelfRelative",
+    "aces": [
+      {
+        "sid": "S-1-5-18",
+        "mask": "0xD01F01FF",
+        "type": "AccessAllowed",
+        "flags": "None",
+        "callback": false
+      },
+      {
+        "sid": "S-1-5-80-691799173-1855633879-2502259152-2798716133-3216230455",
+        "mask": "0xD01F01FF",
+        "type": "AccessAllowed",
+        "flags": "None",
+        "callback": false
+      }
+    ]
+  }
+}

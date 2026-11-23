@@ -1,0 +1,1800 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": 1,
+  "reportKind": "ENTRY_CONTROL_GOLDEN_VECTORS_V1",
+  "nonProductionOnly": true,
+  "protocolManifestSha256": "512534732dce759da424ba0e8d8838c3d9c294e3faa02a4017212ce482523eab",
+  "keyDerivation": "ENTRY_CONTROL_SYSTEM:TEST_ONLY_DO_NOT_TRUST:GOLDEN_VECTOR_KEY:V1:<KEY_ID>",
+  "keys": [
+    {
+      "keyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "purpose": "INSTALLATION_DEVICE",
+      "environment": "TEST",
+      "trustClass": "TRUSTED",
+      "kidHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "spkiPath": "keys/test-only-installation-device-primary.spki.der",
+      "spkiSha256": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2"
+    },
+    {
+      "keyId": "TEST_ONLY_INSTALLATION_DEVICE_REBIND",
+      "purpose": "INSTALLATION_DEVICE",
+      "environment": "TEST",
+      "trustClass": "TRUSTED",
+      "kidHex": "f0aebcce6bc4ab356184ca15bad68e04d731a11717bdeb0cf4988e752b536831",
+      "spkiPath": "keys/test-only-installation-device-rebind.spki.der",
+      "spkiSha256": "f0aebcce6bc4ab356184ca15bad68e04d731a11717bdeb0cf4988e752b536831"
+    },
+    {
+      "keyId": "TEST_ONLY_INSTALLATION_DEVICE_WRONG_ENV",
+      "purpose": "INSTALLATION_DEVICE",
+      "environment": "DEVELOPMENT",
+      "trustClass": "WRONG_ENVIRONMENT",
+      "kidHex": "234325dfdc63d4c2443b448a264b64a907d806943cd2fe51f5e5a24a9645de6e",
+      "spkiPath": "keys/test-only-installation-device-wrong-env.spki.der",
+      "spkiSha256": "234325dfdc63d4c2443b448a264b64a907d806943cd2fe51f5e5a24a9645de6e"
+    },
+    {
+      "keyId": "TEST_ONLY_OFFLINE_CONTROL_DENIED",
+      "purpose": "OFFLINE_CONTROL",
+      "environment": "TEST",
+      "trustClass": "DENIED",
+      "kidHex": "db360932782c99c15cc4bac0e58405cce3177b5c5a8cfbc14059c2a550879ca7",
+      "spkiPath": "keys/test-only-offline-control-denied.spki.der",
+      "spkiSha256": "db360932782c99c15cc4bac0e58405cce3177b5c5a8cfbc14059c2a550879ca7"
+    },
+    {
+      "keyId": "TEST_ONLY_OFFLINE_CONTROL_PRIMARY",
+      "purpose": "OFFLINE_CONTROL",
+      "environment": "TEST",
+      "trustClass": "TRUSTED",
+      "kidHex": "35b837f91f24f52e936f60fbb6a2867c4cfd3fc304eb5528a089b82894eacec5",
+      "spkiPath": "keys/test-only-offline-control-primary.spki.der",
+      "spkiSha256": "35b837f91f24f52e936f60fbb6a2867c4cfd3fc304eb5528a089b82894eacec5"
+    },
+    {
+      "keyId": "TEST_ONLY_OFFLINE_CONTROL_WRONG_ENV",
+      "purpose": "OFFLINE_CONTROL",
+      "environment": "DEVELOPMENT",
+      "trustClass": "WRONG_ENVIRONMENT",
+      "kidHex": "472107d496fad7d7c62696007ce4bd15804dc01474f1e0e15d1d99cec09c919f",
+      "spkiPath": "keys/test-only-offline-control-wrong-env.spki.der",
+      "spkiSha256": "472107d496fad7d7c62696007ce4bd15804dc01474f1e0e15d1d99cec09c919f"
+    },
+    {
+      "keyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_DENIED",
+      "purpose": "OFFLINE_ENTITLEMENT",
+      "environment": "TEST",
+      "trustClass": "DENIED",
+      "kidHex": "8c3d78979c8234f3c25dac0f4a90c4ca58c5968342fba6a7d1ee214c8967d39f",
+      "spkiPath": "keys/test-only-offline-entitlement-denied.spki.der",
+      "spkiSha256": "8c3d78979c8234f3c25dac0f4a90c4ca58c5968342fba6a7d1ee214c8967d39f"
+    },
+    {
+      "keyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_PRIMARY",
+      "purpose": "OFFLINE_ENTITLEMENT",
+      "environment": "TEST",
+      "trustClass": "TRUSTED",
+      "kidHex": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "spkiPath": "keys/test-only-offline-entitlement-primary.spki.der",
+      "spkiSha256": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390"
+    },
+    {
+      "keyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_WRONG_ENV",
+      "purpose": "OFFLINE_ENTITLEMENT",
+      "environment": "DEVELOPMENT",
+      "trustClass": "WRONG_ENVIRONMENT",
+      "kidHex": "1f1b21e26d138bad00a23c002cf3bbbacf5a57c4ff47779645eaa089285f8168",
+      "spkiPath": "keys/test-only-offline-entitlement-wrong-env.spki.der",
+      "spkiSha256": "1f1b21e26d138bad00a23c002cf3bbbacf5a57c4ff47779645eaa089285f8168"
+    },
+    {
+      "keyId": "TEST_ONLY_ONLINE_LEASE_DENIED",
+      "purpose": "ONLINE_LEASE",
+      "environment": "TEST",
+      "trustClass": "DENIED",
+      "kidHex": "f68bf6ef3be988a755b6554afa58c16e5b30ade98cd011b37b8a0c5d140927ab",
+      "spkiPath": "keys/test-only-online-lease-denied.spki.der",
+      "spkiSha256": "f68bf6ef3be988a755b6554afa58c16e5b30ade98cd011b37b8a0c5d140927ab"
+    },
+    {
+      "keyId": "TEST_ONLY_ONLINE_LEASE_PRIMARY",
+      "purpose": "ONLINE_LEASE",
+      "environment": "TEST",
+      "trustClass": "TRUSTED",
+      "kidHex": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901",
+      "spkiPath": "keys/test-only-online-lease-primary.spki.der",
+      "spkiSha256": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901"
+    },
+    {
+      "keyId": "TEST_ONLY_ONLINE_LEASE_WRONG_ENV",
+      "purpose": "ONLINE_LEASE",
+      "environment": "DEVELOPMENT",
+      "trustClass": "WRONG_ENVIRONMENT",
+      "kidHex": "e46f8ad2a8b1f242c7dd0fcbcaf29ca002eafc6c1f7445dd2addcea816d6d323",
+      "spkiPath": "keys/test-only-online-lease-wrong-env.spki.der",
+      "spkiSha256": "e46f8ad2a8b1f242c7dd0fcbcaf29ca002eafc6c1f7445dd2addcea816d6d323"
+    },
+    {
+      "keyId": "TEST_ONLY_PROD_ROOT_PRIMARY",
+      "purpose": "PROD_ROOT",
+      "environment": "TEST",
+      "trustClass": "TRUSTED",
+      "kidHex": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "spkiPath": "keys/test-only-prod-root-primary.spki.der",
+      "spkiSha256": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913"
+    },
+    {
+      "keyId": "TEST_ONLY_PROD_ROOT_WRONG_ENV",
+      "purpose": "PROD_ROOT",
+      "environment": "DEVELOPMENT",
+      "trustClass": "WRONG_ENVIRONMENT",
+      "kidHex": "a1de343295e68f7afd00cff7b0312d28beec2a0e222d41f40be5e079da97763a",
+      "spkiPath": "keys/test-only-prod-root-wrong-env.spki.der",
+      "spkiSha256": "a1de343295e68f7afd00cff7b0312d28beec2a0e222d41f40be5e079da97763a"
+    },
+    {
+      "keyId": "TEST_ONLY_RECOVERY_DENIED",
+      "purpose": "RECOVERY",
+      "environment": "TEST",
+      "trustClass": "DENIED",
+      "kidHex": "1cadb092a565d1590b1129357176952d47aadae3d7d01a7f68ba65fa92492c9d",
+      "spkiPath": "keys/test-only-recovery-denied.spki.der",
+      "spkiSha256": "1cadb092a565d1590b1129357176952d47aadae3d7d01a7f68ba65fa92492c9d"
+    },
+    {
+      "keyId": "TEST_ONLY_RECOVERY_PRIMARY",
+      "purpose": "RECOVERY",
+      "environment": "TEST",
+      "trustClass": "TRUSTED",
+      "kidHex": "0f19208a68826aef5342a18e1a2afef8d7016eee3a7faff8c119900de9d1ac71",
+      "spkiPath": "keys/test-only-recovery-primary.spki.der",
+      "spkiSha256": "0f19208a68826aef5342a18e1a2afef8d7016eee3a7faff8c119900de9d1ac71"
+    },
+    {
+      "keyId": "TEST_ONLY_RECOVERY_WRONG_ENV",
+      "purpose": "RECOVERY",
+      "environment": "DEVELOPMENT",
+      "trustClass": "WRONG_ENVIRONMENT",
+      "kidHex": "71364084d288d9247970532568062d0b85d79b17f92d06e629a47ac0c98b56b8",
+      "spkiPath": "keys/test-only-recovery-wrong-env.spki.der",
+      "spkiSha256": "71364084d288d9247970532568062d0b85d79b17f92d06e629a47ac0c98b56b8"
+    },
+    {
+      "keyId": "TEST_ONLY_UNKNOWN_SIGNER",
+      "purpose": "UNKNOWN",
+      "environment": "TEST",
+      "trustClass": "UNKNOWN",
+      "kidHex": "514bad918a390bde4b41598dc5e2ed959f96a8bd983c8e5b55c2f5cf99aa1464",
+      "spkiPath": "keys/test-only-unknown-signer.spki.der",
+      "spkiSha256": "514bad918a390bde4b41598dc5e2ed959f96a8bd983c8e5b55c2f5cf99aa1464"
+    }
+  ],
+  "positive": [
+    {
+      "id": "pos-activation-activate-full",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "ACTIVATE_FULL_SOFTWARE_BOUND",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-activate-full.cbor",
+      "bytes": 928,
+      "sha256": "611ae8d30fc904d1ff581cc692a66dcd8261587b10a19fd12167c421916f77f7",
+      "protectedSha256": "0ddc79ef78d29ee4b06534ac31a5a8c9161b0fbe3b6177c072ff17f2fba860d6",
+      "payloadSha256": "d42d3b7543bcd85b969cd60bbe0abbf03c360978cc05a988ee9ebcb1539cc255",
+      "sigStructureSha256": "d67a734d4135074b7e004862cdb3212ef2c8183895456ce63c5aa954abf14b1c",
+      "signatureSha256": "971ed803435a5786eb650a2481ee22d225f96d6803858f09aacf747cefd187af",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-activation-activate-tpm",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "ACTIVATE_TPM_ATTESTED",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "bytes": 1093,
+      "sha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "protectedSha256": "0ddc79ef78d29ee4b06534ac31a5a8c9161b0fbe3b6177c072ff17f2fba860d6",
+      "payloadSha256": "ee985180ac589fd20775bea28c3424b22e1b9efdab7372451036d0706eab913a",
+      "sigStructureSha256": "2dc1bbee21aaffe824418ddbb8bfa7e6be99f52ce8b92745bc155b3fcd038eb4",
+      "signatureSha256": "fccd1a12d27b5c1a5a3299261933ff438596eacf69c9dd501f8a40660668df4b",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-activation-control",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "CONTROL_NON_INITIAL",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-control.cbor",
+      "bytes": 1056,
+      "sha256": "c8fe0abd0be06856511dd07620f27c771c677dff1cb4e4c3366c599fb46d4451",
+      "protectedSha256": "0ddc79ef78d29ee4b06534ac31a5a8c9161b0fbe3b6177c072ff17f2fba860d6",
+      "payloadSha256": "414a91fc7511d8fb2f5eff6422a2db9c27c4d6ca1a1cd8b692ebe60e79493eb4",
+      "sigStructureSha256": "f1db50087365380a7b94f2dc0051da6fae85d405aebd6d2b98eb69a4e60e64a2",
+      "signatureSha256": "bd70033dc1bab2149e72488e32df18b1027ee640f5544efa23134816a322377f",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-activation-reactivate",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "REACTIVATE",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-reactivate.cbor",
+      "bytes": 1264,
+      "sha256": "d742f52b1de346235b596483e8f21a8a4277fab1896e9f282a20303be75e3a4a",
+      "protectedSha256": "0ddc79ef78d29ee4b06534ac31a5a8c9161b0fbe3b6177c072ff17f2fba860d6",
+      "payloadSha256": "a085dc11c3ec93c058217761e2ea822d8ad8c8983111357b5ceb99acd94e5e86",
+      "sigStructureSha256": "f4a8bc32c5d547d087560fdb40accc2e422a3e69efd24e87d09d5c7989def99d",
+      "signatureSha256": "09224c1ada58cdf229aa13f952007fff3a5434c6aa02910a52fdf27e26878093",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-activation-rebind",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "REBIND_NEW_DEVICE_PROOF",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-rebind.cbor",
+      "bytes": 1248,
+      "sha256": "eda777a904a8dd7625547c4831a7f74d427c1460df78a262966511c6c5b5b0de",
+      "protectedSha256": "e02954c2ab816ca8bc41e442f5b9447fa419cd1ddb9f03599dab7b2926737735",
+      "payloadSha256": "5d41ecc1bdd44f154c87c67737c63f21b3a48d7975a468a5b11e803ca8450f57",
+      "sigStructureSha256": "a084145794f930d8c2a18c47875dcbdd5a41c71ea469224fa700794a7dbec4f2",
+      "signatureSha256": "45b0e657f6faf4493947dfa074eb7920df4cbf0fc0361b48f3cc5ecbe2cb2d85",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_REBIND",
+      "signerKeyIdHex": "f0aebcce6bc4ab356184ca15bad68e04d731a11717bdeb0cf4988e752b536831",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-activation-recover",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "RECOVER",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-recover.cbor",
+      "bytes": 1200,
+      "sha256": "e4152655da6dd7dd3efde0b6a5b63a1e55ea5e78e67189727411a826de9a4f30",
+      "protectedSha256": "0ddc79ef78d29ee4b06534ac31a5a8c9161b0fbe3b6177c072ff17f2fba860d6",
+      "payloadSha256": "62002dd26f3d7a48265026b11b7b9c0ba42285d14fa65534ae289bbd81b1bff5",
+      "sigStructureSha256": "98cfbe4fac8bdec089d3d6aa0484c3667a0ec0cf7c57879f82a17690075456f4",
+      "signatureSha256": "3594f9fc5c6753c05918ac1f2fe55097fe5499195b5feb2fb3657156bcaf6d9d",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-activation-renew",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "RENEW_SOFTWARE_BOUND",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-renew.cbor",
+      "bytes": 1025,
+      "sha256": "2eb2f4450b13a33ae76e45181af9f026a019e880c69aeabdbf3d6f51ca980d1f",
+      "protectedSha256": "0ddc79ef78d29ee4b06534ac31a5a8c9161b0fbe3b6177c072ff17f2fba860d6",
+      "payloadSha256": "6ca8d9019c020dc60a60b2e86dc6d40bd57dae65d52b4e780d878ebecd25bac8",
+      "sigStructureSha256": "9fde3009aefedaadcd3b5158ba4e5fe32f3408c2ffcf8142c847d9fb69acce67",
+      "signatureSha256": "8a0719263a5f5aa2ebf58e1d295747b33b34bea22eec3eaf37a8c1bfa139f76f",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-activation-time-correct",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "activation-request",
+      "carrierType": null,
+      "variant": "TIME_CORRECT",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "path": "fixtures/positive/pos-activation-time-correct.cbor",
+      "bytes": 1104,
+      "sha256": "f494dd6736558378f2a6470138ecdad39c6572b3933c3d2124bbdc7c37443302",
+      "protectedSha256": "0ddc79ef78d29ee4b06534ac31a5a8c9161b0fbe3b6177c072ff17f2fba860d6",
+      "payloadSha256": "51dab4143c6468ca601602a30cc8e7517fa658872eec9161725ac3915431a6ac",
+      "sigStructureSha256": "25fc123e3fcaa0317c13ec624fc35331212346fe46fd06fcbaf6c1adb76624fb",
+      "signatureSha256": "95533b0f3e9c97a2073a46f5b231bfb1730387286deabb7b5f1edda65562d7eb",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-carrier-lease-challenge",
+      "kind": "CARRIER",
+      "tokenType": null,
+      "carrierType": "lease-challenge",
+      "variant": "STANDARD",
+      "mediaType": "application/vnd.entry-control.lease-challenge+cbor;v=1",
+      "path": "fixtures/positive/pos-carrier-lease-challenge.cbor",
+      "bytes": 111,
+      "sha256": "d177e0cbccdcda84145d68a761dd0a5d28aaadde2237894b7810e0936c79ff96",
+      "protectedSha256": "",
+      "payloadSha256": "",
+      "sigStructureSha256": "",
+      "signatureSha256": "",
+      "signerKeyId": null,
+      "signerKeyIdHex": "",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-carrier-lease-response-complete",
+      "kind": "CARRIER",
+      "tokenType": null,
+      "carrierType": "lease-response",
+      "variant": "WITH_LEASE",
+      "mediaType": "application/vnd.entry-control.lease-response+cbor;v=1",
+      "path": "fixtures/positive/pos-carrier-lease-response-complete.cbor",
+      "bytes": 5882,
+      "sha256": "77a44f32a9360e9bb978b29108751da1b1ba12f19480903b00b8d180aba888ac",
+      "protectedSha256": "",
+      "payloadSha256": "",
+      "sigStructureSha256": "",
+      "signatureSha256": "",
+      "signerKeyId": null,
+      "signerKeyIdHex": "",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-carrier-lease-response-control-only",
+      "kind": "CARRIER",
+      "tokenType": null,
+      "carrierType": "lease-response",
+      "variant": "CONTROL_ONLY",
+      "mediaType": "application/vnd.entry-control.lease-response+cbor;v=1",
+      "path": "fixtures/positive/pos-carrier-lease-response-control-only.cbor",
+      "bytes": 601,
+      "sha256": "89e83799d3bb3c6cfb57a6d25f76f6bfccc76e18f69765768fc73112982f1a7e",
+      "protectedSha256": "",
+      "payloadSha256": "",
+      "sigStructureSha256": "",
+      "signatureSha256": "",
+      "signerKeyId": null,
+      "signerKeyIdHex": "",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-carrier-lease-response-reactivation-only",
+      "kind": "CARRIER",
+      "tokenType": null,
+      "carrierType": "lease-response",
+      "variant": "REACTIVATION_ONLY",
+      "mediaType": "application/vnd.entry-control.lease-response+cbor;v=1",
+      "path": "fixtures/positive/pos-carrier-lease-response-reactivation-only.cbor",
+      "bytes": 1000,
+      "sha256": "890e1ad3899a95ecef27d31467e759873768851fbd1a06501517ad95d9413c0d",
+      "protectedSha256": "",
+      "payloadSha256": "",
+      "sigStructureSha256": "",
+      "signatureSha256": "",
+      "signerKeyId": null,
+      "signerKeyIdHex": "",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-carrier-lease-response-time-recovery",
+      "kind": "CARRIER",
+      "tokenType": null,
+      "carrierType": "lease-response",
+      "variant": "WITH_LEASE",
+      "mediaType": "application/vnd.entry-control.lease-response+cbor;v=1",
+      "path": "fixtures/positive/pos-carrier-lease-response-time-recovery.cbor",
+      "bytes": 1107,
+      "sha256": "1cbe9ec11b3471a2b1a4a4344f90b3deba4e66ac1f0b3d7711d3ba6b0e621b8a",
+      "protectedSha256": "",
+      "payloadSha256": "",
+      "sigStructureSha256": "",
+      "signatureSha256": "",
+      "signerKeyId": null,
+      "signerKeyIdHex": "",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-carrier-trust-bundle",
+      "kind": "CARRIER",
+      "tokenType": null,
+      "carrierType": "trust-bundle",
+      "variant": "STANDARD",
+      "mediaType": "application/vnd.entry-control.trust-bundle+cbor;v=1",
+      "path": "fixtures/positive/pos-carrier-trust-bundle.cbor",
+      "bytes": 3301,
+      "sha256": "49fec3aad8796d942327419c6efa2b48daaf8e8eb8fc018ce957f7ccb167c108",
+      "protectedSha256": "",
+      "payloadSha256": "",
+      "sigStructureSha256": "",
+      "signatureSha256": "",
+      "signerKeyId": null,
+      "signerKeyIdHex": "",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-control-request-unsuspend",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "offline-control",
+      "carrierType": null,
+      "variant": "REQUEST_BOUND_UNSUSPEND",
+      "mediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "path": "fixtures/positive/pos-control-request-unsuspend.cbor",
+      "bytes": 585,
+      "sha256": "5de982ee6476272b922da841b9901f167eb62685637c340107f6ed0c500dfc11",
+      "protectedSha256": "68c078e6f5499ff9ab327f814e34b9455905335c7a4ee548aa3814329cd39112",
+      "payloadSha256": "22f51e57807eac7780b54e9491cf547aca326bcdb2276462530eea516b61c803",
+      "sigStructureSha256": "ce2d9681094809cc224bf59d55e844b06c818aefc6b41a52e5aea0503cc3f82f",
+      "signatureSha256": "e423d285a8ffa2f49145eb76d4686fde2f4360901fe30cd25443803aef3d81ae",
+      "signerKeyId": "TEST_ONLY_OFFLINE_CONTROL_PRIMARY",
+      "signerKeyIdHex": "35b837f91f24f52e936f60fbb6a2867c4cfd3fc304eb5528a089b82894eacec5",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-control-vendor-revoke",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "offline-control",
+      "carrierType": null,
+      "variant": "VENDOR_INITIATED_REVOKE",
+      "mediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "path": "fixtures/positive/pos-control-vendor-revoke.cbor",
+      "bytes": 512,
+      "sha256": "7cd8f3e38c7db24c13a34eabf558b0365f5b4fa9d923b0b0843070f0219570f1",
+      "protectedSha256": "68c078e6f5499ff9ab327f814e34b9455905335c7a4ee548aa3814329cd39112",
+      "payloadSha256": "04717e2f3d174170564bfd62cde151e6c12a6af2509f6717a50233772152c09f",
+      "sigStructureSha256": "ef1b088232ed4975281e0f039b914368b8e293565cf5a332e230825ac05094a9",
+      "signatureSha256": "9381c7a57c9d69a3da4b1aa91c0b365574574d6d6d194569bd8b4d6bda395dea",
+      "signerKeyId": "TEST_ONLY_OFFLINE_CONTROL_PRIMARY",
+      "signerKeyIdHex": "35b837f91f24f52e936f60fbb6a2867c4cfd3fc304eb5528a089b82894eacec5",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-control-vendor-suspend",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "offline-control",
+      "carrierType": null,
+      "variant": "VENDOR_INITIATED_SUSPEND",
+      "mediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "path": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "bytes": 513,
+      "sha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "protectedSha256": "68c078e6f5499ff9ab327f814e34b9455905335c7a4ee548aa3814329cd39112",
+      "payloadSha256": "fa55104f77effbbed153d26acbceaec5dbe4ef3263e1722331de27cbddff0edb",
+      "sigStructureSha256": "645b2970b3bd17d028e5b4a5b67c88ed7a54fe2af3f6429a0513cd1fa6ebb883",
+      "signatureSha256": "12be15e2beca19e7e7021819e8b306e049375969444f483de6b23e1180226f7f",
+      "signerKeyId": "TEST_ONLY_OFFLINE_CONTROL_PRIMARY",
+      "signerKeyIdHex": "35b837f91f24f52e936f60fbb6a2867c4cfd3fc304eb5528a089b82894eacec5",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-delegation-offline-control",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "key-delegation",
+      "carrierType": null,
+      "variant": "OFFLINE_CONTROL",
+      "mediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "path": "fixtures/positive/pos-delegation-offline-control.cbor",
+      "bytes": 599,
+      "sha256": "feb1bbd9eaa0f7eef03777a7ad0fdf9d41aa6ac4461e373a687b6f6fc148def3",
+      "protectedSha256": "3961099c68e52ae8adb23b09bacee1a0e0b43822831117e6f14c5bc358c4c363",
+      "payloadSha256": "57dbdd35ce19c8761a3611f1fe27cfe2eb68c20d9be5ac71905f9626bd5068bb",
+      "sigStructureSha256": "c953214d3e8912e54e512b9d9787f772114fb356a2a73797a38f0e6702758c78",
+      "signatureSha256": "a59f03df042dd885b4550dc97de075b981200ded29450abb5bc58a780957448c",
+      "signerKeyId": "TEST_ONLY_PROD_ROOT_PRIMARY",
+      "signerKeyIdHex": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-delegation-offline-entitlement",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "key-delegation",
+      "carrierType": null,
+      "variant": "OFFLINE_ENTITLEMENT",
+      "mediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "path": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "bytes": 631,
+      "sha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "protectedSha256": "3961099c68e52ae8adb23b09bacee1a0e0b43822831117e6f14c5bc358c4c363",
+      "payloadSha256": "76c3679ffbdb6e0ae3946384bee81cb824631258600f0a7ec33a84c051a47e66",
+      "sigStructureSha256": "d691a407670bdb6892c5d6f3c747c6bc1fef2168d0c87d10c79afc27887c9e68",
+      "signatureSha256": "6359ca0e493e1d8b9ea6d9c82d4458c723abb276ff13dc65cbbbbe7321a7c296",
+      "signerKeyId": "TEST_ONLY_PROD_ROOT_PRIMARY",
+      "signerKeyIdHex": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-delegation-online-lease",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "key-delegation",
+      "carrierType": null,
+      "variant": "ONLINE_LEASE",
+      "mediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "path": "fixtures/positive/pos-delegation-online-lease.cbor",
+      "bytes": 596,
+      "sha256": "8cbdb2a451c358d56f6fa3e437bbf22e309abe29db651ad8f242ccdaf07c9460",
+      "protectedSha256": "3961099c68e52ae8adb23b09bacee1a0e0b43822831117e6f14c5bc358c4c363",
+      "payloadSha256": "8383da4b2cec46a5d2e4631e7a1e23f74178bc9fdf33f70d82c4d60b5c1c2f03",
+      "sigStructureSha256": "fb5a0f1f3dd9fd4d07c6cfff6e61b8c88c4560ca89174fb45dc185faa8445e50",
+      "signatureSha256": "2793fc4d9d129032c7202494643e2935861566b83517f6c6adba56092ac38936",
+      "signerKeyId": "TEST_ONLY_PROD_ROOT_PRIMARY",
+      "signerKeyIdHex": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-delegation-recovery",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "key-delegation",
+      "carrierType": null,
+      "variant": "RECOVERY",
+      "mediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "path": "fixtures/positive/pos-delegation-recovery.cbor",
+      "bytes": 592,
+      "sha256": "3f07cb32022b0e0d90f3f1ba29d57cbb9b4395120473c383a14249f73da33b08",
+      "protectedSha256": "3961099c68e52ae8adb23b09bacee1a0e0b43822831117e6f14c5bc358c4c363",
+      "payloadSha256": "b3bcbf53316f6399f136a9e08ece30d9f18afc6667544c7007bf6c2aaef4407f",
+      "sigStructureSha256": "a14e539a24e50d67575c0c477c475517e4f45f6a26d7be53506c8f0fdfb018cb",
+      "signatureSha256": "5ce422bb1adde98266b057c16a1c1824e0e961d802e67438737be4fe33fef833",
+      "signerKeyId": "TEST_ONLY_PROD_ROOT_PRIMARY",
+      "signerKeyIdHex": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-denylist-revision-1",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "key-denylist",
+      "carrierType": null,
+      "variant": "REVISION_1",
+      "mediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "path": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "bytes": 392,
+      "sha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "protectedSha256": "1224e70ae90ec21c0473b72e10f83e14aaf768a73f789d7bfa2bddd9653f229b",
+      "payloadSha256": "b47a31b5153bd5f296f4d6781a6f827abf1c4cafea4b4f281e6da97009cec47f",
+      "sigStructureSha256": "2f96e15c049b879d92f0292900ce3a53cb74d59f5c4bc272bfdeae93ea6369b4",
+      "signatureSha256": "3c7a3638aa42a9aceae10258bde077ecbb621f4876827c0fbd5b64cdd42b5a45",
+      "signerKeyId": "TEST_ONLY_PROD_ROOT_PRIMARY",
+      "signerKeyIdHex": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-denylist-revision-2",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "key-denylist",
+      "carrierType": null,
+      "variant": "REVISION_2_WITH_PREDECESSOR",
+      "mediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "path": "fixtures/positive/pos-denylist-revision-2.cbor",
+      "bytes": 805,
+      "sha256": "d92b68b381f934c90eddc76d0d30d2548d1f96d5cb76f37c46161521b746f9fc",
+      "protectedSha256": "1224e70ae90ec21c0473b72e10f83e14aaf768a73f789d7bfa2bddd9653f229b",
+      "payloadSha256": "f698c0e818ebf9b07d806e192716dc6d3a9764ad6ab31ced3efc5d500553d042",
+      "sigStructureSha256": "78a11a5cd0bdb83f4ea6bc19ba90c586c9187d78d6387f31c6929b8f427e299f",
+      "signatureSha256": "a914c574b0afbf66d06739925ac1d13fafc70e62f1a6ee9bc6e56b7dc684f156",
+      "signerKeyId": "TEST_ONLY_PROD_ROOT_PRIMARY",
+      "signerKeyIdHex": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-entitlement-initial-full",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "entitlement",
+      "carrierType": null,
+      "variant": "GENERATION_1_FULL",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "path": "fixtures/positive/pos-entitlement-initial-full.cbor",
+      "bytes": 1220,
+      "sha256": "33b0a0848fd4b63c420d234d2912a4347cbee6f7006a2dc0f3cdf9984d93db9b",
+      "protectedSha256": "1d1d127c66e00c237e1539858e2c3b04448111011304cba37ced882ad7eab126",
+      "payloadSha256": "001bfb3f2e740a91a6914af0860340584be1670dd2aecdbc1f728fbb4775d064",
+      "sigStructureSha256": "4faf1c8d2092351155ea3f00829042ddc26a9dd362e1415a08835975e20afe7b",
+      "signatureSha256": "383183290985f2339f8c4e205eac9a0d98e8968b3ad82503cd539061e798a707",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_PRIMARY",
+      "signerKeyIdHex": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-entitlement-initial-hybrid",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "entitlement",
+      "carrierType": null,
+      "variant": "GENERATION_1_HYBRID",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "path": "fixtures/positive/pos-entitlement-initial-hybrid.cbor",
+      "bytes": 980,
+      "sha256": "bbb0b196e50abbd0f7544a8580e78a2acbc7e353c06218ff54a83fca07e8e14b",
+      "protectedSha256": "1d1d127c66e00c237e1539858e2c3b04448111011304cba37ced882ad7eab126",
+      "payloadSha256": "4785e7634e296c2eb55e84c097c7440de75074e59f2f572e8667dc8fcc82e108",
+      "sigStructureSha256": "98afc5bc0dc1c835721d495ac2b7bd359f9fcf44ec333269b94b6bc0e1a4ba68",
+      "signatureSha256": "2a9ff84f51ebf4421621e0979295bcac4b29b3cf90e425ff313e8b846e468b3a",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_PRIMARY",
+      "signerKeyIdHex": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-entitlement-initial-offline",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "entitlement",
+      "carrierType": null,
+      "variant": "GENERATION_1_OFFLINE",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "path": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "bytes": 941,
+      "sha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "protectedSha256": "1d1d127c66e00c237e1539858e2c3b04448111011304cba37ced882ad7eab126",
+      "payloadSha256": "8bd31f3ee1814596072b691903264da7409bd3d71f0d8d2ac0b21d4993a365e4",
+      "sigStructureSha256": "4d6851e5ac851d819e3c09ec5da8fdbc847e345566cfd5e783f1b841ffad5f05",
+      "signatureSha256": "72d378befca2594db613bc14a984115efe685de1afe8493c9e2e183efbb36d2b",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_PRIMARY",
+      "signerKeyIdHex": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-entitlement-reactivated",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "entitlement",
+      "carrierType": null,
+      "variant": "GENERATION_1_REACTIVATED",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "path": "fixtures/positive/pos-entitlement-reactivated.cbor",
+      "bytes": 1028,
+      "sha256": "51adce3648c1be6d5f9d05fc0dd3c646e36f0a31607ab55d5a47fb4e7534d642",
+      "protectedSha256": "1d1d127c66e00c237e1539858e2c3b04448111011304cba37ced882ad7eab126",
+      "payloadSha256": "09ce5c4171c57130a24a631eb57f3d28440b8b5f322fae422b287c3bb5d53c54",
+      "sigStructureSha256": "6a4ada3d0e8f6a67db379cc13b683f21ab42486b96f3d35e13a0dfd6e6334598",
+      "signatureSha256": "37b77d47b04d7b441da1fb0ae887eb68cc7d225dec7d39409e29f9aea00246a8",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_PRIMARY",
+      "signerKeyIdHex": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-entitlement-renewal",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "entitlement",
+      "carrierType": null,
+      "variant": "GENERATION_2_RENEWAL",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "path": "fixtures/positive/pos-entitlement-renewal.cbor",
+      "bytes": 937,
+      "sha256": "4a95d0c389556225ed1ea3090b5ef10bf929cec2628036e1c243d8ffe799e895",
+      "protectedSha256": "1d1d127c66e00c237e1539858e2c3b04448111011304cba37ced882ad7eab126",
+      "payloadSha256": "13fce2e822b15324261f867b208afbb58e0a79e4d7de12416f05410d985fe831",
+      "sigStructureSha256": "f7bf406152634799b5dda93b7d7f89bca82e194973e6aef7fd1693e688021aa0",
+      "signatureSha256": "cf5c8845919ea1f901f6a90ffc1ed27539d06c67863942be14afa17cfcfb1883",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_PRIMARY",
+      "signerKeyIdHex": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-full",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease",
+      "carrierType": null,
+      "variant": "ACTIVE_FULL",
+      "mediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-full.cbor",
+      "bytes": 1266,
+      "sha256": "d2a64234237e0274a4e81e32d876068e290bf85c4501f764e53c7f364dcab7a9",
+      "protectedSha256": "6ba667896407d4c9059e446243c52866445df6b7a91f8ed5b8be9825f6e83ac6",
+      "payloadSha256": "d7d3efd2680fdc7870558ba73e68255ec5d62fd2ea76e60971b562a7f3b0f0d6",
+      "sigStructureSha256": "319d0f33b188f2fc2a347485575c5a6ac658caaf3506da16dfc719b9845caa63",
+      "signatureSha256": "dcfb939dc9fc63bcef0855c93b64d12641b238e684669cb562b04cef0a843032",
+      "signerKeyId": "TEST_ONLY_ONLINE_LEASE_PRIMARY",
+      "signerKeyIdHex": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-initial-control",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease",
+      "carrierType": null,
+      "variant": "INITIAL_CONTROL_TUPLE",
+      "mediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-initial-control.cbor",
+      "bytes": 1026,
+      "sha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "protectedSha256": "6ba667896407d4c9059e446243c52866445df6b7a91f8ed5b8be9825f6e83ac6",
+      "payloadSha256": "82141f9961b0c3a321d3a2fa2e5dd271100bf429ed9fa1c8ea6dd65d062da1b3",
+      "sigStructureSha256": "76cad0a50bb37491c46b92fbeb0a7bf37d21e9ea927a7ab4f0b97790f15f7d42",
+      "signatureSha256": "ce4afe849de371cc7c4a19c7696f35d4318c8fcf13bc6d53b94590debfbc2a06",
+      "signerKeyId": "TEST_ONLY_ONLINE_LEASE_PRIMARY",
+      "signerKeyIdHex": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-positive-control",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease",
+      "carrierType": null,
+      "variant": "POSITIVE_SUSPENDED_CONTROL_TUPLE",
+      "mediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-positive-control.cbor",
+      "bytes": 1028,
+      "sha256": "eb002e000f27a6b401f43b8c3c9b2525e16407a01a7133e5a8d552187728640a",
+      "protectedSha256": "6ba667896407d4c9059e446243c52866445df6b7a91f8ed5b8be9825f6e83ac6",
+      "payloadSha256": "39e376e68c70983185a4e994b0621589c5e2824588cab804d3af646f0a23a71d",
+      "sigStructureSha256": "8c8545213d54fe6a1dc02bfac200c3ad1b157a1c9b52db1a628039b61aac5e77",
+      "signatureSha256": "fe505f1e36d0e7a8047ea98cd5203e3a486a792e7975be3974f7621c9449c7ee",
+      "signerKeyId": "TEST_ONLY_ONLINE_LEASE_PRIMARY",
+      "signerKeyIdHex": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-rebind-reference",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease",
+      "carrierType": null,
+      "variant": "ACTIVE_REBIND_REFERENCE",
+      "mediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-rebind-reference.cbor",
+      "bytes": 1068,
+      "sha256": "c0dcfd88ff69b1d54f76c220de3ffd546723c140508c35ecff647edbf98b6db1",
+      "protectedSha256": "6ba667896407d4c9059e446243c52866445df6b7a91f8ed5b8be9825f6e83ac6",
+      "payloadSha256": "1b822c045e609a06aa0d58f51d153a429bcc3a6e2171172adad3dc0592249450",
+      "sigStructureSha256": "9895f422f543060fe111d0db944182415b19a551e77f170c602f7dcf82e18f42",
+      "signatureSha256": "92d3fca4df323652555176b2493187d3a6ed1156d8bc16eb821fdae0be47861a",
+      "signerKeyId": "TEST_ONLY_ONLINE_LEASE_PRIMARY",
+      "signerKeyIdHex": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-request-check-in",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease-request",
+      "carrierType": null,
+      "variant": "CHECK_IN",
+      "mediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "bytes": 919,
+      "sha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "protectedSha256": "3bcfbf0bd8bf7a273ddd06c8d81f39c1bc0411d287c44c3b2d03929eb6001c8c",
+      "payloadSha256": "a4fc1ab7725ab08e922b5b0bb14255a03d0f65da5870838d310f9e5e5c85f258",
+      "sigStructureSha256": "cec197e07af43e73493d16f17d7245636fb54497870152400f1307e283a98c0b",
+      "signatureSha256": "c22e79a520aee277ef7baf3176516a6b6d51dcd17613b7144d59b6a084c633c2",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-request-check-in-full",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease-request",
+      "carrierType": null,
+      "variant": "CHECK_IN_FULL",
+      "mediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-request-check-in-full.cbor",
+      "bytes": 913,
+      "sha256": "52e80923095d86993a225305868fbc4beffacaf506a0413273b3de4dab6eccbf",
+      "protectedSha256": "3bcfbf0bd8bf7a273ddd06c8d81f39c1bc0411d287c44c3b2d03929eb6001c8c",
+      "payloadSha256": "3f315d59eb9009bfede7aea9df54bd4c0610958f9d73c96674b573e8a8f4de12",
+      "sigStructureSha256": "ea6cfb964c1d7cd99577ab620e8b6b189052d2f0bb1af105b1f2c7975103c067",
+      "signatureSha256": "5dc8f21ebf5d6701dc8b81f1fd2d424f50d4dd403eea4aa5de892bb712c54a67",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-request-check-in-rebind",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease-request",
+      "carrierType": null,
+      "variant": "CHECK_IN_WITH_REBIND_REFERENCE",
+      "mediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-request-check-in-rebind.cbor",
+      "bytes": 959,
+      "sha256": "66c55b18dfb269672af710699ad1105e4de9e619213ee99f134f4d7c509bde24",
+      "protectedSha256": "f45c42fe6d6064a3ff9e47e97e982c9c1fe6478332da1c014fdcf285ca967b10",
+      "payloadSha256": "17f0522112f81c9d4993eb92b0e8a0565ff0060ade105ef68b322756b949274d",
+      "sigStructureSha256": "7ee1195728805b38b168505e038be7e9569400cc18fa823dd3bba8c805cedf9b",
+      "signatureSha256": "4028bc2aab4f9ed88760e0f6c49d7303f0fa1341d99bda711cc90579fdae75bd",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_REBIND",
+      "signerKeyIdHex": "f0aebcce6bc4ab356184ca15bad68e04d731a11717bdeb0cf4988e752b536831",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-lease-request-time-recovery",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "lease-request",
+      "carrierType": null,
+      "variant": "TIME_RECOVERY",
+      "mediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "path": "fixtures/positive/pos-lease-request-time-recovery.cbor",
+      "bytes": 1034,
+      "sha256": "050067ad1f05d8387b39bce94ade4b897e766912a4d591aa7e3a5517d9d6f541",
+      "protectedSha256": "3bcfbf0bd8bf7a273ddd06c8d81f39c1bc0411d287c44c3b2d03929eb6001c8c",
+      "payloadSha256": "16e7608e3fcade190a23ec97df5b87857fc46951952a62e491ecfad6ab63afd8",
+      "sigStructureSha256": "8cedbe1843c711ebf869496e7fdb393412010026120f143f5c7d5546b60e4297",
+      "signatureSha256": "12543a49dd9087b510d823b6045f6752fea57f10b49dbe4e48d478c43eddc11b",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-reactivation-authorization",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "reactivation-authorization",
+      "carrierType": null,
+      "variant": "TERMINAL_LINEAGE_REPLACEMENT",
+      "mediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "path": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "bytes": 900,
+      "sha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "protectedSha256": "40d3e223ced27a2cc103e89d4cbf89ab03b1fd12055a4d1f71bf16c9c25463bf",
+      "payloadSha256": "04abf872c449e085543db40a10b903135f19e4ab0a936e86dd9391850fac563e",
+      "sigStructureSha256": "e4392d1b161099c77a5cbacefd049a8c0a8e1bc8bd8fddfb426f50655111ca91",
+      "signatureSha256": "15ed703fddf8c2a9af003bcbc154bf0ce4fd8987b456f8fae883f27cb1c69300",
+      "signerKeyId": "TEST_ONLY_OFFLINE_CONTROL_PRIMARY",
+      "signerKeyIdHex": "35b837f91f24f52e936f60fbb6a2867c4cfd3fc304eb5528a089b82894eacec5",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-recovery-clear-tamper",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "recovery",
+      "carrierType": null,
+      "variant": "CLEAR_TAMPER",
+      "mediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "path": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "bytes": 883,
+      "sha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "protectedSha256": "2fe0ceec195cf7ab647104d9b496ed36c48d477c21a6f0735cf79e7cd0b5c05c",
+      "payloadSha256": "bf47282a1c993d109fcf02cbca0bd91eb7b354688c66bae8143ac9322cc9654d",
+      "sigStructureSha256": "1cd7b529fdc37a83ea3f448fc645246013aed41d8cf6339ded02e41d0c10f0ef",
+      "signatureSha256": "51684f85f2669679d4a9017f5de460e8dcd079f714a763a57378bcffed3dc8e5",
+      "signerKeyId": "TEST_ONLY_RECOVERY_PRIMARY",
+      "signerKeyIdHex": "0f19208a68826aef5342a18e1a2afef8d7016eee3a7faff8c119900de9d1ac71",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-recovery-rebind-device",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "recovery",
+      "carrierType": null,
+      "variant": "REBIND_DEVICE",
+      "mediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "path": "fixtures/positive/pos-recovery-rebind-device.cbor",
+      "bytes": 1010,
+      "sha256": "4e9c557403347107fce3dda2d2c654071776cdd94c76f1d22a1947b638968f96",
+      "protectedSha256": "2fe0ceec195cf7ab647104d9b496ed36c48d477c21a6f0735cf79e7cd0b5c05c",
+      "payloadSha256": "8d63b4c64be749fd43053b8ea2dd2c7aac9c1aba2edffad3bcd1246ef4b07552",
+      "sigStructureSha256": "3c74f35a199e9987e3716764faf45576599d91def2485493011d65859fea4698",
+      "signatureSha256": "0c869e8797cf5aa279b81b3a4328130c0467a0bd0e1a7b79964d386ebf514ef5",
+      "signerKeyId": "TEST_ONLY_RECOVERY_PRIMARY",
+      "signerKeyIdHex": "0f19208a68826aef5342a18e1a2afef8d7016eee3a7faff8c119900de9d1ac71",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-recovery-repair-state",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "recovery",
+      "carrierType": null,
+      "variant": "REPAIR_SECURE_STATE",
+      "mediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "path": "fixtures/positive/pos-recovery-repair-state.cbor",
+      "bytes": 890,
+      "sha256": "daa9f6a55b5bcc3f0840e8b05861242853c736ad839394a5c877547dd4cb9c55",
+      "protectedSha256": "2fe0ceec195cf7ab647104d9b496ed36c48d477c21a6f0735cf79e7cd0b5c05c",
+      "payloadSha256": "79eb8d86445f4eaa32648264f8e41ee05b5f3b9ccc048db3c833a15a0b6678b5",
+      "sigStructureSha256": "b5e8459c98454ec709dba8a0e9b2aa4861eea68c230a34f6c23bdb3df9c5ccbd",
+      "signatureSha256": "e512fc56f6186962d361910d1be9b22cd4e3a2d739fd71fd79729a58271708a7",
+      "signerKeyId": "TEST_ONLY_RECOVERY_PRIMARY",
+      "signerKeyIdHex": "0f19208a68826aef5342a18e1a2afef8d7016eee3a7faff8c119900de9d1ac71",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    },
+    {
+      "id": "pos-time-correction",
+      "kind": "SIGNED_OBJECT",
+      "tokenType": "time-correction",
+      "carrierType": null,
+      "variant": "OFFLINE_TIME_CORRECTION",
+      "mediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "path": "fixtures/positive/pos-time-correction.cbor",
+      "bytes": 786,
+      "sha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "protectedSha256": "dca2bbcad8c6675a95165605abbe5ba4c05cf55263cdc8d06154ed8efd4ba00d",
+      "payloadSha256": "67b09fb5086f895c0954e732ed073e826e6844a3db8a1edbcfefe16a4fc2f7ed",
+      "sigStructureSha256": "9376b2018ecf009ec15ec8d1f9c721c31b280b31c77e016a349aad19d99c1cb3",
+      "signatureSha256": "2406888e85a79133159604667e4a4696dab613c7678569dc390f9c6f11b59965",
+      "signerKeyId": "TEST_ONLY_RECOVERY_PRIMARY",
+      "signerKeyIdHex": "0f19208a68826aef5342a18e1a2afef8d7016eee3a7faff8c119900de9d1ac71",
+      "expected": {
+        "decision": "ACCEPT",
+        "stage": "COMPLETE",
+        "errorCode": "NONE"
+      }
+    }
+  ],
+  "criticalNegative": [
+    {
+      "id": "neg-activation-object-too-large",
+      "sourceDescriptorId": "MAL_ACTIVATION_REQUEST_OVERSIZE",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-activation-object-too-large.cbor",
+      "bytes": 131073,
+      "sha256": "d281209cc72d47b090175b22621840d9eb8267d09cc05dc122bfaa759a82830f",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE"
+      }
+    },
+    {
+      "id": "neg-cose-array-extra",
+      "sourceDescriptorId": "MAL_COMMON_COSE_ARRAY_EXTRA_ITEM",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-cose-array-extra.cbor",
+      "bytes": 1094,
+      "sha256": "b10c115c13cb56a75ef032f46de81098f1b41f11ce94bf3361a39801f59313e8",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "INVALID_COSE_SHAPE"
+      }
+    },
+    {
+      "id": "neg-denied-signer",
+      "sourceDescriptorId": "MAL_COMMON_DENIED_SIGNER",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "tokenType": "entitlement",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_DENIED",
+      "signerKeyIdHex": "8c3d78979c8234f3c25dac0f4a90c4ca58c5968342fba6a7d1ee214c8967d39f",
+      "path": "fixtures/negative/neg-denied-signer.cbor",
+      "bytes": 941,
+      "sha256": "7c9c92780771bff4ca67fffee149c81eaf3d8141830e2f20b305775f17655726",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "SIGNING_KEY_DENIED"
+      }
+    },
+    {
+      "id": "neg-detached-payload",
+      "sourceDescriptorId": "MAL_COMMON_DETACHED_PAYLOAD",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-detached-payload.cbor",
+      "bytes": 170,
+      "sha256": "cac8493677764d4a9d39c013dbe52bf8523c79ed3ede0f7f20c03c95705aa0fb",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "DETACHED_PAYLOAD_FORBIDDEN"
+      }
+    },
+    {
+      "id": "neg-duplicate-payload-key",
+      "sourceDescriptorId": "MAL_COMMON_DUPLICATE_PAYLOAD_KEY",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-duplicate-payload-key.cbor",
+      "bytes": 206,
+      "sha256": "0dfd811721f75abf2100acd7a29317f2fceb322db73261821b1e8519f413a5e6",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "DUPLICATE_MAP_KEY"
+      }
+    },
+    {
+      "id": "neg-high-s",
+      "sourceDescriptorId": "MAL_COMMON_HIGH_S",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-high-s.cbor",
+      "bytes": 1093,
+      "sha256": "00576d9ce10914bee35eba96763a228a1631614b5bf2859c45307f5a5b897d95",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "NON_CANONICAL_SIGNATURE"
+      }
+    },
+    {
+      "id": "neg-indefinite-payload-map",
+      "sourceDescriptorId": "MAL_COMMON_INDEFINITE_PAYLOAD_MAP",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-indefinite-payload-map.cbor",
+      "bytes": 172,
+      "sha256": "66a08cb59eb871fbbf50526909d52dc5baa9ad69ac08ad66c58637eec0b6d1e7",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "INDEFINITE_LENGTH"
+      }
+    },
+    {
+      "id": "neg-kid-31-bytes",
+      "sourceDescriptorId": "MAL_COMMON_KID_WRONG_LENGTH",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-kid-31-bytes.cbor",
+      "bytes": 1092,
+      "sha256": "aa70c0c0884355696b3c685b5e0aa68701eb1a451be813102dd1f81facb76459",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_KEY_ID_LENGTH"
+      }
+    },
+    {
+      "id": "neg-kid-text",
+      "sourceDescriptorId": "MAL_COMMON_KID_WRONG_TYPE",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-kid-text.cbor",
+      "bytes": 1073,
+      "sha256": "611e1b46c3a4ec6704cbca9528505a33b7e36d08b372a8977125a8ba3581cc89",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_HEADER_TYPE"
+      }
+    },
+    {
+      "id": "neg-malformed-utf8",
+      "sourceDescriptorId": "MAL_COMMON_MALFORMED_UTF8",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-malformed-utf8.cbor",
+      "bytes": 174,
+      "sha256": "afaa863e02507cf348a2a5a4f59b9aa05c082c7a103af37da5fba30feb3151f9",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "MALFORMED_UTF8"
+      }
+    },
+    {
+      "id": "neg-missing-alg",
+      "sourceDescriptorId": "MAL_COMMON_MISSING_ALG",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-missing-alg.cbor",
+      "bytes": 1091,
+      "sha256": "cddf7a233463b4d84cef6742be9d9502026ca65e0057963e5d0134e99e4c6306",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "MISSING_PROTECTED_HEADER"
+      }
+    },
+    {
+      "id": "neg-missing-content-type",
+      "sourceDescriptorId": "MAL_COMMON_MISSING_CTYP",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-missing-content-type.cbor",
+      "bytes": 1033,
+      "sha256": "91e928fb65c6d40e6156680748fb90e136118812e3b6fc4fde590fc36ac9b311",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "MISSING_PROTECTED_HEADER"
+      }
+    },
+    {
+      "id": "neg-missing-kid",
+      "sourceDescriptorId": "MAL_COMMON_MISSING_KID",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-missing-kid.cbor",
+      "bytes": 1058,
+      "sha256": "ebb51310259f2138fc05cc85fb487d477a7d7121263f61b045f401118bc2aa50",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "MISSING_PROTECTED_HEADER"
+      }
+    },
+    {
+      "id": "neg-missing-tag",
+      "sourceDescriptorId": "MAL_COMMON_MISSING_TAG_18",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-missing-tag.cbor",
+      "bytes": 1092,
+      "sha256": "e40107f12021bca4b006c42ecd05d23db822a0be25b442596079003f0c3d0c7a",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_COSE_TAG"
+      }
+    },
+    {
+      "id": "neg-non-minimal-integer",
+      "sourceDescriptorId": "MAL_COMMON_NON_MINIMAL_INTEGER",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-non-minimal-integer.cbor",
+      "bytes": 189,
+      "sha256": "813e7b27fe3cf5606446cef91ad5aa63242119584065f13b483084badbcde9a7",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "NON_CANONICAL_CBOR"
+      }
+    },
+    {
+      "id": "neg-non-minimal-length",
+      "sourceDescriptorId": "MAL_COMMON_NON_MINIMAL_LENGTH",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-non-minimal-length.cbor",
+      "bytes": 189,
+      "sha256": "94a815541c7fc93150dcaa35cfbdbe5a1b7c425c3e6fee5ac78280c072fb8a5a",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "NON_CANONICAL_CBOR"
+      }
+    },
+    {
+      "id": "neg-out-of-order-payload-map",
+      "sourceDescriptorId": "MAL_COMMON_UNSORTED_MAP_KEYS",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-out-of-order-payload-map.cbor",
+      "bytes": 218,
+      "sha256": "68fe5bf9f48eea8b83917eda0165a0902e2d6e65784d7c7eeb9c7c486cd0de43",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "NON_CANONICAL_CBOR"
+      }
+    },
+    {
+      "id": "neg-payload-bit-flip",
+      "sourceDescriptorId": "MAL_COMMON_PAYLOAD_ONE_BIT_FLIP",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-payload-bit-flip.cbor",
+      "bytes": 1093,
+      "sha256": "5c4daca5ff85ea6c10cdce0d1e8eb212d2b9cb06730c487f6913a2894358db3e",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "SIGNATURE_INVALID"
+      }
+    },
+    {
+      "id": "neg-payload-kid-mismatch",
+      "sourceDescriptorId": "MAL_COMMON_KID_PAYLOAD_KEYID_MISMATCH",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-payload-kid-mismatch.cbor",
+      "bytes": 1093,
+      "sha256": "28bd33dede668d34f081e4f74ca582b8d82172e7e6e91f75946d80053e313b29",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "KEY_ID_MISMATCH"
+      }
+    },
+    {
+      "id": "neg-payload-not-bstr",
+      "sourceDescriptorId": "MAL_COMMON_PAYLOAD_NOT_BSTR",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-payload-not-bstr.cbor",
+      "bytes": 1090,
+      "sha256": "f36638250d42bdadc13c691b2a42b8c9d497bfa0a05d550e6a0598dd0624f935",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "INVALID_COSE_PAYLOAD"
+      }
+    },
+    {
+      "id": "neg-protected-extra",
+      "sourceDescriptorId": "MAL_COMMON_PROTECTED_EXTRA_HEADER",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-protected-extra.cbor",
+      "bytes": 1096,
+      "sha256": "731b5d3b70fbba763374be34cb61787625ddb22b85bba7bb1f19a0c9d1092946",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "UNKNOWN_PROTECTED_HEADER"
+      }
+    },
+    {
+      "id": "neg-protected-not-bstr",
+      "sourceDescriptorId": "MAL_COMMON_PROTECTED_NOT_BSTR",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-protected-not-bstr.cbor",
+      "bytes": 1091,
+      "sha256": "9aff8c97ed708727b3fe6251b09eb55266de474756dafb2fa2edcd48dfd2601a",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "INVALID_PROTECTED_HEADER"
+      }
+    },
+    {
+      "id": "neg-protocol-version-zero",
+      "sourceDescriptorId": "MAL_COMMON_PROTOCOL_VERSION_ZERO",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-protocol-version-zero.cbor",
+      "bytes": 1093,
+      "sha256": "df5e16848718c6be3f23ae8077bc3cbe7f5af3784ab73eb05eb692ed1320e098",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "PROTOCOL_VERSION_MISMATCH"
+      }
+    },
+    {
+      "id": "neg-r-out-of-range",
+      "sourceDescriptorId": "MAL_COMMON_R_OUT_OF_RANGE",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-r-out-of-range.cbor",
+      "bytes": 1093,
+      "sha256": "42fbb612977965d69e8018e55a0adfb0ca7148df79074b38da721c5fb631c08c",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR"
+      }
+    },
+    {
+      "id": "neg-r-zero",
+      "sourceDescriptorId": "MAL_COMMON_R_ZERO",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-r-zero.cbor",
+      "bytes": 1093,
+      "sha256": "16438887a4cfa3c14f508bff78de94334684b25166d548a3497cb7f6f152303c",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR"
+      }
+    },
+    {
+      "id": "neg-s-out-of-range",
+      "sourceDescriptorId": "MAL_COMMON_S_OUT_OF_RANGE",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-s-out-of-range.cbor",
+      "bytes": 1093,
+      "sha256": "f92a0ec587bb0d233b0311daae08c94bd306f6e8e230b3551444ce28f09fda95",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR"
+      }
+    },
+    {
+      "id": "neg-s-zero",
+      "sourceDescriptorId": "MAL_COMMON_S_ZERO",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-s-zero.cbor",
+      "bytes": 1093,
+      "sha256": "6d9a812cd56d776d973656aec51b5d7a79bb64b9a640b17ba9a8a00152f2e3e5",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR"
+      }
+    },
+    {
+      "id": "neg-signature-63-bytes",
+      "sourceDescriptorId": "MAL_COMMON_SIGNATURE_63_BYTES",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-signature-63-bytes.cbor",
+      "bytes": 1092,
+      "sha256": "ac98158266ef5366ae6197874ee08b75a86d990bc9ee36d9b450b03619c9d210",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_SIGNATURE_ENCODING"
+      }
+    },
+    {
+      "id": "neg-signature-before-denied",
+      "sourceDescriptorId": "MAL_COMMON_SIGNATURE_ONE_BIT_FLIP",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "tokenType": "entitlement",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_DENIED",
+      "signerKeyIdHex": "8c3d78979c8234f3c25dac0f4a90c4ca58c5968342fba6a7d1ee214c8967d39f",
+      "path": "fixtures/negative/neg-signature-before-denied.cbor",
+      "bytes": 941,
+      "sha256": "196211b5b8b1e184ef1b2e0dfff1f411041b55d57294b02351cd1f78a1df0ec7",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "SIGNATURE_INVALID"
+      }
+    },
+    {
+      "id": "neg-signature-before-wrong-environment",
+      "sourceDescriptorId": "MAL_COMMON_SIGNATURE_ONE_BIT_FLIP",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "tokenType": "recovery",
+      "mediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_RECOVERY_WRONG_ENV",
+      "signerKeyIdHex": "71364084d288d9247970532568062d0b85d79b17f92d06e629a47ac0c98b56b8",
+      "path": "fixtures/negative/neg-signature-before-wrong-environment.cbor",
+      "bytes": 883,
+      "sha256": "4d25961ae6f345129f2dda9c61d88eaec35ba0ef44316a6b02272688cb9b8090",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "SIGNATURE_INVALID"
+      }
+    },
+    {
+      "id": "neg-signature-before-wrong-purpose",
+      "sourceDescriptorId": "MAL_COMMON_SIGNATURE_ONE_BIT_FLIP",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "tokenType": "offline-control",
+      "mediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_OFFLINE_ENTITLEMENT_PRIMARY",
+      "signerKeyIdHex": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "path": "fixtures/negative/neg-signature-before-wrong-purpose.cbor",
+      "bytes": 513,
+      "sha256": "9be9a2e0af936ba6f329019894d4021f0fb87fed7408157dff8ecd991267fd68",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "SIGNATURE_INVALID"
+      }
+    },
+    {
+      "id": "neg-signature-bit-flip",
+      "sourceDescriptorId": "MAL_COMMON_SIGNATURE_ONE_BIT_FLIP",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-signature-bit-flip.cbor",
+      "bytes": 1093,
+      "sha256": "6102de736140ce74e083fd1a62b404d4327a5c5f8f9f329653faeaac3dc8b6c6",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "SIGNATURE_INVALID"
+      }
+    },
+    {
+      "id": "neg-signature-text",
+      "sourceDescriptorId": "MAL_COMMON_SIGNATURE_NOT_BSTR",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-signature-text.cbor",
+      "bytes": 1043,
+      "sha256": "b44af3b921d15bb3e06df8ca4da0c0c62bbf8061fb7ee07442b59b8289ba8a6d",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_SIGNATURE_ENCODING"
+      }
+    },
+    {
+      "id": "neg-token-type-mismatch",
+      "sourceDescriptorId": "MAL_COMMON_TOKEN_TYPE_MISMATCH",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-token-type-mismatch.cbor",
+      "bytes": 1088,
+      "sha256": "9d0afe4ab536bf92a497044f7b3eb0091c74e9ae143481ae7edf900acf6e45e5",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "TOKEN_TYPE_MISMATCH"
+      }
+    },
+    {
+      "id": "neg-trailing-data",
+      "sourceDescriptorId": "MAL_COMMON_TRAILING_DATA",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-trailing-data.cbor",
+      "bytes": 1094,
+      "sha256": "4684b867570e33e4a1ef9430b6403302aa8687d42fcfa76e9bc73dd21ff917ac",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "TRAILING_DATA"
+      }
+    },
+    {
+      "id": "neg-unknown-signer",
+      "sourceDescriptorId": "MAL_COMMON_UNKNOWN_SIGNER",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "tokenType": "entitlement",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_UNKNOWN_SIGNER",
+      "signerKeyIdHex": "514bad918a390bde4b41598dc5e2ed959f96a8bd983c8e5b55c2f5cf99aa1464",
+      "path": "fixtures/negative/neg-unknown-signer.cbor",
+      "bytes": 941,
+      "sha256": "043f8ae44a749aa83b64a46f3f91b4e744b33dcbf78b8c4b1b9b646ccecce583",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "UNKNOWN_SIGNING_KEY"
+      }
+    },
+    {
+      "id": "neg-unprotected-nonempty",
+      "sourceDescriptorId": "MAL_COMMON_UNPROTECTED_NONEMPTY",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-unprotected-nonempty.cbor",
+      "bytes": 1128,
+      "sha256": "e553b9829bea5d64944209abfe1e249d757995bd12b2c148224d4cb679a101db",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "UNPROTECTED_HEADER_NOT_EMPTY"
+      }
+    },
+    {
+      "id": "neg-wrong-alg",
+      "sourceDescriptorId": "MAL_COMMON_ALG_NOT_ES256",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-wrong-alg.cbor",
+      "bytes": 1093,
+      "sha256": "1e9bb491f06fa46e34321276a218f33b002ab5fcac2efec9561ee6e231d00777",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_ALGORITHM"
+      }
+    },
+    {
+      "id": "neg-wrong-content-type",
+      "sourceDescriptorId": "MAL_COMMON_WRONG_CTYP",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-wrong-content-type.cbor",
+      "bytes": 1088,
+      "sha256": "65c63408d9b0a4e700c534893cabe9449bab8c1071387b1c2a68419d1c76c94d",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "MEDIA_TYPE_MISMATCH"
+      }
+    },
+    {
+      "id": "neg-wrong-environment",
+      "sourceDescriptorId": "MAL_COMMON_WRONG_ENVIRONMENT",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "tokenType": "recovery",
+      "mediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_RECOVERY_WRONG_ENV",
+      "signerKeyIdHex": "71364084d288d9247970532568062d0b85d79b17f92d06e629a47ac0c98b56b8",
+      "path": "fixtures/negative/neg-wrong-environment.cbor",
+      "bytes": 883,
+      "sha256": "f58dfe9e98de9843a9fc3145c7820f9a0f057c46d8f2a1b5472e15aab447c16f",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "SIGNING_KEY_ENVIRONMENT_MISMATCH"
+      }
+    },
+    {
+      "id": "neg-wrong-purpose-signer",
+      "sourceDescriptorId": "MAL_COMMON_WRONG_PURPOSE_SIGNER",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "tokenType": "entitlement",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_ONLINE_LEASE_PRIMARY",
+      "signerKeyIdHex": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901",
+      "path": "fixtures/negative/neg-wrong-purpose-signer.cbor",
+      "bytes": 941,
+      "sha256": "d3933349a979ca8a07e8f32c92f6a900cac9bee845fb2157f202bae6be90ce38",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "WRONG_SIGNING_KEY_PURPOSE"
+      }
+    },
+    {
+      "id": "neg-wrong-tag",
+      "sourceDescriptorId": "MAL_COMMON_UNEXPECTED_OUTER_TAG",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "tokenType": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "signerKeyId": "TEST_ONLY_INSTALLATION_DEVICE_PRIMARY",
+      "signerKeyIdHex": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "path": "fixtures/negative/neg-wrong-tag.cbor",
+      "bytes": 1094,
+      "sha256": "11b3d65db770347daf2775040e7939fad9cef4549339d5131c8f9711f36decc1",
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_COSE_TAG"
+      }
+    }
+  ],
+  "descriptorCorpora": {
+    "malformedPath": "coverage/malformed-expanded.json",
+    "malformedSha256": "4c2acc665e2eda4535a7f28f39e202d1d954e0ef668edc2393f2629b26541c63",
+    "malformedExpandedCount": 744,
+    "crossTypePath": "coverage/cross-type.json",
+    "crossTypeSha256": "ef15a55ce54ce9d86fcda9107b76a18c15620af77123d20d814a5e2c0ad925bb",
+    "crossTypeCount": 90
+  }
+}

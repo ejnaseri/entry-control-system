@@ -1,0 +1,154 @@
+; Entry Control System licensing protocol v1
+; Root type: a device-signed activation/offline-workflow request.
+
+activation-request = #6.18([
+  protected: bstr .cbor activation-request-protected,
+  unprotected: {},
+  payload: bstr .cbor activation-request-payload,
+  signature: bstr .size 64
+])
+
+activation-request-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.activation-request+cbor;v=1",
+  4: key-id
+}
+
+activation-request-payload =
+  activation-request-activate /
+  activation-request-renew /
+  activation-request-control /
+  activation-request-recover /
+  activation-request-rebind /
+  activation-request-reactivate /
+  activation-request-time-correct
+
+activation-request-activate = {
+  activation-request-common,
+  "requestPurpose": "ACTIVATE"
+}
+
+activation-request-renew = {
+  activation-request-common,
+  "requestPurpose": "RENEW",
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "entitlementTokenId": opaque-id
+}
+
+activation-request-control = {
+  activation-request-common,
+  "requestPurpose": "CONTROL",
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "controlAction": control-action,
+  "controlEffectiveAt": utc-second,
+  "controlReasonCode": control-reason-code
+}
+
+activation-request-recover = {
+  activation-request-common,
+  "requestPurpose": "RECOVER",
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "incidentId": opaque-id,
+  "incidentNonce": nonce-256,
+  "stateHash": sha-256,
+  "entitlementTokenId": opaque-id,
+  "entitlementTokenHash": sha-256
+}
+
+activation-request-rebind = {
+  activation-request-common,
+  "requestPurpose": "REBIND",
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "incidentId": opaque-id,
+  "incidentNonce": nonce-256,
+  "stateHash": sha-256,
+  "entitlementTokenId": opaque-id,
+  "entitlementTokenHash": sha-256,
+  "oldDeviceKeyId": key-id
+}
+
+activation-request-reactivate = {
+  activation-request-common,
+  "requestPurpose": "REACTIVATE",
+  "revokedLicenseId": opaque-id,
+  "revokedActivationId": opaque-id,
+  "finalRevokeTokenHash": sha-256,
+  "finalControlRevision": positive-counter,
+  "incidentId": opaque-id,
+  "incidentNonce": nonce-256,
+  "revokedLineageTombstoneId": opaque-id,
+  "revokedLineageTombstoneHash": sha-256
+}
+
+activation-request-time-correct = {
+  activation-request-common,
+  "requestPurpose": "TIME_CORRECT",
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "incidentId": opaque-id,
+  "incidentNonce": nonce-256,
+  "preIncidentClockHighWater": utc-second
+}
+
+activation-request-common = (
+  "protocolVersion": 1,
+  "tokenType": "activation-request",
+  "requestId": opaque-id,
+  "requestNonce": nonce-256,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "edition": edition,
+  "installationId": opaque-id,
+  "devicePublicKey": p256-spki-der,
+  "deviceKeyId": key-id,
+  "versionIdentitySha256": sha-256,
+  "buildIdentitySha256": sha-256,
+  "buildManifestSha256": sha-256,
+  "stateGeneration": counter,
+  "entitlementGeneration": counter,
+  "leaseRevision": counter,
+  current-control-snapshot,
+  "timeCorrectionRevision": counter,
+  activation-binding
+)
+
+activation-binding = (
+  "bindingKind" => "SOFTWARE_BOUND"
+//
+  "bindingKind" => "TPM_ATTESTED",
+  "tpmEvidence": tpm-evidence
+)
+
+tpm-evidence = {
+  "schemaVersion": 1,
+  "format": "WINDOWS_CNG_TPM_KEY_ATTESTATION_V1",
+  "contextHash": sha-256,
+  "evidence": bstr .size (1..65536)
+}
+
+edition = "FULL" / "ATTENDANCE"
+control-state = "OPERATIONAL" / "SUSPENDED" / "REVOKED"
+current-control-snapshot = (
+  "controlRevision" => 0,
+  "controlState" => "OPERATIONAL"
+//
+  "controlRevision" => positive-counter,
+  "controlState" => control-state
+)
+control-action = "SUSPEND" / "UNSUSPEND" / "REVOKE"
+control-reason-code = 1..5
+
+opaque-id = bstr .size 16
+nonce-256 = bstr .size 32
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+p256-spki-der = bstr .size 91
+counter = 0..9223372036854775807
+positive-counter = 1..9223372036854775807
+utc-second = 0..253402300799

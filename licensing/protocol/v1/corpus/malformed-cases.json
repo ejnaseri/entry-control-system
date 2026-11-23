@@ -1,0 +1,4888 @@
+{
+  "schemaVersion": 1,
+  "corpusKind": "descriptor-based-negative-corpus",
+  "protocolVersion": 1,
+  "signedTypes": [
+    {
+      "name": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "maximumCoseBytes": 131072
+    },
+    {
+      "name": "lease-request",
+      "mediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "maximumCoseBytes": 8192
+    },
+    {
+      "name": "key-delegation",
+      "mediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "maximumCoseBytes": 8192
+    },
+    {
+      "name": "key-denylist",
+      "mediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "maximumCoseBytes": 262144
+    },
+    {
+      "name": "entitlement",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "maximumCoseBytes": 16384
+    },
+    {
+      "name": "lease",
+      "mediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "maximumCoseBytes": 16384
+    },
+    {
+      "name": "offline-control",
+      "mediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "maximumCoseBytes": 8192
+    },
+    {
+      "name": "reactivation-authorization",
+      "mediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "maximumCoseBytes": 16384
+    },
+    {
+      "name": "recovery",
+      "mediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "maximumCoseBytes": 16384
+    },
+    {
+      "name": "time-correction",
+      "mediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "maximumCoseBytes": 8192
+    }
+  ],
+  "expectedCaseCount": 224,
+  "cases": [
+    {
+      "id": "MAL_ACTIVATION_REQUEST_MISSING_REQUIRED",
+      "types": [
+        "activation-request"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "requestId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_UNKNOWN_FIELD",
+      "types": [
+        "activation-request"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_WRONG_TYPE",
+      "types": [
+        "activation-request"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "requestId",
+        "valueDescriptor": "text-instead-of-bstr16"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_OVERSIZE",
+      "types": [
+        "activation-request"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 131072,
+        "actualBytes": 131073
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_MISSING_REQUIRED",
+      "types": [
+        "lease-request"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "httpPath"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_UNKNOWN_FIELD",
+      "types": [
+        "lease-request"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_WRONG_TYPE",
+      "types": [
+        "lease-request"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "requestNonce",
+        "valueDescriptor": "text-instead-of-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_OVERSIZE",
+      "types": [
+        "lease-request"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 8192,
+        "actualBytes": 8193
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_MISSING_REQUIRED",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "delegatedKeyId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_UNKNOWN_FIELD",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_WRONG_TYPE",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "delegationSerial",
+        "valueDescriptor": "text-instead-of-uint"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_OVERSIZE",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 8192,
+        "actualBytes": 8193
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_MISSING_REQUIRED",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "denylistRevision"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_UNKNOWN_FIELD",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_WRONG_TYPE",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "deniedKeys",
+        "valueDescriptor": "map-instead-of-array"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_OVERSIZE",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 262144,
+        "actualBytes": 262145
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_MISSING_REQUIRED",
+      "types": [
+        "entitlement"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "termEndsAt"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_UNKNOWN_FIELD",
+      "types": [
+        "entitlement"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_WRONG_TYPE",
+      "types": [
+        "entitlement"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "features",
+        "valueDescriptor": "map-instead-of-array"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_OVERSIZE",
+      "types": [
+        "entitlement"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 16384,
+        "actualBytes": 16385
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_MISSING_REQUIRED",
+      "types": [
+        "lease"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "entitlementTokenId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_UNKNOWN_FIELD",
+      "types": [
+        "lease"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_WRONG_TYPE",
+      "types": [
+        "lease"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "serverTime",
+        "valueDescriptor": "text-instead-of-uint"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_OVERSIZE",
+      "types": [
+        "lease"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 16384,
+        "actualBytes": 16385
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_MISSING_REQUIRED",
+      "types": [
+        "offline-control"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "action"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_UNKNOWN_FIELD",
+      "types": [
+        "offline-control"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_WRONG_TYPE",
+      "types": [
+        "offline-control"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "controlRevision",
+        "valueDescriptor": "text-instead-of-uint"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_OVERSIZE",
+      "types": [
+        "offline-control"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 8192,
+        "actualBytes": 8193
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_MISSING_REQUIRED",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "finalRevokeTokenHash"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_UNKNOWN_FIELD",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_WRONG_TYPE",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "maximumFeatures",
+        "valueDescriptor": "map-instead-of-array"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_OVERSIZE",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 16384,
+        "actualBytes": 16385
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_MISSING_REQUIRED",
+      "types": [
+        "recovery"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "allowedTransition"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_UNKNOWN_FIELD",
+      "types": [
+        "recovery"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_WRONG_TYPE",
+      "types": [
+        "recovery"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "expectedStateGeneration",
+        "valueDescriptor": "text"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_OVERSIZE",
+      "types": [
+        "recovery"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 16384,
+        "actualBytes": 16385
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_MISSING_REQUIRED",
+      "types": [
+        "time-correction"
+      ],
+      "category": "missing-required",
+      "mutation": {
+        "operation": "removePayloadField",
+        "field": "correctedUtc"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "MISSING_REQUIRED_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_UNKNOWN_FIELD",
+      "types": [
+        "time-correction"
+      ],
+      "category": "unknown-field",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "unexpectedV1Field",
+        "valueDescriptor": "uint-zero"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_WRONG_TYPE",
+      "types": [
+        "time-correction"
+      ],
+      "category": "wrong-type",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "timeCorrectionRevision",
+        "valueDescriptor": "text-instead-of-uint"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_FIELD_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_OVERSIZE",
+      "types": [
+        "time-correction"
+      ],
+      "category": "oversize",
+      "mutation": {
+        "operation": "setRawObjectLength",
+        "maximumBytes": 8192,
+        "actualBytes": 8193
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "PRE_DECODE",
+        "errorCode": "OBJECT_TOO_LARGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_DUPLICATE_PAYLOAD_KEY",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "duplicatePayloadMapKey",
+        "field": "protocolVersion"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "DUPLICATE_MAP_KEY",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_DUPLICATE_PROTECTED_KEY",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "duplicateProtectedHeaderLabel",
+        "label": 1
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "DUPLICATE_MAP_KEY",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_INDEFINITE_PAYLOAD_MAP",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "encodeIndefinitePayloadMap"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "INDEFINITE_LENGTH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_INDEFINITE_NESTED_ARRAY",
+      "types": [
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "reactivation-authorization",
+        "recovery"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "encodeIndefiniteNestedArray",
+        "targetByType": {
+          "key-denylist": {
+            "path": "payload.deniedKeys",
+            "itemType": "denied-key-entry"
+          },
+          "entitlement": {
+            "path": "payload.features",
+            "itemType": "feature-id"
+          },
+          "lease": {
+            "path": "payload.features",
+            "itemType": "feature-id"
+          },
+          "reactivation-authorization": {
+            "path": "payload.maximumFeatures",
+            "itemType": "feature-id"
+          },
+          "recovery": {
+            "path": "payload.maximumFeatures",
+            "itemType": "feature-id"
+          }
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "INDEFINITE_LENGTH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_INDEFINITE_BYTE_STRING",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "encodeIndefiniteByteString"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "INDEFINITE_LENGTH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_FLOAT_TIMESTAMP",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "replaceTimestampWithFloat"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "FLOAT_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_MALFORMED_UTF8",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "injectMalformedUtf8"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "MALFORMED_UTF8",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_NON_MINIMAL_INTEGER",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "encodeNonMinimalInteger"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "NON_CANONICAL_CBOR",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_NON_MINIMAL_LENGTH",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "encodeNonMinimalLength"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "NON_CANONICAL_CBOR",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_UNSORTED_MAP_KEYS",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "reorderMapKeysAgainstCoreDeterministicOrder"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "NON_CANONICAL_CBOR",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_TRAILING_DATA",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "appendTrailingByte",
+        "byteHex": "00"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "TRAILING_DATA",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_COSE_ARRAY_EXTRA_ITEM",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "appendCoseArrayItem"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "INVALID_COSE_SHAPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_UNEXPECTED_OUTER_TAG",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "replaceOuterTag",
+        "expectedTag": 18,
+        "actualTag": 98
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_COSE_TAG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_UNEXPECTED_NESTED_TAG",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cbor",
+      "mutation": {
+        "operation": "tagPayloadClaim",
+        "field": "protocolVersion",
+        "tag": 1
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CBOR_PARSE",
+        "errorCode": "UNEXPECTED_CBOR_TAG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_MISSING_TAG_18",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "removeOuterTag",
+        "expectedTag": 18
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_COSE_TAG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_DETACHED_PAYLOAD",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "setCosePayloadNil"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "DETACHED_PAYLOAD_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_PAYLOAD_NOT_BSTR",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "setCosePayloadToMap"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "INVALID_COSE_PAYLOAD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_PROTECTED_NOT_BSTR",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "setProtectedHeaderToMap"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "INVALID_PROTECTED_HEADER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_PROTECTED_EXTRA_HEADER",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "addProtectedHeader",
+        "label": 99
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "UNKNOWN_PROTECTED_HEADER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_UNPROTECTED_NONEMPTY",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "addUnprotectedHeader",
+        "label": 4
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "UNPROTECTED_HEADER_NOT_EMPTY",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_MISSING_ALG",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "removeProtectedHeader",
+        "label": 1
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "MISSING_PROTECTED_HEADER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_ALG_NONE",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "replaceProtectedHeader",
+        "label": 1,
+        "valueDescriptor": "none-equivalent"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_ALGORITHM",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_ALG_NOT_ES256",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "replaceProtectedHeader",
+        "label": 1,
+        "value": -8
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_ALGORITHM",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_MISSING_CTYP",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "removeProtectedHeader",
+        "label": 3
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "MISSING_PROTECTED_HEADER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_WRONG_CTYP",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "replaceProtectedContentTypeWithDifferentRegisteredType"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "MEDIA_TYPE_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_MISSING_KID",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "removeProtectedHeader",
+        "label": 4
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "MISSING_PROTECTED_HEADER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_KID_WRONG_TYPE",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "replaceProtectedHeader",
+        "label": 4,
+        "valueDescriptor": "text"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_HEADER_TYPE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_KID_WRONG_LENGTH",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "cose",
+      "mutation": {
+        "operation": "replaceKidLength",
+        "expectedBytes": 32,
+        "actualBytes": 31
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "COSE_PARSE",
+        "errorCode": "WRONG_KEY_ID_LENGTH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_KID_PAYLOAD_KEYID_MISMATCH",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "makeKidAndPayloadKeyIdDiffer"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "KEY_ID_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_TOKEN_TYPE_MISMATCH",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replaceTokenTypeWithDifferentRegisteredType"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "TOKEN_TYPE_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_PROTOCOL_VERSION_ZERO",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "protocolVersion",
+        "value": 0
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "PROTOCOL_VERSION_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_PROTOCOL_VERSION_TWO",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "protocolVersion",
+        "value": 2
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "PROTOCOL_VERSION_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_SIGNATURE_NOT_BSTR",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "replaceSignature",
+        "valueDescriptor": "text"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_SIGNATURE_ENCODING",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_SIGNATURE_63_BYTES",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "replaceSignatureLength",
+        "expectedBytes": 64,
+        "actualBytes": 63
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_SIGNATURE_ENCODING",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_SIGNATURE_65_BYTES",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "replaceSignatureLength",
+        "expectedBytes": 64,
+        "actualBytes": 65
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_SIGNATURE_ENCODING",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_R_ZERO",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "setEcdsaComponent",
+        "component": "R",
+        "value": 0
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_S_ZERO",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "setEcdsaComponent",
+        "component": "S",
+        "value": 0
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_R_OUT_OF_RANGE",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "setEcdsaComponent",
+        "component": "R",
+        "valueDescriptor": "p256-order"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_S_OUT_OF_RANGE",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "setEcdsaComponent",
+        "component": "S",
+        "valueDescriptor": "p256-order"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "INVALID_ECDSA_SCALAR",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_HIGH_S",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "replaceWithMathematicallyValidHighS"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "NON_CANONICAL_SIGNATURE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_PAYLOAD_ONE_BIT_FLIP",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "flipOnePayloadBitWithoutResigning"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "SIGNATURE_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_SIGNATURE_ONE_BIT_FLIP",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "flipOneSignatureBit"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "SIGNATURE_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_UNKNOWN_SIGNER",
+      "types": [
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "signWithUnknownTestKey"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SIGNATURE",
+        "errorCode": "UNKNOWN_SIGNING_KEY",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_WRONG_PURPOSE_SIGNER",
+      "types": [
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "signWithValidWrongPurposeTestKey"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "WRONG_SIGNING_KEY_PURPOSE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_DENIED_SIGNER",
+      "types": [
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "signWithDeniedTestKey"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "SIGNING_KEY_DENIED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_EXPIRED_DELEGATION",
+      "types": [
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "verifyUnderExpiredDelegation"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "SIGNING_KEY_DELEGATION_EXPIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_WRONG_ENVIRONMENT",
+      "types": [
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "signWithDifferentEnvironmentTestKey"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "SIGNING_KEY_ENVIRONMENT_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_KEY_ID_SPKI_COLLISION",
+      "types": [
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "registerDifferentSpkiForExistingKeyId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "KEY_ID_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_ID_15_BYTES",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceOpaqueIdLength",
+        "expectedBytes": 16,
+        "actualBytes": 15
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_ID_LENGTH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_HASH_31_BYTES",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceHashLength",
+        "expectedBytes": 32,
+        "actualBytes": 31
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_HASH_LENGTH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_NONCE_31_BYTES",
+      "types": [
+        "activation-request",
+        "lease-request"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceNonceLength",
+        "expectedBytes": 32,
+        "actualBytes": 31
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_NONCE_LENGTH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_NEGATIVE_COUNTER",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceCounter",
+        "value": -1
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "COUNTER_OUT_OF_RANGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_COUNTER_OVER_INT64",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceCounter",
+        "valueDescriptor": "9223372036854775808"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "COUNTER_OUT_OF_RANGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_TIMESTAMP_OVER_YEAR_9999",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceTimestamp",
+        "value": 253402300800
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "TIMESTAMP_OUT_OF_RANGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_NULL_OPTIONAL",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "recovery"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "setOptionalOrConditionalFieldNull",
+        "targetByType": {
+          "activation-request": {
+            "when": "bindingKind=TPM_ATTESTED",
+            "path": "tpmEvidence"
+          },
+          "lease-request": {
+            "when": "activeBindingRecoveryOverride=true",
+            "path": "bindingRecoveryTokenId"
+          },
+          "key-delegation": {
+            "when": "purpose=OFFLINE_ENTITLEMENT",
+            "path": "maxBusinessTermSeconds"
+          },
+          "key-denylist": {
+            "when": "denylistRevision>=2",
+            "path": "previousDenylistTokenId"
+          },
+          "entitlement": {
+            "path": "customerDisplayName"
+          },
+          "lease": {
+            "when": "activeBindingRecoveryOverride=true",
+            "path": "bindingRecoveryTokenId"
+          },
+          "offline-control": {
+            "when": "origin=REQUEST_BOUND",
+            "path": "requestId"
+          },
+          "recovery": {
+            "when": "allowedTransition=REBIND_DEVICE",
+            "path": "oldDeviceKeyId"
+          }
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "NULL_FIELD_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_EMPTY_OPTIONAL",
+      "types": [
+        "activation-request",
+        "lease-request",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "recovery"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "setOptionalOrConditionalFieldEmpty",
+        "targetByType": {
+          "activation-request": {
+            "when": "bindingKind=TPM_ATTESTED",
+            "path": "tpmEvidence",
+            "emptyValue": "empty-map"
+          },
+          "lease-request": {
+            "when": "activeBindingRecoveryOverride=true",
+            "path": "bindingRecoveryTokenId",
+            "emptyValue": "zero-length-bstr"
+          },
+          "key-denylist": {
+            "when": "denylistRevision>=2",
+            "path": "previousDenylistTokenId",
+            "emptyValue": "zero-length-bstr"
+          },
+          "entitlement": {
+            "path": "customerDisplayName",
+            "emptyValue": "zero-length-tstr"
+          },
+          "lease": {
+            "when": "activeBindingRecoveryOverride=true",
+            "path": "bindingRecoveryTokenId",
+            "emptyValue": "zero-length-bstr"
+          },
+          "offline-control": {
+            "when": "origin=REQUEST_BOUND",
+            "path": "requestId",
+            "emptyValue": "zero-length-bstr"
+          },
+          "recovery": {
+            "when": "allowedTransition=REBIND_DEVICE",
+            "path": "oldDeviceKeyId",
+            "emptyValue": "zero-length-bstr"
+          }
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "EMPTY_OPTIONAL_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_UNKNOWN_NESTED_FIELD",
+      "types": [
+        "activation-request"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "addNestedField",
+        "when": "bindingKind=TPM_ATTESTED",
+        "path": "tpmEvidence",
+        "field": "unexpectedNestedV1Field"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_UNSORTED_SET",
+      "types": [
+        "entitlement",
+        "lease",
+        "reactivation-authorization",
+        "recovery"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "reverseCanonicalSetOrder",
+        "targetPathByType": {
+          "entitlement": "features",
+          "lease": "features",
+          "reactivation-authorization": "maximumFeatures",
+          "recovery": "maximumFeatures"
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "SET_NOT_CANONICAL",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_DUPLICATE_SET_MEMBER",
+      "types": [
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "reactivation-authorization",
+        "recovery"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "duplicateSetMember",
+        "targetPathByType": {
+          "key-denylist": "deniedKeys",
+          "entitlement": "features",
+          "lease": "features",
+          "reactivation-authorization": "maximumFeatures",
+          "recovery": "maximumFeatures"
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "DUPLICATE_SET_MEMBER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_COMMON_TOKEN_ID_REUSED_DIFFERENT_BYTES",
+      "types": [
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "replay",
+      "mutation": {
+        "operation": "reuseAcceptedTokenIdWithDifferentPayload"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "TOKEN_ID_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_REQUEST_HASH_PRESENT",
+      "types": [
+        "activation-request"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "requestHash"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_DEVICE_KEY_HASH_MISMATCH",
+      "types": [
+        "activation-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "makeDeviceKeyIdDifferFromSpkiHash"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "DEVICE_KEY_ID_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_LIFETIME_OVER_30_DAYS",
+      "types": [
+        "activation-request"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 2592000,
+        "actualSeconds": 2592001
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REQUEST_LIFETIME_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_TPM_EVIDENCE_MISSING",
+      "types": [
+        "activation-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "removeConditionalField",
+        "when": "bindingKind=TPM_ATTESTED",
+        "field": "tpmEvidence"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "TPM_EVIDENCE_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_TPM_EVIDENCE_ON_SOFTWARE",
+      "types": [
+        "activation-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "addConditionalField",
+        "when": "bindingKind=SOFTWARE_BOUND",
+        "field": "tpmEvidence"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "TPM_EVIDENCE_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_TPM_CONTEXT_HASH_MISMATCH",
+      "types": [
+        "activation-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replaceNestedHash",
+        "field": "tpmEvidence.contextHash"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TPM_CONTEXT_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_PURPOSE_FIELDS_MISSING",
+      "types": [
+        "activation-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removePurposeConditionalFields",
+        "requestPurpose": "REACTIVATE"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONDITIONAL_FIELDS_MISSING",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_PURPOSE_FIELDS_LEAK",
+      "types": [
+        "activation-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "addFieldsFromDifferentPurpose",
+        "requestPurpose": "ACTIVATE",
+        "foreignPurpose": "REACTIVATE"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONDITIONAL_FIELDS_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_METHOD_NOT_POST",
+      "types": [
+        "lease-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "httpMethod",
+        "value": "GET"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "HTTP_METHOD_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_PATH_TRAILING_SLASH",
+      "types": [
+        "lease-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "httpPath",
+        "value": "/v1/licensing/leases/"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "HTTP_PATH_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_PATH_QUERY",
+      "types": [
+        "lease-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "httpPath",
+        "value": "/v1/licensing/leases?x=1"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "HTTP_PATH_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_CHALLENGE_EXPIRED",
+      "types": [
+        "lease-request"
+      ],
+      "category": "replay",
+      "mutation": {
+        "operation": "useExpiredVendorChallenge",
+        "maximumAgeSeconds": 300
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "CHALLENGE_EXPIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_CHALLENGE_REPLAY",
+      "types": [
+        "lease-request"
+      ],
+      "category": "replay",
+      "mutation": {
+        "operation": "reuseConsumedChallenge"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "CHALLENGE_REPLAYED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_REQUEST_ID_REUSED_DIFFERENT_HASH",
+      "types": [
+        "lease-request"
+      ],
+      "category": "replay",
+      "mutation": {
+        "operation": "reuseRequestIdWithDifferentBody"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "REQUEST_ID_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_TIME_RECOVERY_INCIDENT_MISSING",
+      "types": [
+        "lease-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removePurposeConditionalFields",
+        "requestPurpose": "TIME_RECOVERY"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "TIME_RECOVERY_BINDING_MISSING",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_BUILD_MANIFEST_HASH_MISMATCH",
+      "types": [
+        "lease-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "buildManifestSha256",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "BUILD_BINDING_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_DERIVED_KEY_ID_MISMATCH",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "makeDelegatedKeyIdDifferFromSpkiHash"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "DELEGATED_KEY_ID_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_NON_CANONICAL_SPKI",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "replaceDelegatedPublicKey",
+        "valueDescriptor": "equivalent-noncanonical-der"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "NON_CANONICAL_SPKI",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_WRONG_CURVE",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "replaceDelegatedPublicKey",
+        "valueDescriptor": "p384-spki"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WRONG_KEY_CURVE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_ENVELOPE_OVER_5Y",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 158112000,
+        "actualSeconds": 158112001
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "DELEGATION_LIFETIME_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_SERIAL_ROLLBACK",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setDelegationSerialBelowHighWater"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DELEGATION_SERIAL_ROLLBACK",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_SERIAL_REUSE_DIFFERENT_TOKEN",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "reuseDelegationSerialWithDifferentToken"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DELEGATION_SERIAL_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DELEGATION_PURPOSE_LIMIT_TOO_WIDE",
+      "types": [
+        "key-delegation"
+      ],
+      "category": "claims",
+      "mutation": {
+        "operation": "setPurposeLimitAboveV1Ceiling"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "DELEGATION_SCOPE_TOO_WIDE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_MORE_THAN_4096_ENTRIES",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "admission",
+      "mutation": {
+        "operation": "setDeniedKeyCount",
+        "maximum": 4096,
+        "actual": 4097
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "DENYLIST_ENTRY_LIMIT",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_ENVELOPE_OVER_366_DAYS",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 31622400,
+        "actualSeconds": 31622401
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "DENYLIST_LIFETIME_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_LOWER_REVISION",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setDenylistRevisionBelowHighWater"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DENYLIST_REVISION_ROLLBACK",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_EQUAL_REVISION_DIFFERENT_BYTES",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "reuseDenylistRevisionWithDifferentToken"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DENYLIST_REVISION_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_REMOVES_ACCEPTED_ENTRY",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "removePreviouslyDeniedKey"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DENYLIST_NOT_CUMULATIVE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_CHANGES_ACCEPTED_ENTRY",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "changePreviouslyAcceptedDenyEntry"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DENYLIST_ENTRY_CHANGED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_PREDECESSOR_HASH_MISMATCH",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "previousDenylistHash",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DENYLIST_PREDECESSOR_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_EXPIRED_NEW_IMPORT",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "importAfterNotAfter"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "DENYLIST_IMPORT_EXPIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_EXPIRY_UNDENIES_EXISTING_KEY",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "attemptToDropPersistedDenialsWhenEnvelopeExpires"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DENIAL_PERSISTENCE_VIOLATION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_PERPETUAL_SENTINEL",
+      "types": [
+        "entitlement"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setPerpetualSentinel"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "PERPETUAL_ENTITLEMENT_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_TERM_OVER_366_DAYS",
+      "types": [
+        "entitlement"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setBusinessTermDuration",
+        "maximumSeconds": 31622400,
+        "actualSeconds": 31622401
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TERM_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_ENVELOPE_OVER_410_DAYS",
+      "types": [
+        "entitlement"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 35424000,
+        "actualSeconds": 35424001
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "ENTITLEMENT_ENVELOPE_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_TIME_ORDER_INVALID",
+      "types": [
+        "entitlement"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "violateEntitlementTimeOrder",
+        "relation": "notBefore<=termStartsAt<termEndsAt<=graceUntil<=notAfter"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "ENTITLEMENT_TIME_ORDER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_WARNING_OUT_OF_RANGE",
+      "types": [
+        "entitlement"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setPayloadField",
+        "field": "warningLeadSeconds",
+        "value": 2592001
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "WARNING_POLICY_OUT_OF_RANGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_WARNING_START_MISMATCH",
+      "types": [
+        "entitlement"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "makeWarningStartInconsistentWithLead"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "WARNING_POLICY_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_GRACE_OUT_OF_RANGE",
+      "types": [
+        "entitlement"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setPayloadField",
+        "field": "graceSeconds",
+        "value": 604801
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "GRACE_POLICY_OUT_OF_RANGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_GRACE_UNTIL_MISMATCH",
+      "types": [
+        "entitlement"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "makeGraceUntilInconsistentWithGrace"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "GRACE_POLICY_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_HYBRID_POLICY_MISSING",
+      "types": [
+        "entitlement"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removeHybridPolicyFields"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "HYBRID_POLICY_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_OFFLINE_HAS_HYBRID_POLICY",
+      "types": [
+        "entitlement"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "addHybridPolicyFieldsToOfflineMode"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "HYBRID_POLICY_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_CADENCE_OUT_OF_RANGE",
+      "types": [
+        "entitlement"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setPayloadField",
+        "field": "checkCadenceSeconds",
+        "value": 3599
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CADENCE_POLICY_OUT_OF_RANGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_ALLOWANCE_OUT_OF_RANGE",
+      "types": [
+        "entitlement"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setPayloadField",
+        "field": "offlineAllowanceSeconds",
+        "value": 2592001
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "ALLOWANCE_POLICY_OUT_OF_RANGE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_NO_RETRY_MARGIN",
+      "types": [
+        "entitlement"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setHybridPolicyCombination",
+        "checkCadenceSeconds": 86400,
+        "clockToleranceSeconds": 300,
+        "offlineAllowanceSeconds": 86400
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "HYBRID_POLICY_MARGIN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_WRONG_PREDECESSOR",
+      "types": [
+        "entitlement"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "previousTokenId",
+        "valueDescriptor": "different-bstr16"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "ENTITLEMENT_PREDECESSOR_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_REACTIVATION_REFERENCE_MISSING",
+      "types": [
+        "entitlement"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removeConditionalField",
+        "field": "reactivationAuthorizationId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REACTIVATION_AUTHORIZATION_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_PARENT_TOKEN_MISMATCH",
+      "types": [
+        "lease"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "entitlementTokenId",
+        "valueDescriptor": "different-bstr16"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_PARENT_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_PARENT_GENERATION_MISMATCH",
+      "types": [
+        "lease"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "entitlementGeneration",
+        "valueDescriptor": "different-uint"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_PARENT_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REVISION_ROLLBACK",
+      "types": [
+        "lease"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setLeaseRevisionBelowHighWater"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "LEASE_REVISION_ROLLBACK",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REVISION_REUSE_DIFFERENT_TOKEN",
+      "types": [
+        "lease"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "reuseLeaseRevisionWithDifferentToken"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "LEASE_REVISION_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_OFFLINE_UNTIL_AFTER_NOT_AFTER",
+      "types": [
+        "lease"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "violateLeaseTimeOrder",
+        "relation": "offlineUntil<=notAfter"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_TIME_ORDER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_OFFLINE_UNTIL_AFTER_PARENT",
+      "types": [
+        "lease"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setOfflineUntilAfterParentNotAfter"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_OUTLIVES_PARENT",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_OFFLINE_ALLOWANCE_EXCEEDED",
+      "types": [
+        "lease"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setOfflineUntilBeyondParentAllowance"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_ALLOWANCE_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_ENVELOPE_OVER_30_DAYS",
+      "types": [
+        "lease"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 2592000,
+        "actualSeconds": 2592001
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_ENVELOPE_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_FEATURE_WIDENING",
+      "types": [
+        "lease"
+      ],
+      "category": "claims",
+      "mutation": {
+        "operation": "addFeatureNotInParent"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_FEATURES_WIDEN_PARENT",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_CONTROL_REVISION_LOWER",
+      "types": [
+        "lease"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setControlRevisionBelowHighWater"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "CONTROL_REVISION_ROLLBACK",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_CONTROL_REVISION_EQUAL_DIFFERENT_TUPLE",
+      "types": [
+        "lease"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "changeControlTupleAtEqualRevision"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "CONTROL_REVISION_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_HASH_MISMATCH",
+      "types": [
+        "lease"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "leaseRequestHash",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_REQUEST_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_TERMINAL_REVOKE_BY_ONLINE_KEY",
+      "types": [
+        "lease"
+      ],
+      "category": "claims",
+      "mutation": {
+        "operation": "setPayloadField",
+        "field": "controlState",
+        "value": "REVOKED"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONTROL_SIGNER_PURPOSE_VIOLATION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REBIND_REFERENCE_MISSING",
+      "types": [
+        "lease"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removeConditionalField",
+        "field": "bindingRecoveryTokenId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REBIND_CHAIN_MISSING",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_ENVELOPE_OVER_30_DAYS",
+      "types": [
+        "offline-control"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 2592000,
+        "actualSeconds": 2592001
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "CONTROL_ENVELOPE_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_EFFECTIVE_BEFORE_NOT_BEFORE",
+      "types": [
+        "offline-control"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEffectiveAtOutsideEnvelope",
+        "position": "before-notBefore"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "CONTROL_EFFECTIVE_TIME_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_EFFECTIVE_AT_NOT_AFTER",
+      "types": [
+        "offline-control"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEffectiveAtOutsideEnvelope",
+        "position": "equal-notAfter"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "CONTROL_EFFECTIVE_TIME_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_REVISION_ROLLBACK",
+      "types": [
+        "offline-control"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setControlRevisionBelowHighWater"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "CONTROL_REVISION_ROLLBACK",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_REVISION_REUSE_DIFFERENT_ACTION",
+      "types": [
+        "offline-control"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "reuseControlRevisionWithDifferentAction"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "CONTROL_REVISION_COLLISION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_UNSUSPEND_REVOKED",
+      "types": [
+        "offline-control"
+      ],
+      "category": "transition",
+      "mutation": {
+        "operation": "applyUnsuspendToTerminalLineage"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "TERMINAL_REVOCATION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_REQUEST_HASH_MISMATCH",
+      "types": [
+        "offline-control"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "when": "origin=REQUEST_BOUND",
+        "field": "requestHash",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "CONTROL_REQUEST_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_DEVICE_SCOPE_FIELD_PRESENT",
+      "types": [
+        "offline-control"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "addPayloadField",
+        "field": "deviceKeyId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "UNKNOWN_FIELD",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_ENVELOPE_OVER_7_DAYS",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 604800,
+        "actualSeconds": 604801
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REACTIVATION_LIFETIME_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_FINAL_REVOKE_HASH_MISMATCH",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "finalRevokeTokenHash",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REVOKED_LINEAGE_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_FINAL_CONTROL_REVISION_MISMATCH",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "finalControlRevision",
+        "valueDescriptor": "different-uint"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REVOKED_LINEAGE_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_REQUEST_HASH_MISMATCH",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "requestHash",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REACTIVATION_REQUEST_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_NEW_LINEAGE_REUSES_OLD_ID",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "setNewLineageEqualToRevokedLineage"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "NEW_LINEAGE_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_ENTITLEMENT_WIDENS_FEATURES",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "claims",
+      "mutation": {
+        "operation": "pairWithEntitlementAboveMaximumFeatures"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "REACTIVATION_FEATURES_WIDENED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_HALF_PAIR_PROMOTION",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "atomicity",
+      "mutation": {
+        "operation": "attemptPromotionWithoutBothArtifacts"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "REACTIVATION_PAIR_INCOMPLETE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_REACTIVATION_AUTHORIZATION_AUTHORIZATION_REPLAY",
+      "types": [
+        "reactivation-authorization"
+      ],
+      "category": "replay",
+      "mutation": {
+        "operation": "reuseConsumedAuthorization"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "REACTIVATION_AUTHORIZATION_REPLAYED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_ENVELOPE_OVER_24_HOURS",
+      "types": [
+        "recovery"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 86400,
+        "actualSeconds": 86401
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "RECOVERY_LIFETIME_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_STATE_GENERATION_NOT_NEXT",
+      "types": [
+        "recovery"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setNewStateGenerationNotExpectedPlusOne"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "STATE_GENERATION_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_INCIDENT_MISMATCH",
+      "types": [
+        "recovery"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "incidentNonce",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "RECOVERY_INCIDENT_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_REQUEST_HASH_MISMATCH",
+      "types": [
+        "recovery"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "requestHash",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "RECOVERY_REQUEST_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_WRONG_EDITION",
+      "types": [
+        "recovery"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "edition",
+        "valueDescriptor": "other-edition"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "EDITION_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_FEATURE_WIDENING",
+      "types": [
+        "recovery"
+      ],
+      "category": "claims",
+      "mutation": {
+        "operation": "setMaximumFeaturesAboveCurrent"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "RECOVERY_FEATURES_WIDENED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_TARGETS_REVOKED_LINEAGE",
+      "types": [
+        "recovery"
+      ],
+      "category": "transition",
+      "mutation": {
+        "operation": "applyRecoveryToTerminalLineage"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "TERMINAL_REVOCATION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_REBIND_FIELDS_MISSING",
+      "types": [
+        "recovery"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removeRebindConditionalFields"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "REBIND_FIELDS_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_NON_REBIND_HAS_DEVICE_OVERRIDE",
+      "types": [
+        "recovery"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "addRebindFieldsToNonRebind"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "REBIND_FIELDS_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_RECOVERY_TOKEN_REPLAY",
+      "types": [
+        "recovery"
+      ],
+      "category": "replay",
+      "mutation": {
+        "operation": "reuseConsumedRecoveryToken"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "RECOVERY_TOKEN_REPLAYED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_ENVELOPE_OVER_24_HOURS",
+      "types": [
+        "time-correction"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setEnvelopeLifetime",
+        "maximumSeconds": 86400,
+        "actualSeconds": 86401
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_CORRECTION_LIFETIME_TOO_LONG",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_STATE_GENERATION_NOT_NEXT",
+      "types": [
+        "time-correction"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setNewStateGenerationNotExpectedPlusOne"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "STATE_GENERATION_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_REVISION_NOT_NEXT",
+      "types": [
+        "time-correction"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "setTimeCorrectionRevisionNotCurrentPlusOne"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "TIME_CORRECTION_REVISION_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_INCIDENT_MISMATCH",
+      "types": [
+        "time-correction"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "incidentNonce",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_CORRECTION_INCIDENT_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_REQUEST_HASH_MISMATCH",
+      "types": [
+        "time-correction"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "replacePayloadField",
+        "field": "requestHash",
+        "valueDescriptor": "different-bstr32"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_CORRECTION_REQUEST_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_ISSUED_BELOW_HIGH_WATER",
+      "types": [
+        "time-correction"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "setPayloadFieldBelowSealedHighWater",
+        "field": "issuedAt"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_CORRECTION_BELOW_HIGH_WATER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_CORRECTED_BELOW_HIGH_WATER",
+      "types": [
+        "time-correction"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "setPayloadFieldBelowSealedHighWater",
+        "field": "correctedUtc"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_CORRECTION_BELOW_HIGH_WATER",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_SUSPECT_WALL_CLOCK_ONLY",
+      "types": [
+        "time-correction"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "removeMonotonicFreshnessEvidence"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "TIME_CORRECTION_FRESHNESS_UNPROVEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_STALE_INCIDENT_AFTER_REBOOT",
+      "types": [
+        "time-correction"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "useIncidentWithoutPreservedSameBootEvidence"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "TIME_CORRECTION_FRESHNESS_UNPROVEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_TOKEN_REPLAY",
+      "types": [
+        "time-correction"
+      ],
+      "category": "replay",
+      "mutation": {
+        "operation": "reuseConsumedTimeCorrectionToken"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "TIME_CORRECTION_REPLAYED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_CONTROL_ACTION_MISSING",
+      "types": [
+        "activation-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removeConditionalField",
+        "when": "requestPurpose=CONTROL",
+        "field": "controlAction"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONTROL_ACTION_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_CONTROL_ACTION_INVALID",
+      "types": [
+        "activation-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "replaceConditionalField",
+        "when": "requestPurpose=CONTROL",
+        "field": "controlAction",
+        "value": "DELETE"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONTROL_ACTION_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_FORBIDDEN_RESPONSE_PAIR",
+      "types": [
+        "activation-request"
+      ],
+      "category": "binding",
+      "mutation": {
+        "operation": "pairRequestWithResponseForbiddenByPurposeMatrix",
+        "requestPurpose": "CONTROL",
+        "responseTokenType": "entitlement",
+        "permittedResponseTokenTypes": [
+          "offline-control"
+        ]
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "RESPONSE_TYPE_FORBIDDEN_FOR_REQUEST_PURPOSE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_ACTIVE_REBIND_REFERENCE_MISSING",
+      "types": [
+        "lease-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removeConditionalField",
+        "when": "activeBindingRecoveryOverride=true",
+        "field": "bindingRecoveryTokenId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REBIND_CHAIN_MISSING",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_UNEXPECTED_REBIND_REFERENCE",
+      "types": [
+        "lease-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "addConditionalField",
+        "when": "activeBindingRecoveryOverride=false",
+        "field": "bindingRecoveryTokenId",
+        "valueDescriptor": "unrelated-bstr16"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "REBIND_CHAIN_UNEXPECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_VENDOR_TOKEN_NOT_BEFORE_NOT_AFTER",
+      "types": [
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setNotBeforeGreaterThanOrEqualToNotAfter",
+        "relation": "notBefore>=notAfter"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TOKEN_TIME_ORDER_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_VENDOR_TOKEN_ISSUED_AT_NOT_AFTER",
+      "types": [
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "lifecycle",
+      "mutation": {
+        "operation": "setIssuedAtGreaterThanOrEqualToNotAfter",
+        "relation": "issuedAt>=notAfter"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TOKEN_TIME_ORDER_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_DELEGATED_TOKEN_OUTSIDE_ACCEPTED_DELEGATION",
+      "types": [
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery",
+        "time-correction"
+      ],
+      "category": "crypto",
+      "mutation": {
+        "operation": "setTokenValidityOutsideAcceptedDelegation",
+        "invalidAlternatives": [
+          "token.notBefore<delegation.notBefore",
+          "token.notAfter>delegation.notAfter",
+          "token.issuedAt<delegation.notBefore",
+          "token.issuedAt>=delegation.notAfter"
+        ]
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "TRUST",
+        "errorCode": "TOKEN_OUTSIDE_DELEGATION_VALIDITY",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_ENTRY_UNSIGNED_BYTE_ORDER",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "orderDeniedKeysAgainstUnsignedByteLexicographicOrder",
+        "field": "deniedKeys[].delegatedKeyId"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "DENYLIST_ENTRY_ORDER_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_REQUEST_BOUND_BINDING_MISSING",
+      "types": [
+        "offline-control"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "removeConditionalFields",
+        "when": "origin=REQUEST_BOUND",
+        "fields": [
+          "requestId",
+          "requestHash"
+        ]
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONTROL_REQUEST_BINDING_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_OFFLINE_CONTROL_VENDOR_INITIATED_BINDING_LEAK",
+      "types": [
+        "offline-control"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "addForbiddenConditionalFields",
+        "when": "origin=VENDOR_INITIATED",
+        "fields": {
+          "requestId": "unrelated-bstr16",
+          "requestHash": "unrelated-bstr32"
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONTROL_REQUEST_BINDING_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_BUILD_MAJOR_RANGE_INVERTED",
+      "types": [
+        "entitlement"
+      ],
+      "category": "claims",
+      "mutation": {
+        "operation": "setMinimumProductVersionMajorAboveMaximumMajorVersion",
+        "fieldRelation": "minimumProductVersion.major>maximumMajorVersion"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "BUILD_COMPATIBILITY_RANGE_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ENTITLEMENT_ATTENDANCE_FULL_ONLY_COMMERCIAL_FEATURE",
+      "types": [
+        "entitlement"
+      ],
+      "category": "claims",
+      "mutation": {
+        "operation": "addEditionDisallowedFeature",
+        "edition": "ATTENDANCE",
+        "feature": "CUSTOMER_PAYMENTS"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "EDITION_FEATURE_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_KEY_DENYLIST_HIGHER_REVISION_NOT_UNCHANGED_SUPERSET",
+      "types": [
+        "key-denylist"
+      ],
+      "category": "rollback",
+      "mutation": {
+        "operation": "replaceAcceptedDenylistWithNonSupersetAtHigherRevision",
+        "requiredRelation": "newEntries must be a cumulative unchanged superset of accepted entries"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "STATE",
+        "errorCode": "DENYLIST_NOT_CUMULATIVE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ORDINARY_ADMISSION_ISSUED_AT_FUTURE_TOLERANCE",
+      "types": [
+        "activation-request",
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "setIssuedAtBeyondTrustedFutureTolerance",
+        "when": "verificationPath=ORDINARY",
+        "relation": "issuedAt>verificationReference+clockToleranceSeconds",
+        "verificationReferenceByObject": {
+          "activation-request": "vendorUtc",
+          "vendor-signed-object": "trustedNow"
+        },
+        "clockToleranceSeconds": 300,
+        "actualFutureOffsetSeconds": 301,
+        "excludedPaths": [
+          "TIME_CORRECTION",
+          "TIME_RECOVERY"
+        ]
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "ISSUED_AT_TOO_FAR_IN_FUTURE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_CONTROL_REASON_ZERO",
+      "types": [
+        "activation-request"
+      ],
+      "category": "conditional",
+      "mutation": {
+        "operation": "replaceConditionalField",
+        "when": "requestPurpose=CONTROL",
+        "field": "controlReasonCode",
+        "value": 0
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "CONTROL_REASON_CODE_INVALID",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_OFFLINE_UNTIL_BELOW_EXACT_MINIMUM",
+      "types": [
+        "lease"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setOfflineUntilBelowExactFormula",
+        "requiredFormula": "min(serverTime+parent.offlineAllowanceSeconds,entitlement.notAfter,entitlement.graceUntil)",
+        "differenceSeconds": -1
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_OFFLINE_UNTIL_FORMULA_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_OPERATIONAL_REMAINING_WINDOW_AT_TOLERANCE",
+      "types": [
+        "lease"
+      ],
+      "category": "policy",
+      "mutation": {
+        "operation": "setOperationalRemainingWindow",
+        "relation": "offlineUntil-serverTime<=300",
+        "actualRemainingSeconds": 300,
+        "requiredRelation": "offlineUntil-serverTime>300"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "LEASE_OPERATIONAL_WINDOW_TOO_SHORT",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_CONTROL_REASON_ZERO_NON_INITIAL_TUPLE",
+      "types": [
+        "lease"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceControlTupleField",
+        "validBaseTuple": {
+          "controlRevision": 0,
+          "controlState": "OPERATIONAL",
+          "controlEffectiveAt": 0,
+          "controlReasonCode": 0
+        },
+        "field": "controlState",
+        "value": "SUSPENDED",
+        "resultingInvalidTuple": {
+          "controlRevision": 0,
+          "controlState": "SUSPENDED",
+          "controlEffectiveAt": 0,
+          "controlReasonCode": 0
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "INVALID_CONTROL_TUPLE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_REQUEST_CONTROL_REASON_ZERO_WITH_POSITIVE_REVISION",
+      "types": [
+        "lease-request"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceControlTupleField",
+        "validBaseTuple": {
+          "controlRevision": 0,
+          "controlState": "OPERATIONAL",
+          "controlEffectiveAt": 0,
+          "controlReasonCode": 0
+        },
+        "field": "controlRevision",
+        "value": 1,
+        "resultingInvalidTuple": {
+          "controlRevision": 1,
+          "controlState": "OPERATIONAL",
+          "controlEffectiveAt": 0,
+          "controlReasonCode": 0
+        }
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "INVALID_CONTROL_TUPLE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_RESPONSE_TIME_RECOVERY_PRIMARY_LEASE_MISSING",
+      "types": [
+        "lease-request"
+      ],
+      "category": "carrier",
+      "mutation": {
+        "operation": "pairTimeRecoveryRequestWithControlOnlyLeaseResponseCarrier",
+        "requestPurpose": "TIME_RECOVERY",
+        "responseMediaType": "application/vnd.entry-control.lease-response+cbor;v=1",
+        "carrierShape": {
+          "schemaVersion": 1,
+          "carrierType": "lease-response",
+          "requestId": "same-bstr16-as-request",
+          "offlineControl": "valid-independent-offline-control-cose-bstr",
+          "lease": "OMITTED"
+        },
+        "requiredPrimaryField": "lease"
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_RECOVERY_PRIMARY_LEASE_REQUIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_LEASE_RESPONSE_TIME_RECOVERY_TRUST_BUNDLE_FORBIDDEN",
+      "types": [
+        "lease-request"
+      ],
+      "category": "carrier",
+      "mutation": {
+        "operation": "addForbiddenTrustBundleToTimeRecoveryLeaseResponse",
+        "requestPurpose": "TIME_RECOVERY",
+        "responseMediaType": "application/vnd.entry-control.lease-response+cbor;v=1",
+        "carrierShape": {
+          "schemaVersion": 1,
+          "carrierType": "lease-response",
+          "requestId": "same-bstr16-as-request",
+          "lease": "valid-request-bound-time-recovery-lease-cose-bstr",
+          "trustBundle": {
+            "encoding": "canonical-trust-bundle-cbor-in-bstr",
+            "embeddedCarrierShape": {
+              "schemaVersion": 1,
+              "carrierType": "trust-bundle",
+              "delegations": [
+                "valid-key-delegation-cose-bstr"
+              ],
+              "denylist": "valid-key-denylist-cose-bstr"
+            }
+          }
+        },
+        "forbiddenField": "trustBundle",
+        "forbiddenTransportedTokenTypes": [
+          "key-delegation",
+          "key-denylist"
+        ]
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_RECOVERY_TRUST_UPDATE_FORBIDDEN",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_CORRECTION_ISSUED_AT_ABOVE_CORRECTED_UTC_TOLERANCE",
+      "types": [
+        "time-correction"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "setTimeCorrectionIssuedAtAboveCorrectedUtcTolerance",
+        "requestContext": {
+          "requestTokenType": "activation-request",
+          "requestPurpose": "TIME_CORRECT",
+          "requestIdRelation": "token.requestId=request.requestId",
+          "requestHashRelation": "token.requestHash=sha256(complete-request-cose-bytes)"
+        },
+        "tokenCarrier": "ECSREC_FILE",
+        "tokenMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+        "field": "issuedAt",
+        "referenceField": "correctedUtc",
+        "maximumOffsetSeconds": 300,
+        "actualOffsetSeconds": 301,
+        "actualRelation": "issuedAt=correctedUtc+301",
+        "preserveOtherConstraints": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_CORRECTION_ISSUED_AT_AFTER_CORRECTED_TOLERANCE",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_TIME_RECOVERY_LEASE_ISSUED_AT_SERVER_TIME_MISMATCH",
+      "types": [
+        "lease"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "setTimeRecoveryLeaseIssuedAtDifferentFromServerTime",
+        "requestContext": {
+          "requestTokenType": "lease-request",
+          "requestPurpose": "TIME_RECOVERY",
+          "requestIdRelation": "lease.leaseRequestId=request.requestId",
+          "requestHashRelation": "lease.leaseRequestHash=sha256(complete-request-cose-bytes)"
+        },
+        "responseMediaType": "application/vnd.entry-control.lease-response+cbor;v=1",
+        "carrierShape": {
+          "schemaVersion": 1,
+          "carrierType": "lease-response",
+          "requestId": "same-bstr16-as-request",
+          "lease": "matching-time-recovery-lease-cose-bstr"
+        },
+        "field": "issuedAt",
+        "referenceField": "serverTime",
+        "requiredRelation": "issuedAt=serverTime",
+        "actualRelation": "issuedAt=serverTime+1",
+        "preserveOtherConstraints": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TIME_RECOVERY_ISSUED_AT_SERVER_TIME_MISMATCH",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_VENDOR_UTC_AT_NOT_AFTER",
+      "types": [
+        "activation-request"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "setActivationRequestAdmissionReferenceAtNotAfter",
+        "requestPurpose": "ACTIVATE",
+        "verificationReference": "vendorUtc",
+        "requiredRelation": "vendorUtc<notAfter",
+        "actualRelation": "vendorUtc=notAfter",
+        "preserveRelation": "issuedAt<notAfter",
+        "preserveOtherConstraints": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "ACTIVATION_REQUEST_EXPIRED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ORDINARY_VENDOR_TOKEN_TRUSTED_NOW_AT_NOT_AFTER",
+      "types": [
+        "key-delegation",
+        "key-denylist",
+        "entitlement",
+        "lease",
+        "offline-control",
+        "reactivation-authorization",
+        "recovery"
+      ],
+      "category": "time",
+      "mutation": {
+        "operation": "setOrdinaryAdmissionTrustedNowAtNotAfter",
+        "verificationPath": "ORDINARY",
+        "verificationReference": "trustedNow",
+        "requiredRelation": "trustedNow<notAfter",
+        "actualRelation": "trustedNow=notAfter",
+        "leaseRequestPurpose": "CHECK_IN",
+        "excludedContexts": [
+          "activation-request uses vendorUtc",
+          "time-correction uses correctedUtc and incident proof",
+          "lease requestPurpose=TIME_RECOVERY uses signed serverTime"
+        ],
+        "preserveOtherConstraints": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "CLAIMS",
+        "errorCode": "TOKEN_EXPIRED_AT_ADMISSION",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "MAL_ACTIVATION_REQUEST_CONTROL_REVISION_ZERO_NON_OPERATIONAL",
+      "types": [
+        "activation-request"
+      ],
+      "category": "schema",
+      "mutation": {
+        "operation": "replaceCurrentControlSnapshotField",
+        "requestPurpose": "ACTIVATE",
+        "validBaseSnapshot": {
+          "controlRevision": 0,
+          "controlState": "OPERATIONAL"
+        },
+        "field": "controlState",
+        "value": "SUSPENDED",
+        "resultingInvalidSnapshot": {
+          "controlRevision": 0,
+          "controlState": "SUSPENDED"
+        },
+        "requiredInvariant": "controlRevision=0 requires controlState=OPERATIONAL; controlRevision>0 permits OPERATIONAL, SUSPENDED, or REVOKED",
+        "preserveOtherConstraints": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "SCHEMA",
+        "errorCode": "INVALID_CONTROL_SNAPSHOT",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    }
+  ]
+}

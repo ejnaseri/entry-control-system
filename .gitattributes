@@ -1,0 +1,65 @@
+/licensing/protocol/v1/** text eol=lf
+/docs/licensing/evidence/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-host-foundation-v1-20261103/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-20261027/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v2-20261027/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v2-20261027/*.txt -text -whitespace
+/docs/licensing/evidence/export-policy-scalar-reader-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v3-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v3-owner-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v3-run-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-controller-diagnostics-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v4-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v4-run-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-initial-status-fix-20261028/*.json -text -whitespace
+/docs/licensing/evidence/wrapping-retained-originals-20261028/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v5-20261102/*.json -text -whitespace
+/docs/licensing/evidence/export-policy-control-v5-run-20261102/*.json -text -whitespace
+/docs/licensing/evidence/standard-account-preparation-v1-20261102/*.json -text -whitespace
+/docs/licensing/evidence/standard-account-preparation-v1-run-20261102/*.json -text -whitespace
+/docs/licensing/evidence/standard-identity-foundation-v1-20261102/*.json -text -whitespace
+/docs/licensing/evidence/standard-user-components-v1-20261103/*.json -text -whitespace
+/docs/licensing/evidence/standard-user-construction-v1-20261103/*.json -text -whitespace
+/docs/licensing/evidence/standard-user-admission-v1-20261103/*.json -text -whitespace
+/docs/licensing/evidence/standard-user-account-lifecycle-v1-20261103/*.json -text -whitespace
+/docs/licensing/evidence/standard-user-native-lifecycle-v1-20261103/*.json -text -whitespace
+/docs/licensing/evidence/standard-user-owner-transfer-v1-20261103/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-loader-v1-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-control-v2-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-package-binding-v2-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-package-binding-v2-nonce64-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-package-preclr-shape-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-host-preclr-shape-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-loader-preclr-shape-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-user-intent-v2-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-origin-lease-v2-20261111/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-stage-reservation-v3-origin-win-v2-20261118/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-reservation-original-v3-windows-sink-20261118/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-preactivation-v3-20261118/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-owner-group-probe-v1-20261118/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-owner-group-probe-v1-20261118/*.bin binary
+/docs/licensing/evidence/standard-native-prefix-seal-v3-20261118/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-programdata-placement-probe-v1-20261118/*.json -text -whitespace
+/docs/licensing/evidence/standard-native-programdata-placement-probe-v1-20261118/*.bin binary
+/docs/licensing/evidence/standard-native-programdata-placement-probe-v1-20261118/INDEX.sha256 -text -whitespace
+/docs/licensing/evidence/standard-native-typed-chain-v3-20261118/*.json -text -whitespace
+/licensing/adapter-evidence/standard-native-loader/standard_loader_core.c -whitespace
+/docs/licensing/plans/LICENSING_NATIVE_ENTRY_AMENDMENT.md -text
+/docs/licensing/plans/LICENSING_NATIVE_ENTRY_AMENDMENT_V2.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_ENTRY_EVIDENCE_LEDGER.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_ENTRY_DECISION_DRAFT.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_OPERATION_CONTRACT.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_OPERATION_CONTRACT_V02.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_OPERATION_CONTRACT_V03.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_FRESH_EVIDENCE_PLAN.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_PHYSICAL_PILOT_SPEC.md -text
+/docs/licensing/plans/LICENSING_ADAPTER_PHYSICAL_PILOT_SPEC_V02.md -text
+/scripts/collect-license-retained-summary-hashes.ps1 -text
+/scripts/reconcile-license-retained-evidence.ps1 -text
+/scripts/collect-license-report-artifact-bindings.ps1 -text
+/licensing/vectors/v1/** text eol=lf
+/licensing/vectors/v1/**/*.cbor binary
+/licensing/vectors/v1/**/*.der binary
+/licensing/vectors/v1/**/*.pk8 binary
+/licensing/adapter-evidence/pilot-implementation/implementation-packet-v05.json -text
+/docs/licensing/plans/LICENSING_PILOT_ISOLATED_PLACEMENT_PLAN.md -text

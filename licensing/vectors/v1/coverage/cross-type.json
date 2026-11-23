@@ -1,0 +1,1991 @@
+{
+  "schemaVersion": 1,
+  "protocolVersion": 1,
+  "coverageKind": "CROSS_TYPE",
+  "nonProductionOnly": true,
+  "sourcePath": "../../protocol/v1/corpus/cross-type-cases.json",
+  "sourceSha256": "dd87178a80b96eda5d10f74da9f2d7005b08793e1d33baee44289c4a71c83890",
+  "expectedRecordCount": 90,
+  "records": [
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_LEASE_REQUEST",
+      "sourceType": "activation-request",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_KEY_DELEGATION",
+      "sourceType": "activation-request",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_KEY_DENYLIST",
+      "sourceType": "activation-request",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_ENTITLEMENT",
+      "sourceType": "activation-request",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_LEASE",
+      "sourceType": "activation-request",
+      "targetType": "lease",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_OFFLINE_CONTROL",
+      "sourceType": "activation-request",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "activation-request",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_RECOVERY",
+      "sourceType": "activation-request",
+      "targetType": "recovery",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_TIME_CORRECTION",
+      "sourceType": "activation-request",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-activation-activate-tpm",
+      "baseCosePath": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "baseCoseSha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_ACTIVATION_REQUEST",
+      "sourceType": "lease-request",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_KEY_DELEGATION",
+      "sourceType": "lease-request",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_KEY_DENYLIST",
+      "sourceType": "lease-request",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_ENTITLEMENT",
+      "sourceType": "lease-request",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_LEASE",
+      "sourceType": "lease-request",
+      "targetType": "lease",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_OFFLINE_CONTROL",
+      "sourceType": "lease-request",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "lease-request",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_RECOVERY",
+      "sourceType": "lease-request",
+      "targetType": "recovery",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_TIME_CORRECTION",
+      "sourceType": "lease-request",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-lease-request-check-in",
+      "baseCosePath": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "baseCoseSha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_ACTIVATION_REQUEST",
+      "sourceType": "key-delegation",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_LEASE_REQUEST",
+      "sourceType": "key-delegation",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_KEY_DENYLIST",
+      "sourceType": "key-delegation",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_ENTITLEMENT",
+      "sourceType": "key-delegation",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_LEASE",
+      "sourceType": "key-delegation",
+      "targetType": "lease",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_OFFLINE_CONTROL",
+      "sourceType": "key-delegation",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "key-delegation",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_RECOVERY",
+      "sourceType": "key-delegation",
+      "targetType": "recovery",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_TIME_CORRECTION",
+      "sourceType": "key-delegation",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-delegation-offline-entitlement",
+      "baseCosePath": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "baseCoseSha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_ACTIVATION_REQUEST",
+      "sourceType": "key-denylist",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_LEASE_REQUEST",
+      "sourceType": "key-denylist",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_KEY_DELEGATION",
+      "sourceType": "key-denylist",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_ENTITLEMENT",
+      "sourceType": "key-denylist",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_LEASE",
+      "sourceType": "key-denylist",
+      "targetType": "lease",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_OFFLINE_CONTROL",
+      "sourceType": "key-denylist",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "key-denylist",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_RECOVERY",
+      "sourceType": "key-denylist",
+      "targetType": "recovery",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_TIME_CORRECTION",
+      "sourceType": "key-denylist",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-denylist-revision-1",
+      "baseCosePath": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "baseCoseSha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_ACTIVATION_REQUEST",
+      "sourceType": "entitlement",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_LEASE_REQUEST",
+      "sourceType": "entitlement",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_KEY_DELEGATION",
+      "sourceType": "entitlement",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_KEY_DENYLIST",
+      "sourceType": "entitlement",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_LEASE",
+      "sourceType": "entitlement",
+      "targetType": "lease",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_OFFLINE_CONTROL",
+      "sourceType": "entitlement",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "entitlement",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_RECOVERY",
+      "sourceType": "entitlement",
+      "targetType": "recovery",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_TIME_CORRECTION",
+      "sourceType": "entitlement",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-entitlement-initial-offline",
+      "baseCosePath": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "baseCoseSha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_ACTIVATION_REQUEST",
+      "sourceType": "lease",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_LEASE_REQUEST",
+      "sourceType": "lease",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_KEY_DELEGATION",
+      "sourceType": "lease",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_KEY_DENYLIST",
+      "sourceType": "lease",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_ENTITLEMENT",
+      "sourceType": "lease",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_OFFLINE_CONTROL",
+      "sourceType": "lease",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "lease",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_RECOVERY",
+      "sourceType": "lease",
+      "targetType": "recovery",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_LEASE_AS_TIME_CORRECTION",
+      "sourceType": "lease",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-lease-initial-control",
+      "baseCosePath": "fixtures/positive/pos-lease-initial-control.cbor",
+      "baseCoseSha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_ACTIVATION_REQUEST",
+      "sourceType": "offline-control",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_LEASE_REQUEST",
+      "sourceType": "offline-control",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_KEY_DELEGATION",
+      "sourceType": "offline-control",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_KEY_DENYLIST",
+      "sourceType": "offline-control",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_ENTITLEMENT",
+      "sourceType": "offline-control",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_LEASE",
+      "sourceType": "offline-control",
+      "targetType": "lease",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "offline-control",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_RECOVERY",
+      "sourceType": "offline-control",
+      "targetType": "recovery",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_TIME_CORRECTION",
+      "sourceType": "offline-control",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-control-vendor-suspend",
+      "baseCosePath": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "baseCoseSha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_ACTIVATION_REQUEST",
+      "sourceType": "reactivation-authorization",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_LEASE_REQUEST",
+      "sourceType": "reactivation-authorization",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_KEY_DELEGATION",
+      "sourceType": "reactivation-authorization",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_KEY_DENYLIST",
+      "sourceType": "reactivation-authorization",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_ENTITLEMENT",
+      "sourceType": "reactivation-authorization",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_LEASE",
+      "sourceType": "reactivation-authorization",
+      "targetType": "lease",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_OFFLINE_CONTROL",
+      "sourceType": "reactivation-authorization",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_RECOVERY",
+      "sourceType": "reactivation-authorization",
+      "targetType": "recovery",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_TIME_CORRECTION",
+      "sourceType": "reactivation-authorization",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-reactivation-authorization",
+      "baseCosePath": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "baseCoseSha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_ACTIVATION_REQUEST",
+      "sourceType": "recovery",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_LEASE_REQUEST",
+      "sourceType": "recovery",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_KEY_DELEGATION",
+      "sourceType": "recovery",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_KEY_DENYLIST",
+      "sourceType": "recovery",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_ENTITLEMENT",
+      "sourceType": "recovery",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_LEASE",
+      "sourceType": "recovery",
+      "targetType": "lease",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_OFFLINE_CONTROL",
+      "sourceType": "recovery",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "recovery",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_TIME_CORRECTION",
+      "sourceType": "recovery",
+      "targetType": "time-correction",
+      "basePositiveId": "pos-recovery-clear-tamper",
+      "baseCosePath": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "baseCoseSha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_ACTIVATION_REQUEST",
+      "sourceType": "time-correction",
+      "targetType": "activation-request",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_LEASE_REQUEST",
+      "sourceType": "time-correction",
+      "targetType": "lease-request",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_KEY_DELEGATION",
+      "sourceType": "time-correction",
+      "targetType": "key-delegation",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_KEY_DENYLIST",
+      "sourceType": "time-correction",
+      "targetType": "key-denylist",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_ENTITLEMENT",
+      "sourceType": "time-correction",
+      "targetType": "entitlement",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_LEASE",
+      "sourceType": "time-correction",
+      "targetType": "lease",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_OFFLINE_CONTROL",
+      "sourceType": "time-correction",
+      "targetType": "offline-control",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "time-correction",
+      "targetType": "reactivation-authorization",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_RECOVERY",
+      "sourceType": "time-correction",
+      "targetType": "recovery",
+      "basePositiveId": "pos-time-correction",
+      "baseCosePath": "fixtures/positive/pos-time-correction.cbor",
+      "baseCoseSha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      },
+      "coverageStatus": "FROZEN"
+    }
+  ]
+}

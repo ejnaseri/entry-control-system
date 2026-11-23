@@ -1,0 +1,2 @@
+# Preserve exact physical-report bytes and their recorded SHA256 digests.
+*.json -text -whitespace

@@ -1,0 +1,46 @@
+; Entry Control System licensing protocol v1
+; Non-authoritative .ecstrust carrier.  Each embedded byte string must also
+; validate against its complete signed-object schema before it is trusted.
+; The complete deterministic carrier is rejected above 1048576 bytes before
+; CBOR decoding; per-field bounds below do not replace that outer cap.
+
+trust-bundle-carrier = {
+  "schemaVersion": 1,
+  "carrierType": "trust-bundle",
+  "delegations": [1*64 key-delegation-bytes],
+  "denylist": key-denylist-bytes
+}
+
+key-delegation-bytes =
+  (bstr .size (1..8192)) .cbor key-delegation-envelope
+
+key-denylist-bytes =
+  (bstr .size (1..262144)) .cbor key-denylist-envelope
+
+key-delegation-envelope = #6.18([
+  bstr .cbor key-delegation-protected,
+  {},
+  bstr,
+  bstr .size 64
+])
+
+key-denylist-envelope = #6.18([
+  bstr .cbor key-denylist-protected,
+  {},
+  bstr,
+  bstr .size 64
+])
+
+key-delegation-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.key-delegation+cbor;v=1",
+  4: key-id
+}
+
+key-denylist-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.key-denylist+cbor;v=1",
+  4: key-id
+}
+
+key-id = bstr .size 32

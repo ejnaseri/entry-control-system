@@ -1,0 +1,52 @@
+; Entry Control System licensing protocol v1
+; Root type: a PROD_ROOT-signed subordinate-key delegation.
+
+key-delegation = #6.18([
+  protected: bstr .cbor key-delegation-protected,
+  unprotected: {},
+  payload: bstr .cbor key-delegation-payload,
+  signature: bstr .size 64
+])
+
+key-delegation-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.key-delegation+cbor;v=1",
+  4: key-id
+}
+
+key-delegation-payload = {
+  "protocolVersion": 1,
+  "tokenType": "key-delegation",
+  "tokenId": opaque-id,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notBefore": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "environment": environment,
+  "delegatedPublicKey": p256-spki-der,
+  "delegatedKeyId": key-id,
+  "delegationSerial": positive-counter,
+  (
+    "purpose" => "OFFLINE_ENTITLEMENT",
+    "maxTokenLifetimeSeconds": 1..35424000,
+    "maxBusinessTermSeconds": 1..31622400
+  //
+    "purpose" => "ONLINE_LEASE",
+    "maxTokenLifetimeSeconds": 1..2592000
+  //
+    "purpose" => "OFFLINE_CONTROL",
+    "maxTokenLifetimeSeconds": 1..2592000
+  //
+    "purpose" => "RECOVERY",
+    "maxTokenLifetimeSeconds": 1..86400
+  )
+}
+
+environment = "PRODUCTION" / "DEVELOPMENT" / "TEST"
+
+opaque-id = bstr .size 16
+key-id = bstr .size 32
+p256-spki-der = bstr .size 91
+positive-counter = 1..9223372036854775807
+utc-second = 0..253402300799

@@ -1,0 +1,82 @@
+[CmdletBinding()]param()
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+$dotnet = 'C:\Program Files\dotnet\dotnet.exe'
+$compiler = 'C:\Program Files\dotnet\sdk\10.0.400\Roslyn\bincore\csc.dll'
+$referenceRoot = 'C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\10.0.11\ref\net10.0'
+$assemblyPath = 'E:\EntryControlSystem\out\lic008-export-policy-v2-capable-27db447d0004467087e3d021e7d4ab84\package\ExportPolicyControl.dll'
+$assemblyPin = 'add4b35d175e23bf37a420329db435bacce71a532c80fcd3e791bdaa72750b5f'
+function Hash([string]$path) { (Get-FileHash -LiteralPath $path -Algorithm SHA256).Hash.ToLowerInvariant() }
+function WriteNew([string]$name, [byte[]]$bytes) {
+    $stream = [IO.File]::Open((Join-Path $PSScriptRoot $name), [IO.FileMode]::CreateNew, [IO.FileAccess]::Write, [IO.FileShare]::Read)
+    try { $stream.Write($bytes, 0, $bytes.Length); $stream.Flush($true) } finally { $stream.Dispose() }
+}
+function JsonNew([string]$name, $value) {
+    WriteNew $name ([Text.Encoding]::UTF8.GetBytes(($value | ConvertTo-Json -Depth 12 -Compress)))
+}
+function RunPinned([string]$arguments) {
+    $start = New-Object Diagnostics.ProcessStartInfo
+    $start.FileName = $dotnet; $start.Arguments = $arguments
+    $start.UseShellExecute = $false; $start.CreateNoWindow = $true
+    $start.RedirectStandardOutput = $true; $start.RedirectStandardError = $true
+    foreach ($name in @($start.EnvironmentVariables.Keys)) {
+        if ($name -match '^(DOTNET_|COMPLUS_|CORECLR_|COR_|COREHOST_)' -or
+            $name -in @('APPDOMAIN_MANAGER_ASM', 'APPDOMAIN_MANAGER_TYPE', 'DEVPATH', '__COMPAT_LAYER')) {
+            $start.EnvironmentVariables.Remove($name)
+        }
+    }
+    $child = [Diagnostics.Process]::Start($start)
+    try {
+        $stdout = $child.StandardOutput.ReadToEndAsync(); $stderr = $child.StandardError.ReadToEndAsync()
+        if (-not $child.WaitForExit(30000)) { throw 'PROBE_CHILD_UNRESOLVED_DO_NOT_RETRY' }
+        if ($stdout.Result.Length -gt 65536 -or $stderr.Result.Length -gt 65536) { throw 'PROBE_OUTPUT_BOUND_REFUSED' }
+        [pscustomobject]@{ exitCode = $child.ExitCode; stdout = $stdout.Result; stderr = $stderr.Result }
+    } finally { $child.Dispose() }
+}
+$sourcePath = Join-Path $PSScriptRoot 'OwnTokenProbe.cs'
+$sourcePin = Hash $sourcePath
+$scriptPin = Hash $PSCommandPath
+if ((Hash $assemblyPath) -cne $assemblyPin) { throw 'PROBE_ASSEMBLY_PIN_REFUSED' }
+$references = @(Get-ChildItem -LiteralPath $referenceRoot -Filter '*.dll' | Sort-Object Name |
+    ForEach-Object { [ordered]@{ path = $_.FullName; sha256 = (Hash $_.FullName) } })
+$tools = @($dotnet, $compiler) | ForEach-Object { [ordered]@{ path = $_; sha256 = (Hash $_) } }
+JsonNew 'input-pins.json' ([ordered]@{
+    schemaVersion = 1; scope = 'TEST_ONLY_EXPORT_POLICY_OWN_TOKEN_PROBE_INPUTS_V1'
+    sourceSha256 = $sourcePin; launcherSha256 = $scriptPin
+    reviewedAssemblyPath = $assemblyPath; reviewedAssemblySha256 = $assemblyPin
+    tools = @($tools); references = $references
+})
+$dll = Join-Path $PSScriptRoot 'OwnTokenProbe.dll'
+$responsePath = Join-Path $PSScriptRoot 'compile.rsp'
+$arguments = @('-nologo', '-target:exe', '-platform:x64', '-nullable:enable', '-warnaserror+', ('-out:"' + $dll + '"'))
+$arguments += @($references | ForEach-Object { '-r:"' + $_.path + '"' })
+$arguments += '"' + $sourcePath + '"'
+WriteNew 'compile.rsp' ([Text.Encoding]::UTF8.GetBytes(($arguments -join [Environment]::NewLine)))
+$compiled = RunPinned ('exec --fx-version 10.0.11 "' + $compiler + '" -noconfig "@' + $responsePath + '"')
+WriteNew 'compile-stdout.txt' ([Text.Encoding]::UTF8.GetBytes($compiled.stdout))
+WriteNew 'compile-stderr.txt' ([Text.Encoding]::UTF8.GetBytes($compiled.stderr))
+if ($compiled.exitCode -ne 0 -or $compiled.stderr.Length -ne 0) { throw 'PROBE_COMPILE_FAILED' }
+JsonNew 'OwnTokenProbe.runtimeconfig.json' ([ordered]@{
+    runtimeOptions = [ordered]@{ tfm = 'net10.0'; framework = [ordered]@{ name = 'Microsoft.NETCore.App'; version = '10.0.11' }; rollForward = 'Disable' }
+})
+if ((Hash $sourcePath) -cne $sourcePin -or (Hash $PSCommandPath) -cne $scriptPin -or (Hash $assemblyPath) -cne $assemblyPin) {
+    throw 'PROBE_INPUT_CHANGED'
+}
+$started = [DateTimeOffset]::UtcNow.ToString('O')
+$result = RunPinned ('exec --fx-version 10.0.11 "' + $dll + '"')
+$finished = [DateTimeOffset]::UtcNow.ToString('O')
+WriteNew 'probe-stdout.json' ([Text.Encoding]::UTF8.GetBytes($result.stdout))
+WriteNew 'probe-stderr.txt' ([Text.Encoding]::UTF8.GetBytes($result.stderr))
+$outputs = @('OwnTokenProbe.cs', 'Run-Probe.ps1', 'input-pins.json', 'compile.rsp', 'OwnTokenProbe.dll',
+    'OwnTokenProbe.runtimeconfig.json', 'compile-stdout.txt', 'compile-stderr.txt', 'probe-stdout.json', 'probe-stderr.txt') |
+    ForEach-Object { $path = Join-Path $PSScriptRoot $_; [ordered]@{ name = $_; size = (Get-Item -LiteralPath $path).Length; sha256 = (Hash $path) } }
+JsonNew 'manifest.json' ([ordered]@{
+    schemaVersion = 1; scope = 'TEST_ONLY_EXPORT_POLICY_OWN_TOKEN_PROBE_BUILD_V1'
+    startedUtc = $started; finishedUtc = $finished; exitCode = $result.exitCode; stderrEmpty = ($result.stderr.Length -eq 0)
+    reviewedAssemblySha256 = $assemblyPin; outputs = @($outputs)
+    elevationRequested = $false; serviceChanged = $false; keysReadOrChanged = $false; retainedArtifactsChanged = $false
+    physicalStageExecuted = $false; securityAccepted = $false; productionAccepted = $false
+})
+if ($result.exitCode -ne 0 -or $result.stderr.Length -ne 0) { throw 'PROBE_FAILED_REVIEW_RETAIN' }
+[Console]::Write($result.stdout)
+[Console]::WriteLine('MANIFEST_SHA256=' + (Hash (Join-Path $PSScriptRoot 'manifest.json')))

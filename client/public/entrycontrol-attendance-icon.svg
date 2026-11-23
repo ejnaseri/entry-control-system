@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Entry Control Attendance</title>
+  <rect width="128" height="128" rx="28" fill="#082f49"/>
+  <path d="M36 28h56a8 8 0 0 1 8 8v56a8 8 0 0 1-8 8H36a8 8 0 0 1-8-8V36a8 8 0 0 1 8-8Z" fill="none" stroke="#22d3ee" stroke-width="8"/>
+  <path d="M47 64l12 12 24-28" fill="none" stroke="#f8fafc" stroke-linecap="round" stroke-linejoin="round" stroke-width="9"/>
+</svg>

@@ -1,0 +1,74 @@
+; Entry Control System licensing protocol v1
+; Root type: a one-time OFFLINE_CONTROL-signed terminal-lineage replacement authorization.
+
+reactivation-authorization = #6.18([
+  protected: bstr .cbor reactivation-authorization-protected,
+  unprotected: {},
+  payload: bstr .cbor reactivation-authorization-payload,
+  signature: bstr .size 64
+])
+
+reactivation-authorization-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+  4: key-id
+}
+
+reactivation-authorization-payload = {
+  "protocolVersion": 1,
+  "tokenType": "reactivation-authorization",
+  "tokenId": opaque-id,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notBefore": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "edition": edition,
+  "revokedLicenseId": opaque-id,
+  "revokedActivationId": opaque-id,
+  "finalRevokeTokenHash": sha-256,
+  "finalControlRevision": positive-counter,
+  "incidentId": opaque-id,
+  "incidentNonce": nonce-256,
+  "requestId": opaque-id,
+  "requestHash": sha-256,
+  "installationId": opaque-id,
+  "deviceKeyId": key-id,
+  "newLicenseId": opaque-id,
+  "newActivationId": opaque-id,
+  "maximumFeatures": [1*23 feature]
+}
+
+feature =
+  "ADMIN_USERS" /
+  "ATTENDANCE_COMPLIANCE" /
+  "ATTENDANCE_DAILY" /
+  "ATTENDANCE_DASHBOARD" /
+  "ATTENDANCE_EXPORT" /
+  "ATTENDANCE_REPORTS" /
+  "AUDIT_LOGS" /
+  "AUTH" /
+  "BACKUPS" /
+  "CUSTOMERS" /
+  "CUSTOMER_PAYMENTS" /
+  "DEVICES" /
+  "DEVICE_DIAGNOSTICS" /
+  "DOOR_CONTROL" /
+  "EMPLOYEES" /
+  "ENTRY_LOGS" /
+  "EXPENSES" /
+  "FINANCIAL_REPORTS" /
+  "INBOX" /
+  "MEMBERSHIPS" /
+  "PAYROLL" /
+  "SOUNDS" /
+  "STAFF_GROUPS"
+
+edition = "FULL" / "ATTENDANCE"
+
+opaque-id = bstr .size 16
+nonce-256 = bstr .size 32
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+positive-counter = 1..9223372036854775807
+utc-second = 0..253402300799

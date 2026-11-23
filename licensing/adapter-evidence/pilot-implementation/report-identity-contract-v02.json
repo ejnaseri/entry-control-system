@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "id": "ADAPTER-PILOT-REPORT-IDENTITY-02",
+  "revision": "0.1",
+  "status": "DRAFT_REVIEW_AND_ADOPTION_PENDING",
+  "date": "2026-10-15",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_ADAPTER_EVIDENCE_V1",
+  "report": {
+    "schemaVersion": 2,
+    "maximumBytes": 2097152,
+    "maximumReports": 10,
+    "fields": [
+      "schemaVersion",
+      "scope",
+      "stage",
+      "action",
+      "role",
+      "runId",
+      "experimentId",
+      "planSha256",
+      "sourceManifestSha256",
+      "provenanceSha256",
+      "kitManifestSha256",
+      "packageManifestSha256",
+      "executorExeSha256",
+      "loadedAssemblySha256",
+      "dependencyInventorySha256",
+      "hostBindingSha256",
+      "profileSha256",
+      "runtime",
+      "osVersion",
+      "architecture",
+      "processId",
+      "bootIdentity",
+      "timeUtc",
+      "elapsedMonotonicMs",
+      "tokenUserSid",
+      "tokenOwnerSid",
+      "tokenType",
+      "elevation",
+      "serviceSid",
+      "serviceSidAttributes",
+      "serviceIdentityMatched",
+      "artifactIdentityMatched",
+      "workerEnded",
+      "results",
+      "runtimeAuthority",
+      "durable",
+      "securityAccepted",
+      "productionAccepted",
+      "notTested",
+      "serviceSidGroupCount",
+      "tokenRestricted",
+      "tokenQueryComplete"
+    ],
+    "resultFields": [
+      "id",
+      "status",
+      "reasonCode",
+      "stage",
+      "nativeStatus",
+      "elapsedMonotonicMs"
+    ],
+    "statuses": [
+      "PASS",
+      "FAIL",
+      "OBSERVED",
+      "UNKNOWN",
+      "SKIPPED_PREREQUISITE"
+    ],
+    "forbiddenFields": [
+      "exception",
+      "stackTrace",
+      "plaintext",
+      "dataKey",
+      "privateKey",
+      "handle",
+      "privatePath",
+      "keyName"
+    ],
+    "contextAuthority": "INDEPENDENT_APPROVED_PLAN_NOT_REPORT_CONTENT",
+    "absenceRule": "RAW_BAD_KEYSET_IS_UNKNOWN_UNLESS_EXACT_CONTROLLED_CONTEXT_IS_REVIEWED"
+  },
+  "requiredEvidence": {
+    "serviceSidGroupCount": {
+      "type": "integer",
+      "allowed": [
+        0,
+        1
+      ],
+      "meaning": "EXACT_MATCHING_TOKEN_GROUPS_COUNT_NO_DEFAULT"
+    },
+    "tokenRestricted": {
+      "type": "boolean",
+      "meaning": "TOKEN_HAS_RESTRICTIONS_EVER_FILTERED_NOT_RESTRICTED_SID_COUNT",
+      "acceptedValue": false
+    },
+    "tokenQueryComplete": {
+      "type": "boolean",
+      "meaning": "ALL_REQUIRED_NATIVE_QUERIES_SUCCEEDED",
+      "acceptedValue": true
+    }
+  },
+  "restrictionQuery": {
+    "informationClass": 21,
+    "capacityBytes": 4,
+    "acceptedReturnedLengths": [
+      1,
+      4
+    ],
+    "requiresSuccess": true,
+    "nonzeroMeansFiltered": true,
+    "unknownAction": "REFUSE_NO_DEFAULT_NO_RETRY"
+  },
+  "identity": {
+    "virtualRoles": [
+      "Guardian",
+      "App",
+      "Child"
+    ],
+    "childExpectedSid": "APP_SID",
+    "userOwnerRule": "EXACT_EXPECTED_ROLE_SID_AND_PRIMARY_TOKEN",
+    "absentGroup": "COUNT_ZERO_AND_ATTRIBUTES_ZERO_VIRTUAL_ROLES_ONLY",
+    "presentGroup": "COUNT_ONE_ENABLED_AND_NOT_DENY_ONLY",
+    "duplicateGroup": "REFUSE",
+    "setup": "SYSTEM_USER_AND_OWNER_PRIMARY_PLUS_ONE_ENABLED_NON_DENY_SERVICE_GROUP",
+    "controller": "EXISTING_OWNER_ELEVATION_CONTRACT_UNCHANGED",
+    "binding": "INDEPENDENT_PLAN_REGISTERED_SERVICE_AND_PROCESS_OBSERVATION_NOT_REPORT_SELF_ASSERTION"
+  },
+  "compatibility": {
+    "schema1": "REFUSE_NO_IMPLICIT_UPGRADE",
+    "missingEvidence": "REFUSE_INCLUDING_FALSE_OR_ZERO_DEFAULTS",
+    "retainedExperiment": "NO_RESUME_NO_OVERWRITE_NO_CLEANUP_AUTHORITY",
+    "unchanged": "ALL_BASE_RULES_EXCEPT_EXPLICIT_REPORT_SCHEMA_AND_IDENTITY_OVERRIDES"
+  },
+  "gates": {
+    "productAdopted": false,
+    "physicalExecutionAuthorized": false,
+    "independentReviewSatisfied": false,
+    "securityAccepted": false,
+    "productionAccepted": false,
+    "runtimeAuthority": "NONE"
+  }
+}

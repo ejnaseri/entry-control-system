@@ -1,0 +1,111 @@
+using System;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
+using System.Text.Json;
+using Microsoft.Win32.SafeHandles;
+
+internal sealed record ProbeSize(bool Success, int LastError, int RequiredLength);
+internal sealed record ProbeQuery(bool Attempted, int Capacity, bool? Success, int? LastError, int? Written, int? Scalar);
+internal sealed record ProbeActual(bool Invoked, bool Returned, int? Scalar, string Category, int? HResult);
+internal sealed record ProbeRow(int InformationClass, ProbeSize SizeProbe, ProbeQuery AllocatedQuery, ProbeQuery FixedFourQuery, ProbeActual ActualScalar);
+
+internal static class OwnTokenProbe
+{
+    private const string AssemblyPath = @"E:\EntryControlSystem\out\lic008-export-policy-v2-capable-27db447d0004467087e3d021e7d4ab84\package\ExportPolicyControl.dll";
+    private const string AssemblySha256 = "add4b35d175e23bf37a420329db435bacce71a532c80fcd3e791bdaa72750b5f";
+    private static readonly JsonSerializerOptions Json = new() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase };
+    private static string stage = "arguments";
+
+    private static int Main(string[] args)
+    {
+        try {
+            if (args.Length != 0) throw new InvalidDataException();
+            stage = "runtime";
+            if (!OperatingSystem.IsWindows() || !Environment.Is64BitProcess || Environment.Version.ToString() != "10.0.11")
+                throw new InvalidDataException();
+            stage = "assembly-pin";
+            using var pinnedAssembly = new FileStream(AssemblyPath, FileMode.Open, FileAccess.Read, FileShare.Read);
+            if (Convert.ToHexString(SHA256.HashData(pinnedAssembly)).ToLowerInvariant() != AssemblySha256)
+                throw new InvalidDataException();
+            stage = "scalar-method";
+            // The reviewed type has no initializer. Do not invoke Main, Capture,
+            // Dispatch, admission or any lifecycle/service/key method.
+            var assembly = Assembly.LoadFrom(AssemblyPath);
+            var type = assembly.GetType("EntryControl.TestOnly.ExportPolicyControl.NativeControlIdentity", true)!;
+            var scalar = type.GetMethod("Scalar", BindingFlags.NonPublic | BindingFlags.Static,
+                null, new[] { typeof(SafeAccessTokenHandle), typeof(int) }, null);
+            if (scalar is null || scalar.ReturnType != typeof(int)) throw new InvalidDataException();
+            stage = "open-own-token";
+            bool opened = OpenProcessToken(GetCurrentProcess(), 8, out var token);
+            int openError = Marshal.GetLastWin32Error();
+            using (token) {
+                if (!opened || token.IsInvalid) throw new InvalidDataException();
+                stage = "query-own-token";
+                var rows = new[] { Query(token, 8, scalar), Query(token, 20, scalar) };
+                Console.WriteLine(JsonSerializer.Serialize(new {
+                    schemaVersion = 1, scope = "TEST_ONLY_EXPORT_POLICY_OWN_TOKEN_PROBE_V1",
+                    context = "OWN_CURRENT_PROCESS_ORDINARY_LAUNCH_NOT_SERVICE",
+                    runtime = Environment.Version.ToString(), processId = Environment.ProcessId,
+                    requestedTokenAccess = 8, tokenOpenSucceeded = opened, tokenOpenLastError = openError,
+                    assemblySha256 = AssemblySha256, observations = rows,
+                    localSystemServiceContextReproduced = false,
+                    elevationRequested = false, serviceChanged = false, keysReadOrChanged = false,
+                    retainedArtifactsChanged = false, physicalStageExecuted = false,
+                    securityAccepted = false, productionAccepted = false
+                }, Json));
+            }
+            return 0;
+        }
+        catch (Exception error) {
+            Console.WriteLine(JsonSerializer.Serialize(new {
+                schemaVersion = 1, scope = "TEST_ONLY_EXPORT_POLICY_OWN_TOKEN_PROBE_FAILURE_V1",
+                stage, category = Category(error), hResult = error.HResult,
+                physicalStageExecuted = false, securityAccepted = false, productionAccepted = false
+            }, Json));
+            return 1;
+        }
+    }
+
+    private static ProbeRow Query(SafeAccessTokenHandle token, int kind, MethodInfo actualScalar)
+    {
+        if (kind is not (8 or 20)) throw new InvalidDataException();
+        bool first = GetTokenInformation(token, kind, IntPtr.Zero, 0, out int required);
+        int firstError = Marshal.GetLastWin32Error();
+        var sized = required is >= 1 and <= 1048576
+            ? QueryBuffer(token, kind, required) : new ProbeQuery(false, required, null, null, null, null);
+        var fixedFour = QueryBuffer(token, kind, 4);
+        ProbeActual actual;
+        try {
+            int value = (int)actualScalar.Invoke(null, new object[] { token, kind })!;
+            actual = new(true, true, value, "NONE", null);
+        }
+        catch (Exception error) {
+            if (error is TargetInvocationException && error.InnerException is not null) error = error.InnerException;
+            actual = new(true, false, null, Category(error), error.HResult);
+        }
+        return new(kind, new(first, firstError, required), sized, fixedFour, actual);
+    }
+
+    private static ProbeQuery QueryBuffer(SafeAccessTokenHandle token, int kind, int capacity)
+    {
+        IntPtr buffer = Marshal.AllocHGlobal(capacity);
+        try {
+            Marshal.Copy(new byte[capacity], 0, buffer, capacity);
+            bool ok = GetTokenInformation(token, kind, buffer, capacity, out int written);
+            int error = Marshal.GetLastWin32Error();
+            int? value = ok && written == 4 && capacity >= 4 ? Marshal.ReadInt32(buffer) : null;
+            return new(true, capacity, ok, error, written, value);
+        }
+        finally { Marshal.FreeHGlobal(buffer); }
+    }
+
+    private static string Category(Exception error) => error is InvalidDataException ? "VALIDATION" :
+        error is UnauthorizedAccessException ? "ACCESS" : error is IOException ? "IO" : "OTHER";
+    [DllImport("kernel32.dll", ExactSpelling = true)] private static extern IntPtr GetCurrentProcess();
+    [DllImport("advapi32.dll", SetLastError = true)] [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool OpenProcessToken(IntPtr process, uint access, out SafeAccessTokenHandle token);
+    [DllImport("advapi32.dll", SetLastError = true)] [return: MarshalAs(UnmanagedType.Bool)]
+    private static extern bool GetTokenInformation(SafeAccessTokenHandle token, int kind, IntPtr buffer, int capacity, out int written);
+}

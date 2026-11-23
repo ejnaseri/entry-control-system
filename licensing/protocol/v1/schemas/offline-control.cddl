@@ -1,0 +1,50 @@
+; Entry Control System licensing protocol v1
+; Root type: an OFFLINE_CONTROL-signed activation-global Control.
+
+offline-control = #6.18([
+  protected: bstr .cbor offline-control-protected,
+  unprotected: {},
+  payload: bstr .cbor offline-control-payload,
+  signature: bstr .size 64
+])
+
+offline-control-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.offline-control+cbor;v=1",
+  4: key-id
+}
+
+offline-control-payload = {
+  "protocolVersion": 1,
+  "tokenType": "offline-control",
+  "tokenId": opaque-id,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notBefore": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "edition": edition,
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  (
+    "origin" => "VENDOR_INITIATED"
+  //
+    "origin" => "REQUEST_BOUND",
+    "requestId": opaque-id,
+    "requestHash": sha-256
+  ),
+  "controlRevision": positive-counter,
+  "action": control-action,
+  "effectiveAt": utc-second,
+  "reasonCode": control-reason-code
+}
+
+edition = "FULL" / "ATTENDANCE"
+control-action = "SUSPEND" / "UNSUSPEND" / "REVOKE"
+control-reason-code = 1..5
+
+opaque-id = bstr .size 16
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+positive-counter = 1..9223372036854775807
+utc-second = 0..253402300799

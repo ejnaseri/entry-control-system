@@ -1,0 +1,26 @@
+{
+  "name": "entry-control-system-build",
+  "private": true,
+  "engines": {
+    "node": "24.19.0"
+  },
+  "scripts": {
+    "build:full": "node scripts/build-edition.mjs --edition FULL",
+    "build:attendance": "node scripts/build-edition.mjs --edition ATTENDANCE",
+    "build:all": "node scripts/build-edition.mjs --edition FULL && node scripts/build-edition.mjs --edition ATTENDANCE",
+    "verify:full": "node scripts/verify-artifact.mjs --edition FULL --artifact release/FULL",
+    "verify:attendance": "node scripts/verify-artifact.mjs --edition ATTENDANCE --artifact release/ATTENDANCE",
+    "test:docs-links": "node scripts/check-docs-links.mjs --self-test",
+    "test:version-identity": "node scripts/test-version-identity.mjs",
+    "test:version-consumers": "node scripts/test-version-consumers.mjs",
+    "test:build-artifacts": "node scripts/test-build-artifacts.mjs",
+    "test:phase-6.1": "node scripts/test-phase-6-1.mjs",
+    "test:license-protocol-v1": "node scripts/test-license-protocol-v1.mjs",
+    "test:license-golden-vectors": "node scripts/test-license-golden-vectors.mjs",
+    "test:license-core-v1": "node scripts/test-license-core-v1.mjs",
+    "test:license-state-v1": "node scripts/test-license-state-v1.mjs",
+    "test:license-time-v1": "node scripts/test-license-time-v1.mjs",
+    "test:license-offline-v1": "node scripts/test-license-offline-v1.mjs",
+    "test:license-hybrid-v1": "node scripts/test-license-hybrid-v1.mjs"
+  }
+}

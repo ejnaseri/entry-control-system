@@ -1,0 +1,1671 @@
+{
+  "schemaVersion": 1,
+  "corpusKind": "ordered-cross-type-negative-corpus",
+  "protocolVersion": 1,
+  "signedTypeCount": 10,
+  "expectedOrderedPairCount": 90,
+  "signedTypes": [
+    {
+      "name": "activation-request",
+      "mediaType": "application/vnd.entry-control.activation-request+cbor;v=1"
+    },
+    {
+      "name": "lease-request",
+      "mediaType": "application/vnd.entry-control.lease-request+cbor;v=1"
+    },
+    {
+      "name": "key-delegation",
+      "mediaType": "application/vnd.entry-control.key-delegation+cbor;v=1"
+    },
+    {
+      "name": "key-denylist",
+      "mediaType": "application/vnd.entry-control.key-denylist+cbor;v=1"
+    },
+    {
+      "name": "entitlement",
+      "mediaType": "application/vnd.entry-control.entitlement+cbor;v=1"
+    },
+    {
+      "name": "lease",
+      "mediaType": "application/vnd.entry-control.lease+cbor;v=1"
+    },
+    {
+      "name": "offline-control",
+      "mediaType": "application/vnd.entry-control.offline-control+cbor;v=1"
+    },
+    {
+      "name": "reactivation-authorization",
+      "mediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1"
+    },
+    {
+      "name": "recovery",
+      "mediaType": "application/vnd.entry-control.recovery+cbor;v=1"
+    },
+    {
+      "name": "time-correction",
+      "mediaType": "application/vnd.entry-control.time-correction+cbor;v=1"
+    }
+  ],
+  "cases": [
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_LEASE_REQUEST",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_KEY_DELEGATION",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_KEY_DENYLIST",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_ENTITLEMENT",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_LEASE",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_OFFLINE_CONTROL",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_RECOVERY",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ACTIVATION_REQUEST_AS_TIME_CORRECTION",
+      "sourceType": "activation-request",
+      "sourceMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_ACTIVATION_REQUEST",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_KEY_DELEGATION",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_KEY_DENYLIST",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_ENTITLEMENT",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_LEASE",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_OFFLINE_CONTROL",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_RECOVERY",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_REQUEST_AS_TIME_CORRECTION",
+      "sourceType": "lease-request",
+      "sourceMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_ACTIVATION_REQUEST",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_LEASE_REQUEST",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_KEY_DENYLIST",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_ENTITLEMENT",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_LEASE",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_OFFLINE_CONTROL",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_RECOVERY",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DELEGATION_AS_TIME_CORRECTION",
+      "sourceType": "key-delegation",
+      "sourceMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_ACTIVATION_REQUEST",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_LEASE_REQUEST",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_KEY_DELEGATION",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_ENTITLEMENT",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_LEASE",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_OFFLINE_CONTROL",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_RECOVERY",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_KEY_DENYLIST_AS_TIME_CORRECTION",
+      "sourceType": "key-denylist",
+      "sourceMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_ACTIVATION_REQUEST",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_LEASE_REQUEST",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_KEY_DELEGATION",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_KEY_DENYLIST",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_LEASE",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_OFFLINE_CONTROL",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_RECOVERY",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_ENTITLEMENT_AS_TIME_CORRECTION",
+      "sourceType": "entitlement",
+      "sourceMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_ACTIVATION_REQUEST",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_LEASE_REQUEST",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_KEY_DELEGATION",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_KEY_DENYLIST",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_ENTITLEMENT",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_OFFLINE_CONTROL",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_RECOVERY",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_LEASE_AS_TIME_CORRECTION",
+      "sourceType": "lease",
+      "sourceMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_ACTIVATION_REQUEST",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_LEASE_REQUEST",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_KEY_DELEGATION",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_KEY_DENYLIST",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_ENTITLEMENT",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_LEASE",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_RECOVERY",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_OFFLINE_CONTROL_AS_TIME_CORRECTION",
+      "sourceType": "offline-control",
+      "sourceMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_ACTIVATION_REQUEST",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_LEASE_REQUEST",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_KEY_DELEGATION",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_KEY_DENYLIST",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_ENTITLEMENT",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_LEASE",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_OFFLINE_CONTROL",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_RECOVERY",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_REACTIVATION_AUTHORIZATION_AS_TIME_CORRECTION",
+      "sourceType": "reactivation-authorization",
+      "sourceMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_ACTIVATION_REQUEST",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_LEASE_REQUEST",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_KEY_DELEGATION",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_KEY_DENYLIST",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_ENTITLEMENT",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_LEASE",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_OFFLINE_CONTROL",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_RECOVERY_AS_TIME_CORRECTION",
+      "sourceType": "recovery",
+      "sourceMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "targetType": "time-correction",
+      "targetMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_ACTIVATION_REQUEST",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "activation-request",
+      "targetMediaType": "application/vnd.entry-control.activation-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_LEASE_REQUEST",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "lease-request",
+      "targetMediaType": "application/vnd.entry-control.lease-request+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_KEY_DELEGATION",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "key-delegation",
+      "targetMediaType": "application/vnd.entry-control.key-delegation+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_KEY_DENYLIST",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "key-denylist",
+      "targetMediaType": "application/vnd.entry-control.key-denylist+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_ENTITLEMENT",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "entitlement",
+      "targetMediaType": "application/vnd.entry-control.entitlement+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_LEASE",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "lease",
+      "targetMediaType": "application/vnd.entry-control.lease+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_OFFLINE_CONTROL",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "offline-control",
+      "targetMediaType": "application/vnd.entry-control.offline-control+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_REACTIVATION_AUTHORIZATION",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "reactivation-authorization",
+      "targetMediaType": "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    },
+    {
+      "id": "CROSS_TIME_CORRECTION_AS_RECOVERY",
+      "sourceType": "time-correction",
+      "sourceMediaType": "application/vnd.entry-control.time-correction+cbor;v=1",
+      "targetType": "recovery",
+      "targetMediaType": "application/vnd.entry-control.recovery+cbor;v=1",
+      "mutation": {
+        "operation": "verifyValidSignedObjectUnderDifferentTypeContract",
+        "preserveSourceCoseBytes": true
+      },
+      "expected": {
+        "decision": "REJECT",
+        "stage": "DOMAIN",
+        "errorCode": "CROSS_TYPE_REJECTED",
+        "authoritativeStateChanged": false,
+        "requestConsumed": false
+      }
+    }
+  ]
+}

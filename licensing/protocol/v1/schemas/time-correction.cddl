@@ -1,0 +1,52 @@
+; Entry Control System licensing protocol v1
+; Root type: a one-time RECOVERY-signed offline Time Correction.
+
+time-correction = #6.18([
+  protected: bstr .cbor time-correction-protected,
+  unprotected: {},
+  payload: bstr .cbor time-correction-payload,
+  signature: bstr .size 64
+])
+
+time-correction-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.time-correction+cbor;v=1",
+  4: key-id
+}
+
+time-correction-payload = {
+  "protocolVersion": 1,
+  "tokenType": "time-correction",
+  "tokenId": opaque-id,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notBefore": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "edition": edition,
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "installationId": opaque-id,
+  "deviceKeyId": key-id,
+  "incidentId": opaque-id,
+  "incidentNonce": nonce-256,
+  "requestId": opaque-id,
+  "requestHash": sha-256,
+  "expectedStateGeneration": counter,
+  "newStateGeneration": positive-counter,
+  "timeCorrectionRevision": positive-counter,
+  "preIncidentClockHighWater": utc-second,
+  "correctedUtc": utc-second,
+  "reasonCode": time-correction-reason-code
+}
+
+edition = "FULL" / "ATTENDANCE"
+time-correction-reason-code = 1..2
+
+opaque-id = bstr .size 16
+nonce-256 = bstr .size 32
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+counter = 0..9223372036854775807
+positive-counter = 1..9223372036854775807
+utc-second = 0..253402300799

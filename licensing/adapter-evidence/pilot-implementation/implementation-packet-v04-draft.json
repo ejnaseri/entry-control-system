@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "ADAPTER-PILOT-IMPLEMENTATION-01",
+  "revision": "0.4-draft",
+  "date": "2026-10-15",
+  "status": "DRAFT_REPORT_V2_REVIEW_AND_ADOPTION_PENDING",
+  "base": {
+    "path": "licensing/adapter-evidence/pilot-implementation/implementation-packet-v03.json",
+    "sha256": "44ede8aa237a80667ccc3c3da4580aa8231041d443d7b9904be32481b6233d8a"
+  },
+  "references": [
+    {
+      "path": "licensing/adapter-evidence/pilot-implementation/report-identity-contract-v02.json",
+      "sha256": "83a90e0eaed1a1a60bd727a0f7dc7931875b10d6b959231b53757b6d4c3deaf7"
+    },
+    {
+      "path": "docs/licensing/plans/LICENSING_REPORT_IDENTITY_V02_ADOPTION_PLAN.md",
+      "sha256": "51655e6c48ba1c306d6b8c1dd441856122ac296894a3c251b461d7a676621ece"
+    },
+    {
+      "path": "licensing/adapter-evidence/guardian-readonly/RESTRICTION_LENGTH_REVIEW.md",
+      "sha256": "7eb18d3b62bde00889025ca21354ab71b6884ae0f5412abd28eba51f277790f9"
+    }
+  ],
+  "inheritance": "ALL_V03_RULES_UNCHANGED_EXCEPT_EXPLICIT_REPORT_AND_IDENTITY_CONTRACT",
+  "overrides": [
+    "REPORT_SCHEMA_2_REQUIRED_42_FIELDS",
+    "ROLE_SPECIFIC_USER_VERSUS_GROUP_IDENTITY",
+    "EXACT_GROUP_COUNT_FILTERED_HISTORY_AND_QUERY_COMPLETION",
+    "ONE_OR_FOUR_BYTE_RESTRICTION_READER",
+    "SCHEMA1_AND_MISSING_EVIDENCE_REFUSAL"
+  ],
+  "productImplementationDirectionAdopted": false,
+  "physicalExecutionAuthorized": false,
+  "independentReviewSatisfied": false,
+  "securityAccepted": false,
+  "productionAccepted": false,
+  "runtimeAuthority": "NONE"
+}

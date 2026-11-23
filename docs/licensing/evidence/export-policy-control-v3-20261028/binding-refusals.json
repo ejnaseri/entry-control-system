@@ -1,0 +1,49 @@
+{
+    "schemaVersion":  1,
+    "scope":  "TEST_ONLY_EXPORT_POLICY_V3_BINDING_REFUSALS_V1",
+    "observedUtc":  "2026-10-28T09:26:09.3304687+00:00",
+    "cases":  6,
+    "results":  [
+                    {
+                        "case":  "control-builder:lic008-export-policy-inert-2ccca41bbcf248198d075c6d19e0e585",
+                        "refusal":  "REVIEW_LOCATION_REFUSED",
+                        "stdoutEmpty":  true,
+                        "outputSetUnchanged":  true
+                    },
+                    {
+                        "case":  "scalar-runner:lic008-export-policy-inert-2ccca41bbcf248198d075c6d19e0e585",
+                        "refusal":  "SCALAR_REGRESSION_INERT_LOCATION_REFUSED",
+                        "stdoutEmpty":  true,
+                        "outputSetUnchanged":  true
+                    },
+                    {
+                        "case":  "control-builder:lic008-export-policy-v2-inert-02a1fdd35e9f4f6182c6a694af7c39ba",
+                        "refusal":  "REVIEW_LOCATION_REFUSED",
+                        "stdoutEmpty":  true,
+                        "outputSetUnchanged":  true
+                    },
+                    {
+                        "case":  "scalar-runner:lic008-export-policy-v2-inert-02a1fdd35e9f4f6182c6a694af7c39ba",
+                        "refusal":  "SCALAR_REGRESSION_INERT_LOCATION_REFUSED",
+                        "stdoutEmpty":  true,
+                        "outputSetUnchanged":  true
+                    },
+                    {
+                        "case":  "kit-builder:lic008-export-policy-capable-a3bd7cfbf58543678366d113cd32da0b",
+                        "refusal":  "CANDIDATE_LOCATION_REFUSED",
+                        "stdoutEmpty":  true,
+                        "outputSetUnchanged":  true
+                    },
+                    {
+                        "case":  "kit-builder:lic008-export-policy-v2-capable-0da1cb44ef064546a6df9b2903c95f0a",
+                        "refusal":  "CANDIDATE_LOCATION_REFUSED",
+                        "stdoutEmpty":  true,
+                        "outputSetUnchanged":  true
+                    }
+                ],
+    "compilationInvoked":  false,
+    "ownerInputIssued":  false,
+    "physicalStageExecuted":  false,
+    "securityAccepted":  false,
+    "productionAccepted":  false
+}

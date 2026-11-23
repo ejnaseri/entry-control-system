@@ -1,0 +1,47 @@
+﻿{
+    "matrixAccepted":  false,
+    "version":  "0.11.0",
+    "bootUtc":  "2026-10-05T07:55:23.5000000Z",
+    "files":  [
+                  {
+                      "sha256":  "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+                      "relative":  "app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json"
+                  },
+                  {
+                      "sha256":  "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+                      "relative":  "guardian-reports/78eb581814e34b0e990c565727343851.json"
+                  },
+                  {
+                      "sha256":  "61b58565969f7921a50bd0759738e45e3d1dcb167f9b352e49e4b56b25918208",
+                      "relative":  "setup-reports/f860e5ce878a4266897dadc38a7ef47c.json"
+                  },
+                  {
+                      "sha256":  "36e6302696d53e8894aa609462f4efa1236f8e45c4e91ca9d5d116c639d5bea0",
+                      "relative":  "shared/app-readable-envelope.json"
+                  },
+                  {
+                      "sha256":  "a3a187f80e2e80ca9613152c109ac24e806ecf7d741ddd9333f0f082185ed4ac",
+                      "relative":  "shared/app-readable-hash.json"
+                  },
+                  {
+                      "sha256":  "5ae55bcfdbd2659388af4b338585e2d71dec128bb3d0c3c636ab8792303e80ee",
+                      "relative":  "shared/control-set.json"
+                  },
+                  {
+                      "sha256":  "d94efff382c94185bc5a51a16b83851cbeedb74ed6395407be39a6a19f886c44",
+                      "relative":  "shared/restricted-envelope.json"
+                  }
+              ],
+    "securityAccepted":  false,
+    "osCaption":  "Microsoft Windows 11 Pro",
+    "binarySha256":  "1dded83a70b8ea956b984adf0c3f0c67916e1a11d31aa3c6a3368f91a146aef0",
+    "planSha256":  "a670508d3cb865862ab1819a75d4bbf328d71e6363008de238c13f3ced1412bc",
+    "preparedUtc":  "2026-10-05T14:07:36.2351718Z",
+    "scope":  "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+    "osBuild":  22000,
+    "experimentId":  "94cfc6789fe94e8aafdd010cb12f9af5",
+    "machineSha256":  "e6542efa13fa72543dd6940aa2250f47e0ef5add804aa175b412c7f51534bc1c",
+    "schemaVersion":  1,
+    "packageManifestSha256":  "046c3352f6937578b2ecaac65fd1afeac522131012d619398a01b0a102f18cd8",
+    "productionAccepted":  false
+}

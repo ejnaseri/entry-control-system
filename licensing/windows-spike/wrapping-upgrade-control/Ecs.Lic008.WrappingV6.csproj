@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <RuntimeFrameworkVersion>10.0.11</RuntimeFrameworkVersion>
+    <SelfContained>true</SelfContained>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Deterministic>true</Deterministic>
+    <AssemblyName>Ecs.Lic008.WrappingV6</AssemblyName>
+    <ArtifactVariant Condition="'$(ArtifactVariant)' == ''">OLD</ArtifactVariant>
+    <DefineConstants Condition="'$(ArtifactVariant)' == 'OLD'">$(DefineConstants);ARTIFACT_OLD</DefineConstants>
+    <Version Condition="'$(ArtifactVariant)' == 'OLD'">0.13.0</Version>
+    <Version Condition="'$(ArtifactVariant)' == 'NEW'">0.13.1</Version>
+  </PropertyGroup>
+  <Target Name="ValidateVariant" BeforeTargets="BeforeBuild">
+    <Error Condition="'$(ArtifactVariant)' != 'OLD' and '$(ArtifactVariant)' != 'NEW'" Text="ArtifactVariant must be OLD or NEW." />
+  </Target>
+  <ItemGroup>
+    <Compile Include="../wrapping-control/WrappingNative.cs" Link="WrappingNative.cs" />
+    <Compile Include="../provisioning/ServiceHost.cs" Link="ServiceHost.cs" />
+    <Compile Include="../provisioning/TokenEvidence.cs" Link="TokenEvidence.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,184 @@
+﻿{
+    "notTested":  [
+                      "REBOOT",
+                      "REPAIR_REINSTALL",
+                      "ORDINARY_USER",
+                      "TPM",
+                      "PRODUCTION_ACCEPTANCE"
+                  ],
+    "scope":  "TEST_ONLY_COMPARISON_V1",
+    "manifestSha256":  "EBB18E871246382117008B40437BF8B6B16E5211B2558D6FDC6C3156B0D58524",
+    "protectionExperiment":  "NOT_RUN",
+    "reports":  [
+                    {
+                        "schemaVersion":  2,
+                        "checklistId":  "LIC-6.2-008",
+                        "scope":  "TEST_ONLY_COMPARISON_V1",
+                        "role":  "setup",
+                        "action":  "create",
+                        "runId":  "0d26c5c6d100431b88f6bbf5ecb31956",
+                        "runtime":  "10.0.11",
+                        "serviceIdentityMatched":  true,
+                        "token":  {
+                                      "UserSid":  "S-1-5-18",
+                                      "ExpectedSid":  "S-1-5-80-3306186050-2234694586-1743668796-3220755999-3769979442",
+                                      "PrimaryIdentityMatched":  false,
+                                      "ServiceGroupAttributes":  14
+                                  },
+                        "binarySha256":  "3da09fd848d52f539c9419406e01b7163d2eeed96f4956d46e264d38481567fd",
+                        "osVersion":  "10.0.22000.0",
+                        "processId":  3468,
+                        "timeUtc":  "2026-09-19T14:41:55.4542454Z",
+                        "results":  [
+                                        {
+                                            "Id":  "guardian.protected-file-create",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.write-key-intent",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "write-key-intent"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.native-open-provider",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "native-open-provider"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.provider-algorithm-support",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "provider-algorithm-support"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.native-create-persisted-key",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "native-create-persisted-key"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.native-set-export-policy",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "native-set-export-policy"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.native-set-signing-usage",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "native-set-signing-usage"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.native-set-dacl-before-finalize",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "native-set-dacl-before-finalize"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.native-finalize-key",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "native-finalize-key"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.managed-open-finalized-handle",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "managed-open-finalized-handle"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.export-public-key",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "export-public-key"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.write-key-ownership",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "write-key-ownership"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.check-machine-export-algorithm",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-machine-export-algorithm"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.check-signing-usage",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-signing-usage"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.compare-public-identity",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "compare-public-identity"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.sign-challenge",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "sign-challenge"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.verify-signature",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "verify-signature"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.read-key-dacl",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "read-key-dacl"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256.stage.check-protected-dacl",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-protected-dacl"
+                                        },
+                                        {
+                                            "Id":  "setup.software.create-p256",
+                                            "Status":  "FAILED_OR_UNAVAILABLE",
+                                            "Error":  "InvalidDataException:0x80131501",
+                                            "Stage":  "check-ace-rights"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl",
+                                            "Status":  "FAILED_OR_UNAVAILABLE",
+                                            "Error":  "FileNotFoundException:0x80070002",
+                                            "Stage":  "load-public-record"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.private-export-denied",
+                                            "Status":  "NOT_TESTED_PREREQUISITE",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        }
+                                    ],
+                        "notTested":  [
+                                          "TPM_SIGNING",
+                                          "NORMAL_REBOOT",
+                                          "DOMAIN_INVENTORY_EXTERNAL",
+                                          "TPM_WRAPPING",
+                                          "TPM_ATTESTATION",
+                                          "TPM_NV",
+                                          "ORDINARY_USER",
+                                          "REPAIR_REINSTALL",
+                                          "POWER_LOSS",
+                                          "NATIVE_FILE_INTAKE",
+                                          "PRODUCTION_STORE",
+                                          "WINDOWS_10_TPM_LESS_MATRIX"
+                                      ]
+                    }
+                ],
+    "timeUtc":  "2026-09-19T14:41:56.1743675Z",
+    "keyExperimentPassed":  false
+}

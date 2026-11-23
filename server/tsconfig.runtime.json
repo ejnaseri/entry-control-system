@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "sourceMap": false
+  },
+  "files": [
+    "src/index.ts",
+    "src/types/express.d.ts",
+    "src/types/zklib-js.d.ts"
+  ],
+  "include": [],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "src/**/*.test.ts",
+    "src/**/*.runner.ts",
+    "src/**/*.worker.ts"
+  ]
+}

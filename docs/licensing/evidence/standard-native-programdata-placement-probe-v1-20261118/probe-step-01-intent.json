@@ -1,0 +1,1 @@
+{"schema":"TEST_ONLY_LIC008_PROGRAMDATA_PLACEMENT_FEASIBILITY_V1","step":1,"label":"DIRECTORY","path":"C:\\ProgramData\\Ecs.Lic008.StandardNativeHostPlacementProbeV1.d0fb418dd1f044b6870a4084add43171","parent":"C:\\ProgramData","operation":"NT_CREATE_FILE_FILE_CREATE","utc":"2026-11-18T10:52:23.281355+00:00","noRetry":true,"noDelete":true}

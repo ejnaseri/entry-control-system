@@ -1,0 +1,22 @@
+{
+    "scope":  "TEST_ONLY_EXPORT_POLICY_CONTROL_PURE_V1",
+    "cases":  18236,
+    "components":  {
+                       "comparison":  7543,
+                       "keys":  275,
+                       "store":  1193,
+                       "identity":  494,
+                       "service":  18,
+                       "worker":  42,
+                       "lifecycle":  326,
+                       "admission":  125,
+                       "controller":  1499,
+                       "startupDiagnostics":  6237,
+                       "placement":  484
+                   },
+    "physicalExecutionEnabled":  true,
+    "capability":  "TEST_CAPABLE_EXPORT_POLICY_CONTROLLER_V4",
+    "physicalTested":  false,
+    "securityAccepted":  false,
+    "productionAccepted":  false
+}

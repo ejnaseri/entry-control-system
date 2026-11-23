@@ -1,0 +1,39 @@
+﻿{
+    "matrixAccepted":  false,
+    "osBuild":  22000,
+    "timeUtc":  "2026-10-05T09:31:17.9487295Z",
+    "services":  [
+                     {
+                         "Name":  "Ecs.Lic008.WrappingV2.Guardian",
+                         "State":  "Stopped",
+                         "StartMode":  "Manual",
+                         "StartName":  "NT SERVICE\\Ecs.Lic008.WrappingV2.Guardian",
+                         "PathName":  "\"C:\\ProgramData\\Ecs.Lic008.WrappingV2\\bin\\Ecs.Lic008.WrappingV2.exe\" --service guardian"
+                     },
+                     {
+                         "Name":  "Ecs.Lic008.WrappingV2.App",
+                         "State":  "Stopped",
+                         "StartMode":  "Manual",
+                         "StartName":  "NT SERVICE\\Ecs.Lic008.WrappingV2.App",
+                         "PathName":  "\"C:\\ProgramData\\Ecs.Lic008.WrappingV2\\bin\\Ecs.Lic008.WrappingV2.exe\" --service app"
+                     },
+                     {
+                         "Name":  "Ecs.Lic008.WrappingV2.Setup",
+                         "State":  "Stopped",
+                         "StartMode":  "Manual",
+                         "StartName":  "LocalSystem",
+                         "PathName":  "\"C:\\ProgramData\\Ecs.Lic008.WrappingV2\\bin\\Ecs.Lic008.WrappingV2.exe\" --service setup"
+                     }
+                 ],
+    "securityAccepted":  false,
+    "osCaption":  "Microsoft Windows 11 Pro",
+    "vendorLifecycleNotRequired":  true,
+    "hostFeasibilityPassed":  true,
+    "productionAccepted":  false,
+    "scope":  "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V2",
+    "displayVersion":  "21H2",
+    "experimentId":  "ddf935ad95bc4a1e8fcccba4b233bbb9",
+    "schemaVersion":  1,
+    "ordinaryUserNotTested":  true,
+    "platformPolicy":  "WINDOWS_10_11_X64_BUILD_14393_PLUS_NO_LIFECYCLE_GATE"
+}

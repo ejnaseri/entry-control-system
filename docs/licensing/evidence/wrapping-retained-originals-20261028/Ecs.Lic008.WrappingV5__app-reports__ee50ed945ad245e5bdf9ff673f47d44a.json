@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "checklistId": "LIC-6.2-008",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+  "role": "app",
+  "action": "probe",
+  "RunId": "ee50ed945ad245e5bdf9ff673f47d44a",
+  "ExperimentId": "91fa20b415734ed0a9b7838c607ee709",
+  "runtime": "10.0.11",
+  "serviceIdentityMatched": true,
+  "binarySha256": "ff9cc0ad421238f2e0a94e9632c8450d7c14a5d5d4c44a755c6af33f3e2e2663",
+  "osVersion": "10.0.22000.0",
+  "processId": 1288,
+  "timeUtc": "2026-10-05T16:21:24.5755754Z",
+  "results": [
+    {
+      "Id": "app.restricted.open",
+      "Status": "OBSERVED_BAD_KEYSET",
+      "Error": "NCryptStatus:0x80090016",
+      "Stage": null
+    },
+    {
+      "Id": "app.app-readable.open-decrypt-control",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "child.restricted.open",
+      "Status": "OBSERVED_BAD_KEYSET",
+      "Error": "NCryptStatus:0x80090016",
+      "Stage": null
+    },
+    {
+      "Id": "child.app-readable.open-decrypt-control",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "child.token-identity",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "S-1-5-80-886984910-1924781016-959672826-3159298735-3900908224"
+    },
+    {
+      "Id": "app.child-probe-execution",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    }
+  ],
+  "productionAccepted": false,
+  "securityAccepted": false,
+  "repairProofRequiresController": true,
+  "notTested": [
+    "ORDINARY_INTERACTIVE_USER",
+    "NORMAL_REBOOT",
+    "UPGRADE",
+    "UNINSTALL_REINSTALL",
+    "POWER_LOSS",
+    "TPM_PATH",
+    "WINDOWS_MATRIX",
+    "PRODUCTION_STORE"
+  ]
+}

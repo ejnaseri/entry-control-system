@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "ADAPTER-PILOT-IMPLEMENTATION-01",
+  "revision": "0.2",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_ADAPTER_EVIDENCE_V1",
+  "status": "PRODUCT_ADOPTED_GATED_IMPLEMENTATION_NOT_BUILT",
+  "date": "2026-10-12",
+  "physicalExecutionAuthorized": false,
+  "independentReviewSatisfied": false,
+  "securityAccepted": false,
+  "productionAccepted": false,
+  "implementationComplete": false,
+  "runtimeAuthority": "NONE",
+  "durable": false,
+  "base": {
+    "path": "licensing/adapter-evidence/pilot-implementation/implementation-packet.json",
+    "sha256": "8d182ccd61ed911b1d9019a3426c6d3725cbf268e3b57cdc064544cb21aa822e"
+  },
+  "references": [
+    {"path": "docs/licensing/plans/LICENSING_ADAPTER_PHYSICAL_PILOT_SPEC_V03.md", "sha256": "dfce64538c6fd13aa0891996f9ee94b7807c9e210be3060b508b66f2e75848d6"},
+    {"path": "docs/licensing/reviews/LICENSING_ADAPTER_PHYSICAL_PILOT_SPEC_V03_REVIEW.md", "sha256": "c9e521847cfe097767f71111685baa4d5216e5702c13d616870dfa23ee521bd4"},
+    {"path": "docs/licensing/plans/LICENSING_ADAPTER_PHYSICAL_PILOT_SPEC_V03_ADOPTION.md", "sha256": "2ce23e0bc92bd00d1acc6751a787b18b966ac15802a95082a311a16ec7709e15"}
+  ],
+  "inheritance": "ALL_BASE_FIELDS_UNCHANGED_EXCEPT_EXACT_OVERRIDES",
+  "overrides": {
+    "bootstrap": [
+      "VERIFY_APPROVED_HOST_AND_ALL_SOURCE_PACKAGE_KIT_PLAN_PINS",
+      "VERIFY_PLAIN_ANCESTORS_ROOT_AND_THREE_REGISTRATIONS_ABSENT",
+      "VERIFY_CONTROLLER_PRIMARY_TOKEN_DEFAULT_OWNER_A_AND_ELEVATION",
+      "CREATE_NEW_PUBLIC_DIRECTORIES_WITH_EXACT_PROTECTED_DESCRIPTORS",
+      "COPY_NEW_PINNED_PACKAGE_AND_AUTHORIZED_PREPARE_PLAN_VERIFY_READBACK",
+      "REGISTER_EXACT_THREE_OWN_PROCESS_MANUAL_SERVICES_NO_RECOVERY",
+      "DERIVE_NUMERIC_SERVICE_SIDS_AND_REQUIRE_ROLE_SELF_VERIFICATION",
+      "START_ORDERED_PREPARE_ACTIONS_ONLY_AFTER_PREVIOUS_WORKER_COMPLETION",
+      "SETUP_ENFORCES_EXACT_KEY_NAMES_CREATE_NEW_NO_OVERWRITE_RETAIN_ON_COLLISION"
+    ],
+    "setupCreateOperations": [
+      "CREATE_PRIVATE_DIRECTORIES",
+      "CREATE_EACH_INTENT_THEN_KEY_ONCE_NO_OVERWRITE",
+      "REOPEN_PERSISTED_NAME_VERIFY_POLICY_PUBLIC_IDENTITY",
+      "WRITE_OWNED_RECORD_ONLY_AFTER_REOPEN",
+      "WRITE_PUBLIC_CONTROL_ONLY_AFTER_BOTH_VERIFIED",
+      "WRITE_OWN_REPORT"
+    ],
+    "proposedSourceAllowlist": [
+      "licensing/adapter-evidence/pilot-runtime/Program.cs",
+      "licensing/adapter-evidence/pilot-runtime/PlanAdmission.cs",
+      "licensing/adapter-evidence/pilot-runtime/ServiceHost.cs",
+      "licensing/adapter-evidence/pilot-runtime/NativeTokens.cs",
+      "licensing/adapter-evidence/pilot-runtime/SecureFiles.cs",
+      "licensing/adapter-evidence/pilot-runtime/KeyOperations.cs",
+      "licensing/adapter-evidence/pilot-runtime/NativeWorker.cs",
+      "licensing/adapter-evidence/pilot-runtime/RoleActions.cs",
+      "licensing/adapter-evidence/pilot-runtime/ReportEmitter.cs",
+      "licensing/adapter-evidence/pilot-runtime/ControllerWindows.cs",
+      "licensing/adapter-evidence/pilot-runtime/ProcessObserver.cs",
+      "licensing/adapter-evidence/pilot-runtime/BootstrapAdmission.cs",
+      "licensing/adapter-evidence/pilot-kit/Run-Pilot.ps1",
+      "licensing/adapter-evidence/pilot-kit/README-fa.txt",
+      "scripts/build-license-adapter-pilot.ps1",
+      "licensing/adapter-evidence/track-a/CandidateCodec.cs"
+    ]
+  },
+  "keyCreation": {
+    "actor": "Setup",
+    "provider": "Microsoft Software Key Storage Provider",
+    "labels": ["restricted", "app-readable"],
+    "legacyKeySpec": 0,
+    "createFlags": 32,
+    "finalizeFlags": 64,
+    "absenceFromOpenAllowed": false,
+    "onCollisionOrUnknown": "BLOCK_RETAIN_NO_RETRY_NO_ADOPT_NO_CLEANUP",
+    "ownedRecordRequires": "FINALIZE_POLICY_AND_PERSISTED_NAME_PUBLIC_IDENTITY_MATCH",
+    "failureBlocks": "NEXT_LABEL_PUBLICATION_STAGE_CHECKPOINT_AND_LATER_STAGES"
+  },
+  "openImplementationRequirements": ["V03-I01", "BOOTSTRAP_DISPATCH_CAPTURE_COORDINATION", "SELF_CONTAINED_CUSTODY_AND_BUILT_KIT_REVIEW"],
+  "authorizationBoundary": "OWNER_PRODUCT_IMPLEMENTATION_DIRECTION_ONLY_NO_INDEPENDENT_OR_PHYSICAL_APPROVAL"
+}

@@ -1,0 +1,97 @@
+{
+  "manifestVersion": 1,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "protocolVersion": 1,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "175af7bc532851d07ebed89723992feba1076b41c990efe9461123a13ee08c72",
+      "size": 19699
+    },
+    {
+      "path": "corpus/README.md",
+      "sha256": "b3d00b456857ae6215723b8c57123a20dbac2c24ede4872e7ac0b17a7bbe4b37",
+      "size": 3727
+    },
+    {
+      "path": "corpus/cross-type-cases.json",
+      "sha256": "dd87178a80b96eda5d10f74da9f2d7005b08793e1d33baee44289c4a71c83890",
+      "size": 60274
+    },
+    {
+      "path": "corpus/malformed-cases.json",
+      "sha256": "44a656845d37efa1d27b610c4c25505ec8460a2f9f87de113fd59dcad8216051",
+      "size": 130167
+    },
+    {
+      "path": "protocol-registry.json",
+      "sha256": "7fdd11c595f017ef2937203553e50594e1615b0ff97d922f488e57626a3d714c",
+      "size": 21547
+    },
+    {
+      "path": "schemas/activation-request.cddl",
+      "sha256": "1fefaccb6391ddef67e046fb5fafdd98b54fc0470a12a3d9da97db1e6a81fccd",
+      "size": 3987
+    },
+    {
+      "path": "schemas/entitlement.cddl",
+      "sha256": "dd411de69f796b1317443e79128a40557d26bf15cbaeb3fb194f938576f31910",
+      "size": 2308
+    },
+    {
+      "path": "schemas/key-delegation.cddl",
+      "sha256": "2b4a7fbd4342ba50c6c543693fd15c0e5a338811ce79259dad4ff9ff132aa92a",
+      "size": 1351
+    },
+    {
+      "path": "schemas/key-denylist.cddl",
+      "sha256": "26bd3cedf6257cd291339e60180903f308e353bdcae1e996220bb772e2583408",
+      "size": 1175
+    },
+    {
+      "path": "schemas/lease-challenge-carrier.cddl",
+      "sha256": "46d913f3bbaa04729c5492a36107d5806ccfbbe732c72b503db181b5d505b077",
+      "size": 453
+    },
+    {
+      "path": "schemas/lease-request.cddl",
+      "sha256": "098a7717b0c3074378f6bde68ce3ccb17b3d1339c8f705bb75660b1105bab58c",
+      "size": 1921
+    },
+    {
+      "path": "schemas/lease-response-carrier.cddl",
+      "sha256": "bd565fe5b2c79db21e36b7b9922dfe06304fecb91f7735fe884a4428c01c458e",
+      "size": 3166
+    },
+    {
+      "path": "schemas/lease.cddl",
+      "sha256": "319e259b2915a0b813526a1d1cb7e9b7e0169617b2af402123c68ad7a5aa0463",
+      "size": 2235
+    },
+    {
+      "path": "schemas/offline-control.cddl",
+      "sha256": "a208ef0a5d70250bd7e7418f29f552215657f2a495c0711754b7ca1ebebdda4a",
+      "size": 1255
+    },
+    {
+      "path": "schemas/reactivation-authorization.cddl",
+      "sha256": "cc14492953d135d1b6afd89e0ecd4c4336d73af651335d0dc98673883c58ca4f",
+      "size": 1832
+    },
+    {
+      "path": "schemas/recovery.cddl",
+      "sha256": "5eb0bdbdebd0bab28245ab709175c85b0ab8a370ec2081fceee814d186b6ddac",
+      "size": 2121
+    },
+    {
+      "path": "schemas/time-correction.cddl",
+      "sha256": "d0be3079c7b3498d0844804c319ef193ba062c45c2ba1a44d0fa5019a2790648",
+      "size": 1408
+    },
+    {
+      "path": "schemas/trust-bundle-carrier.cddl",
+      "sha256": "75be71398be23591eae3ab6e7de336115cfc81cb242e37e88457bc319147c014",
+      "size": 1121
+    }
+  ]
+}

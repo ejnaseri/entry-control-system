@@ -1,0 +1,126 @@
+; Entry Control System licensing protocol v1
+; Non-authoritative HTTPS response carrier.  Complete raw COSE bytes are
+; retained so token hashes remain stable.  Every embedded object must also
+; validate against its complete signed-object schema before it is trusted.
+; The complete deterministic carrier is rejected above 524288 bytes before
+; CBOR decoding; per-field bounds below do not replace that outer cap.
+
+lease-response-carrier =
+  lease-response-with-lease /
+  lease-response-control-only /
+  lease-response-reactivation-only
+
+lease-response-with-lease = {
+  "schemaVersion": 1,
+  "carrierType": "lease-response",
+  "requestId": opaque-id,
+  "lease": lease-bytes,
+  ? "offlineControl": offline-control-bytes,
+  ? "reactivationAuthorization": reactivation-authorization-bytes,
+  ? "trustBundle": online-trust-bundle-bytes
+}
+
+lease-response-control-only = {
+  "schemaVersion": 1,
+  "carrierType": "lease-response",
+  "requestId": opaque-id,
+  "offlineControl": offline-control-bytes,
+  ? "reactivationAuthorization": reactivation-authorization-bytes,
+  ? "trustBundle": online-trust-bundle-bytes
+}
+
+lease-response-reactivation-only = {
+  "schemaVersion": 1,
+  "carrierType": "lease-response",
+  "requestId": opaque-id,
+  "reactivationAuthorization": reactivation-authorization-bytes,
+  ? "trustBundle": online-trust-bundle-bytes
+}
+
+lease-bytes = (bstr .size (1..16384)) .cbor lease-envelope
+offline-control-bytes =
+  (bstr .size (1..8192)) .cbor offline-control-envelope
+reactivation-authorization-bytes =
+  (bstr .size (1..16384)) .cbor reactivation-authorization-envelope
+online-trust-bundle-bytes =
+  (bstr .size (1..491520)) .cbor online-trust-bundle-envelope
+
+lease-envelope = #6.18([
+  bstr .cbor lease-protected,
+  {},
+  bstr,
+  bstr .size 64
+])
+
+offline-control-envelope = #6.18([
+  bstr .cbor offline-control-protected,
+  {},
+  bstr,
+  bstr .size 64
+])
+
+reactivation-authorization-envelope = #6.18([
+  bstr .cbor reactivation-authorization-protected,
+  {},
+  bstr,
+  bstr .size 64
+])
+
+online-trust-bundle-envelope = {
+  "schemaVersion": 1,
+  "carrierType": "trust-bundle",
+  "delegations": [1*64 key-delegation-bytes],
+  "denylist": key-denylist-bytes
+}
+
+key-delegation-bytes =
+  (bstr .size (1..8192)) .cbor key-delegation-envelope
+key-denylist-bytes =
+  (bstr .size (1..262144)) .cbor key-denylist-envelope
+
+key-delegation-envelope = #6.18([
+  bstr .cbor key-delegation-protected,
+  {},
+  bstr,
+  bstr .size 64
+])
+
+key-denylist-envelope = #6.18([
+  bstr .cbor key-denylist-protected,
+  {},
+  bstr,
+  bstr .size 64
+])
+
+lease-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.lease+cbor;v=1",
+  4: key-id
+}
+
+offline-control-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.offline-control+cbor;v=1",
+  4: key-id
+}
+
+reactivation-authorization-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.reactivation-authorization+cbor;v=1",
+  4: key-id
+}
+
+key-delegation-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.key-delegation+cbor;v=1",
+  4: key-id
+}
+
+key-denylist-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.key-denylist+cbor;v=1",
+  4: key-id
+}
+
+opaque-id = bstr .size 16
+key-id = bstr .size 32

@@ -1,0 +1,45 @@
+﻿{
+    "matrixAccepted":  false,
+    "version":  "0.12.0",
+    "files":  [
+                  {
+                      "sha256":  "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+                      "relative":  "app-reports/b801b6f83e814d50becdb8eb774ab022.json"
+                  },
+                  {
+                      "sha256":  "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+                      "relative":  "guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json"
+                  },
+                  {
+                      "sha256":  "1f284545cff3d2dcd1b1fbf506bb61e43e10f9d3665ee3e7301c11e24c2e36e3",
+                      "relative":  "setup-reports/ef164161de664ea085ec54bab83c67b9.json"
+                  },
+                  {
+                      "sha256":  "50bf7fc8cb147d959be5fe8e6f0605d209ba6a6406298d5e570127a91a0a1b51",
+                      "relative":  "shared/app-readable-envelope.json"
+                  },
+                  {
+                      "sha256":  "a61d7d0e5c5342e2567806260987291bfadcc1dc79b9236c6d7d610eec740604",
+                      "relative":  "shared/app-readable-hash.json"
+                  },
+                  {
+                      "sha256":  "ccdb5d4fae963e8fe5f5eaad4b8f4264b6cdc859844841066659f993f79db697",
+                      "relative":  "shared/control-set.json"
+                  },
+                  {
+                      "sha256":  "a06cd519d377ee6804a7dbf4b1c216cc8b94b1ddd322344de3a80aa27b656c7c",
+                      "relative":  "shared/restricted-envelope.json"
+                  }
+              ],
+    "securityAccepted":  false,
+    "osCaption":  "Microsoft Windows 11 Pro",
+    "planSha256":  "1e960ad70843eb2ecf3fae12bc6d3a5149c653811a9c7795c0b61018cfdd8424",
+    "preparedUtc":  "2026-10-05T16:11:30.2356657Z",
+    "scope":  "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+    "osBuild":  22000,
+    "experimentId":  "91fa20b415734ed0a9b7838c607ee709",
+    "machineSha256":  "e6542efa13fa72543dd6940aa2250f47e0ef5add804aa175b412c7f51534bc1c",
+    "schemaVersion":  1,
+    "packageManifestSha256":  "aa4b776de01e5008db2a025e79390bb99f14b314605d64ac6b1a700205aa712c",
+    "productionAccepted":  false
+}

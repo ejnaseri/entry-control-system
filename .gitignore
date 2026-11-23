@@ -1,0 +1,81 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn.lock
+pnpm-lock.yaml
+
+# Build / Dist
+dist/
+build/
+release/
+out/
+coverage/
+**/obj/
+!/licensing/vectors/v1/coverage/
+!/licensing/vectors/v1/coverage/*.json
+
+# Env / Secrets
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Backup artifacts
+*.dump
+*.dump.inprogress
+*.backup
+AtlasGymBackups/
+
+# Prisma
+prisma/dev.db
+prisma/dev.db-journal
+
+# Local temporary restore artifacts
+.tmp_*
+.tmp_restore/
+
+# Local Windows licensing spike inventory (machine-specific, not acceptance fixtures)
+licensing/windows-spike/preflight/report-*/
+
+
+# Additional environment protection
+.env.*
+!.env.example
+!.env.sample
+
+# Private keys and certificates
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Local databases
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Additional backup files
+*.bak
+# Additional secrets
+.env.*
+!.env.example
+!.env.sample
+
+# Private keys
+*.pem
+*.key
+*.pfx
+*.p12
+
+# Local databases
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Additional backups
+*.bak

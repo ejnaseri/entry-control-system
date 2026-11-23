@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "checklistId": "LIC-6.2-008",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+  "role": "setup",
+  "action": "cleanup",
+  "RunId": "0976d16a1c3c40d588856f5fc6ed6c93",
+  "ExperimentId": "91fa20b415734ed0a9b7838c607ee709",
+  "runtime": "10.0.11",
+  "serviceIdentityMatched": true,
+  "binarySha256": "ff9cc0ad421238f2e0a94e9632c8450d7c14a5d5d4c44a755c6af33f3e2e2663",
+  "osVersion": "10.0.22000.0",
+  "processId": 11576,
+  "timeUtc": "2026-10-05T16:21:27.5699265Z",
+  "results": [
+    {
+      "Id": "setup.restricted.delete-owned-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "setup.app-readable.delete-owned-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    }
+  ],
+  "productionAccepted": false,
+  "securityAccepted": false,
+  "repairProofRequiresController": true,
+  "notTested": [
+    "ORDINARY_INTERACTIVE_USER",
+    "NORMAL_REBOOT",
+    "UPGRADE",
+    "UNINSTALL_REINSTALL",
+    "POWER_LOSS",
+    "TPM_PATH",
+    "WINDOWS_MATRIX",
+    "PRODUCTION_STORE"
+  ]
+}

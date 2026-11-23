@@ -1,0 +1,49 @@
+; Entry Control System licensing protocol v1
+; Root type: a PROD_ROOT-signed cumulative delegated-key denylist.
+
+key-denylist = #6.18([
+  protected: bstr .cbor key-denylist-protected,
+  unprotected: {},
+  payload: bstr .cbor key-denylist-payload,
+  signature: bstr .size 64
+])
+
+key-denylist-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.key-denylist+cbor;v=1",
+  4: key-id
+}
+
+key-denylist-payload = {
+  "protocolVersion": 1,
+  "tokenType": "key-denylist",
+  "tokenId": opaque-id,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notBefore": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "environment": environment,
+  (
+    "denylistRevision" => 1
+  //
+    "denylistRevision" => 2..9223372036854775807,
+    "previousDenylistTokenId": opaque-id,
+    "previousDenylistHash": sha-256
+  ),
+  "deniedKeys": [*4096 denied-key-entry]
+}
+
+denied-key-entry = {
+  "delegatedKeyId": key-id,
+  "effectiveAt": utc-second,
+  "reasonCode": denylist-reason-code
+}
+
+environment = "PRODUCTION" / "DEVELOPMENT" / "TEST"
+denylist-reason-code = 1..3
+
+opaque-id = bstr .size 16
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+utc-second = 0..253402300799

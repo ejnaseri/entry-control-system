@@ -1,0 +1,155 @@
+{
+  "schemaVersion": 1,
+  "checklistId": "LIC-6.2-008",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+  "role": "setup",
+  "action": "create",
+  "RunId": "f860e5ce878a4266897dadc38a7ef47c",
+  "ExperimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+  "runtime": "10.0.11",
+  "serviceIdentityMatched": true,
+  "binarySha256": "1dded83a70b8ea956b984adf0c3f0c67916e1a11d31aa3c6a3368f91a146aef0",
+  "osVersion": "10.0.22000.0",
+  "processId": 13892,
+  "timeUtc": "2026-10-05T14:07:19.4503796Z",
+  "results": [
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.open-software-ksp",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "open-software-ksp"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.check-rsa-support",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "check-rsa-support"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.create-rsa-machine-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "create-rsa-machine-key"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.set-rsa-3072",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-rsa-3072"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.set-export-policy-zero",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-export-policy-zero"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.set-decryption-only-usage",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-decryption-only-usage"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.set-protected-dacl",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-protected-dacl"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.finalize-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "finalize-key"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key.stage.open-finalized-handle",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "open-finalized-handle"
+    },
+    {
+      "Id": "setup.restricted.create-rsa-wrapping-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.open-software-ksp",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "open-software-ksp"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.check-rsa-support",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "check-rsa-support"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.create-rsa-machine-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "create-rsa-machine-key"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.set-rsa-3072",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-rsa-3072"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.set-export-policy-zero",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-export-policy-zero"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.set-decryption-only-usage",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-decryption-only-usage"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.set-protected-dacl",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "set-protected-dacl"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.finalize-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "finalize-key"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key.stage.open-finalized-handle",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": "open-finalized-handle"
+    },
+    {
+      "Id": "setup.app-readable.create-rsa-wrapping-key",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "setup.publish-control-set",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    }
+  ],
+  "productionAccepted": false,
+  "securityAccepted": false,
+  "rebootProofRequiresController": true,
+  "notTested": [
+    "ORDINARY_INTERACTIVE_USER",
+    "REPAIR_UPGRADE",
+    "UNINSTALL_REINSTALL",
+    "POWER_LOSS",
+    "TPM_PATH",
+    "WINDOWS_MATRIX",
+    "PRODUCTION_STORE"
+  ]
+}

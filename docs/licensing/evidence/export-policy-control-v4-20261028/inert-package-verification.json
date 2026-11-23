@@ -1,0 +1,11 @@
+{
+    "scope":  "TEST_ONLY_EXPORT_POLICY_CONTROL_PACKAGE_VERIFIED_V4",
+    "manifestSha256":  "e5e8a66d7ad9456956e15baad41440d112c13f179056729be05e6e9aa909d941",
+    "runtimeInventorySha256":  "f5e89159159cad439f9a473c4c46d6c8ba785c59828f8854d5467dc7d8dd76fa",
+    "canonicalPackageVerified":  true,
+    "canonicalRuntimeInventoryVerified":  true,
+    "physicalExecutionEnabled":  false,
+    "physicalTested":  false,
+    "securityAccepted":  false,
+    "productionAccepted":  false
+}

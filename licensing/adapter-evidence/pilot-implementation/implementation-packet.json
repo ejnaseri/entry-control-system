@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "id": "ADAPTER-PILOT-IMPLEMENTATION-01",
+  "revision": "0.1",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_ADAPTER_EVIDENCE_V1",
+  "status": "PREPARED_FOR_SCOPED_REVIEW_NOT_BUILT",
+  "date": "2026-10-11",
+  "physicalExecutionAuthorized": false,
+  "securityAccepted": false,
+  "productionAccepted": false,
+  "runtimeAuthority": "NONE",
+  "durable": false,
+  "references": [
+    {"path": "docs/licensing/plans/LICENSING_ADAPTER_PHYSICAL_PILOT_SPEC.md", "sha256": "8e50ace849f4f542e096532dda6d45314bb1508f93bb8c83e85728efb5155452"},
+    {"path": "docs/licensing/plans/LICENSING_ADAPTER_PHYSICAL_PILOT_SPEC_V02.md", "sha256": "f2859ad5a1d3bd5a41f2cec89448ac98ca042585118ecd9b40d08d2bf3916706"},
+    {"path": "licensing/adapter-evidence/pilot-foundation/Policy.cs", "sha256": "543ac48ccd7254f2e477975e6f79c9147874a239f633437849d7b611b919a579"},
+    {"path": "licensing/adapter-evidence/track-a/CandidateCodec.cs", "sha256": "62723ac52f4f3ded49d32e128f3ad3a0cabb25a2491381858f9ec4b9ce433893"}
+  ],
+  "proposedSourceAllowlist": [
+    "licensing/adapter-evidence/pilot-runtime/Program.cs",
+    "licensing/adapter-evidence/pilot-runtime/PlanAdmission.cs",
+    "licensing/adapter-evidence/pilot-runtime/ServiceHost.cs",
+    "licensing/adapter-evidence/pilot-runtime/NativeTokens.cs",
+    "licensing/adapter-evidence/pilot-runtime/SecureFiles.cs",
+    "licensing/adapter-evidence/pilot-runtime/KeyOperations.cs",
+    "licensing/adapter-evidence/pilot-runtime/NativeWorker.cs",
+    "licensing/adapter-evidence/pilot-runtime/RoleActions.cs",
+    "licensing/adapter-evidence/pilot-runtime/ReportEmitter.cs",
+    "licensing/adapter-evidence/pilot-kit/Run-Pilot.ps1",
+    "licensing/adapter-evidence/pilot-kit/README-fa.txt",
+    "scripts/build-license-adapter-pilot.ps1",
+    "licensing/adapter-evidence/track-a/CandidateCodec.cs"
+  ],
+  "names": {
+    "root": "C:/ProgramData/Ecs.Lic008.EntryEvidenceV1",
+    "setup": "Ecs.Lic008.EntryEvidenceV1.Setup",
+    "guardian": "Ecs.Lic008.EntryEvidenceV1.Guardian",
+    "app": "Ecs.Lic008.EntryEvidenceV1.App",
+    "keyPrefix": "Ecs.Lic008.EntryEvidenceV1.TEST_ONLY.",
+    "keyLabels": ["restricted", "app-readable"]
+  },
+  "identities": {
+    "Controller": {"user": "ELEVATED_OPERATOR", "owner": "A", "service": "NONE"},
+    "Setup": {"user": "S", "owner": "S", "service": "setup"},
+    "Guardian": {"user": "G", "owner": "G", "service": "guardian"},
+    "App": {"user": "P", "owner": "P", "service": "app"},
+    "Child": {"user": "P", "owner": "P", "service": "app"}
+  },
+  "bootstrap": [
+    "VERIFY_APPROVED_HOST_AND_ALL_SOURCE_PACKAGE_KIT_PLAN_PINS",
+    "VERIFY_PLAIN_ANCESTORS_ROOT_AND_THREE_REGISTRATIONS_ABSENT",
+    "VERIFY_TWO_EXACT_SOFTWARE_MACHINE_KEY_NAMES_ABSENT_NOT_UNKNOWN",
+    "VERIFY_CONTROLLER_PRIMARY_TOKEN_DEFAULT_OWNER_A_AND_ELEVATION",
+    "CREATE_NEW_PUBLIC_DIRECTORIES_WITH_EXACT_PROTECTED_DESCRIPTORS",
+    "COPY_NEW_PINNED_PACKAGE_AND_AUTHORIZED_PREPARE_PLAN_VERIFY_READBACK",
+    "REGISTER_EXACT_THREE_OWN_PROCESS_MANUAL_SERVICES_NO_RECOVERY",
+    "DERIVE_NUMERIC_SERVICE_SIDS_AND_REQUIRE_ROLE_SELF_VERIFICATION",
+    "START_ORDERED_PREPARE_ACTIONS_ONLY_AFTER_PREVIOUS_WORKER_COMPLETION"
+  ],
+  "directories": [
+    {"path": "", "creator": "Controller", "owner": "A", "aces": ["S:F:3", "A:F:3", "G:RD:3", "P:RD:3"]},
+    {"path": "bin", "creator": "Controller", "owner": "A", "aces": ["S:F:3", "A:F:3", "G:RD:3", "P:RD:3"]},
+    {"path": "plans", "creator": "Controller", "owner": "A", "aces": ["S:F:3", "A:F:3", "G:RD:3", "P:RD:3"]},
+    {"path": "controller", "creator": "Controller", "owner": "A", "aces": ["S:F:3", "A:F:3"]},
+    {"path": "shared", "creator": "Setup", "owner": "S", "aces": ["S:F:3", "A:F:3", "G:RD:3", "P:RD:3"]},
+    {"path": "protected", "creator": "Setup", "owner": "S", "aces": ["S:F:3", "G:RD:3"]},
+    {"path": "guardian-work", "creator": "Setup", "owner": "S", "aces": ["S:F:3", "G:M:3"]},
+    {"path": "setup-reports", "creator": "Controller", "owner": "A", "aces": ["S:F:3", "A:RD:3"]},
+    {"path": "guardian-reports", "creator": "Controller", "owner": "A", "aces": ["S:F:3", "A:RD:3", "G:M:3"]},
+    {"path": "app-reports", "creator": "Controller", "owner": "A", "aces": ["S:F:3", "A:RD:3", "P:M:3"]}
+  ],
+  "fileClasses": [
+    {"directory": "bin", "names": ["EXACT_PACKAGE_MANIFEST_ENTRIES"], "owner": "A", "aces": ["S:F:0", "A:F:0", "G:RD:0", "P:RD:0"]},
+    {"directory": "plans", "names": ["prepare.json", "fresh-process.json", "finish.json"], "owner": "A", "aces": ["S:F:0", "A:F:0", "G:R:0", "P:R:0"]},
+    {"directory": "controller", "names": ["run-admission.json", "prepare-checkpoint.json", "fresh-process-checkpoint.json", "finish-checkpoint.json", "final-summary.json"], "owner": "A", "aces": ["S:F:0", "A:F:0"]},
+    {"directory": "protected", "names": ["restricted-intent.json", "app-readable-intent.json", "restricted-owned.json", "app-readable-owned.json"], "owner": "S", "aces": ["S:F:0", "G:R:0"]},
+    {"directory": "shared", "names": ["public-control.json", "restricted-envelope.bin", "app-readable-envelope.bin", "restricted-expected-hash.json", "app-readable-expected-hash.json"], "owner": "S", "aces": ["S:F:0", "A:R:0", "G:R:0", "P:R:0"]},
+    {"directory": "guardian-work", "names": ["restricted-envelope.bin", "app-readable-envelope.bin", "restricted-expected-hash.json", "app-readable-expected-hash.json"], "owner": "G", "aces": ["S:F:0", "G:M:0"]},
+    {"directory": "setup-reports", "names": ["APPROVED_SETUP_RUN_IDS.json"], "owner": "S", "aces": ["S:F:0", "A:R:0"]},
+    {"directory": "guardian-reports", "names": ["APPROVED_GUARDIAN_RUN_IDS.json"], "owner": "G", "aces": ["S:F:0", "A:R:0", "G:M:0"]},
+    {"directory": "app-reports", "names": ["APPROVED_APP_AND_CHILD_RUN_IDS.json"], "owner": "P", "aces": ["S:F:0", "A:R:0", "P:M:0"]}
+  ],
+  "stages": [
+    {"name": "Prepare", "actions": [
+      {"name": "setup-create", "role": "Setup", "operations": ["CREATE_PRIVATE_DIRECTORIES", "CREATE_TWO_INTENTS_AND_KEYS_ONCE", "VERIFY_POLICY_AND_OWNERSHIP", "WRITE_PUBLIC_CONTROL", "WRITE_OWN_REPORT"]},
+      {"name": "guardian-prepare", "role": "Guardian", "operations": ["VERIFY_EXISTING_KEYS_AND_POLICY", "SEAL_OPEN_RANDOM_FIXTURES", "TEST_PRIVATE_EXPORT_REFUSAL", "WRITE_STAGING", "WRITE_OWN_REPORT"]},
+      {"name": "setup-publish", "role": "Setup", "operations": ["VERIFY_PRIVATE_OWNERSHIP_AND_GUARDIAN_STAGING", "COPY_NEW_SYSTEM_OWNED_SHARED_FILES", "VERIFY_DIGESTS", "WRITE_OWN_REPORT"]},
+      {"name": "app-prepare", "role": "App", "operations": ["PROBE_RESTRICTED_AND_READABLE_KEYS", "START_PINNED_CHILD_EXISTING_PRIMARY_TOKEN", "WRITE_OWN_REPORT"]},
+      {"name": "child-prepare", "role": "Child", "operations": ["SELF_VERIFY_TOKEN_AND_ARTIFACT", "PROBE_RESTRICTED_AND_READABLE_KEYS", "WRITE_OWN_REPORT"]}
+    ]},
+    {"name": "VerifyFreshProcess", "actions": [
+      {"name": "guardian-fresh", "role": "Guardian", "operations": ["VERIFY_EXISTING_KEYS_AND_POLICY", "REOPEN_RETAINED_FIXTURES", "TEST_IN_MEMORY_MUTATION_MATRIX", "WRITE_OWN_REPORT"]},
+      {"name": "app-fresh", "role": "App", "operations": ["PROBE_RESTRICTED_AND_READABLE_KEYS", "START_PINNED_CHILD_EXISTING_PRIMARY_TOKEN", "WRITE_OWN_REPORT"]},
+      {"name": "child-fresh", "role": "Child", "operations": ["SELF_VERIFY_TOKEN_AND_ARTIFACT", "PROBE_RESTRICTED_AND_READABLE_KEYS", "WRITE_OWN_REPORT"]}
+    ]},
+    {"name": "Finish", "actions": [
+      {"name": "setup-finish", "role": "Setup", "operations": ["VERIFY_TWO_PRIVATE_OWNERSHIP_CHAINS", "DELETE_ONLY_TWO_OWNED_KEYS_RECORD_INDIVIDUAL_PROGRESS", "WRITE_OWN_REPORT"]},
+      {"name": "guardian-absence", "role": "Guardian", "operations": ["VERIFY_CONTROLLED_ABSENCE_NO_RECREATION", "WRITE_OWN_REPORT"]}
+    ]}
+  ],
+  "report": {
+    "schemaVersion": 1,
+    "maximumBytes": 2097152,
+    "maximumReports": 10,
+    "fields": ["schemaVersion", "scope", "stage", "action", "role", "runId", "experimentId", "planSha256", "sourceManifestSha256", "provenanceSha256", "kitManifestSha256", "packageManifestSha256", "executorExeSha256", "loadedAssemblySha256", "dependencyInventorySha256", "hostBindingSha256", "profileSha256", "runtime", "osVersion", "architecture", "processId", "bootIdentity", "timeUtc", "elapsedMonotonicMs", "tokenUserSid", "tokenOwnerSid", "tokenType", "elevation", "serviceSid", "serviceSidAttributes", "serviceIdentityMatched", "artifactIdentityMatched", "workerEnded", "results", "runtimeAuthority", "durable", "securityAccepted", "productionAccepted", "notTested"],
+    "resultFields": ["id", "status", "reasonCode", "stage", "nativeStatus", "elapsedMonotonicMs"],
+    "statuses": ["PASS", "FAIL", "OBSERVED", "UNKNOWN", "SKIPPED_PREREQUISITE"],
+    "forbiddenFields": ["exception", "stackTrace", "plaintext", "dataKey", "privateKey", "handle", "privatePath", "keyName"],
+    "contextAuthority": "INDEPENDENT_APPROVED_PLAN_NOT_REPORT_CONTENT",
+    "absenceRule": "RAW_BAD_KEYSET_IS_UNKNOWN_UNLESS_EXACT_CONTROLLED_CONTEXT_IS_REVIEWED"
+  },
+  "lifecycle": {
+    "validateBudgetMs": 5000,
+    "cryptoBudgetMs": 10000,
+    "maxConcurrentWorkers": 1,
+    "onUnknown": "BLOCK_RETAIN_NO_RETRY_NO_LATE_DELIVERY",
+    "bufferRelease": "ONLY_AFTER_REAL_WORKER_COMPLETION",
+    "stopAllowed": "ONLY_AFTER_WORKER_ENDED_AND_NON_RUNNING_CONFIRMATION",
+    "stagePass": "EXACT_REPORTS_AND_CHECKPOINTS_THREE_SERVICES_STOPPED_MANUAL_PID0",
+    "onPartialDelete": "RETAIN_INDIVIDUAL_PROGRESS_NO_BLIND_RETRY"
+  },
+  "custody": {
+    "sdk": "10.0.400", "runtime": "10.0.11", "rid": "win-x64",
+    "build": "FROZEN_CLOSED_INPUTS_NO_NETWORK_RESTORE",
+    "package": "EXACT_EXE_DLL_DEPS_RUNTIMECONFIG_RUNTIME_HOSTFXR_INVENTORY",
+    "kit": "BINDS_PACKAGE_MANIFEST_CONTROLLER_README_PACKET_PURE_RESULTS",
+    "provenance": "OUTSIDE_SELF_HASH_CYCLE_BINDS_SOURCE_TOOLCHAIN_PACKAGE_KIT_BUILD_RESULTS",
+    "archive": "CREATE_NEW_CLOSED_ENTRIES_EXTERNAL_DIGEST_EXTRACT_AND_VERIFY",
+    "admission": "INDEPENDENT_APPROVED_PINS_PRE_POST_AND_ROLE_SELF_CAPTURE"
+  },
+  "authorizationGates": ["SCOPED_PACKET_REVIEW", "OWNER_EXACT_IMPLEMENTATION_SCOPE", "BUILT_SOURCE_KIT_NEGATIVE_REVIEW", "OWNER_PREPARE", "PREPARE_EVIDENCE_REVIEW", "OWNER_FRESH", "FRESH_EVIDENCE_REVIEW", "OWNER_FINISH", "FINAL_EVIDENCE_AND_REM_DECISION"],
+  "excluded": ["PRODUCTION_GUARDIAN", "LICENSE_STORE", "BUSINESS_DB", "AUTH_IPC", "PRODUCT_INSTALLER", "TPM", "DPAPI", "WINDOWS_MATRIX_ACCEPTANCE", "FORCED_INTERRUPTION", "OLD_V1_V7_RERUN", "GLOBAL_ACL_CHANGES", "TOKEN_OWNER_REWRITE", "PRIVILEGE_ENABLE", "WORKER_KILL", "AUTOMATIC_RETRY_OR_CLEANUP"],
+  "physicalCases": ["FEP-P01", "FEP-P02", "FEP-P03", "FEP-P04", "FEP-P05"],
+  "implementationComplete": false
+}

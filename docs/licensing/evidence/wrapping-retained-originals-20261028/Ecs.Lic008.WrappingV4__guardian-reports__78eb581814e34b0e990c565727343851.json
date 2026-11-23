@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "checklistId": "LIC-6.2-008",
+  "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+  "role": "guardian",
+  "action": "verify",
+  "RunId": "78eb581814e34b0e990c565727343851",
+  "ExperimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+  "runtime": "10.0.11",
+  "serviceIdentityMatched": true,
+  "binarySha256": "1dded83a70b8ea956b984adf0c3f0c67916e1a11d31aa3c6a3368f91a146aef0",
+  "osVersion": "10.0.22000.0",
+  "processId": 8792,
+  "timeUtc": "2026-10-05T14:07:26.8636757Z",
+  "results": [
+    {
+      "Id": "guardian.restricted.reopen-policy-decrypt",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "guardian.restricted.private-export-denied",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "guardian.app-readable.reopen-policy-decrypt",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "guardian.app-readable.private-export-denied",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    },
+    {
+      "Id": "guardian.envelope-negative-matrix",
+      "Status": "PASS",
+      "Error": null,
+      "Stage": null
+    }
+  ],
+  "productionAccepted": false,
+  "securityAccepted": false,
+  "rebootProofRequiresController": true,
+  "notTested": [
+    "ORDINARY_INTERACTIVE_USER",
+    "REPAIR_UPGRADE",
+    "UNINSTALL_REINSTALL",
+    "POWER_LOSS",
+    "TPM_PATH",
+    "WINDOWS_MATRIX",
+    "PRODUCTION_STORE"
+  ]
+}

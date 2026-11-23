@@ -1,0 +1,98 @@
+; Entry Control System licensing protocol v1
+; Root type: an OFFLINE_ENTITLEMENT-signed finite Entitlement.
+
+entitlement = #6.18([
+  protected: bstr .cbor entitlement-protected,
+  unprotected: {},
+  payload: bstr .cbor entitlement-payload,
+  signature: bstr .size 64
+])
+
+entitlement-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.entitlement+cbor;v=1",
+  4: key-id
+}
+
+entitlement-payload = {
+  "protocolVersion": 1,
+  "tokenType": "entitlement",
+  "tokenId": opaque-id,
+  "keyId": key-id,
+  "issuedAt": utc-second,
+  "notBefore": utc-second,
+  "notAfter": utc-second,
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "edition": edition,
+  "customerId": opaque-id,
+  ? "customerDisplayName": display-text,
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "installationId": opaque-id,
+  "deviceKeyId": key-id,
+  (
+    "generation" => 1
+  //
+    "generation" => 1,
+    "reactivationAuthorizationId": opaque-id
+  //
+    "generation" => 2..9223372036854775807,
+    "previousTokenId": opaque-id
+  ),
+  (
+    "mode" => "OFFLINE_BOUND"
+  //
+    "mode" => "HYBRID_LEASED",
+    "checkCadenceSeconds": 3600..86400,
+    "offlineAllowanceSeconds": 86400..2592000,
+    "timeRecoveryRttSeconds": 300
+  ),
+  "features": [1*23 feature],
+  "assurance": assurance,
+  "termStartsAt": utc-second,
+  "termEndsAt": utc-second,
+  "warningLeadSeconds": 0..2592000,
+  "warningStartsAt": utc-second,
+  "graceSeconds": 0..604800,
+  "graceUntil": utc-second,
+  "clockToleranceSeconds": 300,
+  "minimumProductVersion": semver-text,
+  "maximumMajorVersion": 0..9223372036854775807,
+  "requestId": opaque-id,
+  "requestHash": sha-256
+}
+
+feature =
+  "ADMIN_USERS" /
+  "ATTENDANCE_COMPLIANCE" /
+  "ATTENDANCE_DAILY" /
+  "ATTENDANCE_DASHBOARD" /
+  "ATTENDANCE_EXPORT" /
+  "ATTENDANCE_REPORTS" /
+  "AUDIT_LOGS" /
+  "AUTH" /
+  "BACKUPS" /
+  "CUSTOMERS" /
+  "CUSTOMER_PAYMENTS" /
+  "DEVICES" /
+  "DEVICE_DIAGNOSTICS" /
+  "DOOR_CONTROL" /
+  "EMPLOYEES" /
+  "ENTRY_LOGS" /
+  "EXPENSES" /
+  "FINANCIAL_REPORTS" /
+  "INBOX" /
+  "MEMBERSHIPS" /
+  "PAYROLL" /
+  "SOUNDS" /
+  "STAFF_GROUPS"
+
+edition = "FULL" / "ATTENDANCE"
+assurance = "TPM_ATTESTED" / "SOFTWARE_BOUND"
+display-text = tstr .size (1..256)
+semver-text = tstr .size (5..64)
+
+opaque-id = bstr .size 16
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+utc-second = 0..253402300799

@@ -1,0 +1,20 @@
+{
+    "schemaVersion":  1,
+    "scope":  "TEST_ONLY_EXPORT_POLICY_V3_PLACEMENT_OBSERVATION_V1",
+    "observedUtc":  "2026-10-28T09:23:07.3376541+00:00",
+    "root":  "C:\\ProgramData\\Ecs.Lic008.ExportPolicyControlV3",
+    "rootObservation":  "NOT_FOUND",
+    "setupService":  "Ecs.Lic008.ExportPolicyControlV3.Setup",
+    "serviceQueryExitCode":  1060,
+    "serviceObservation":  "NOT_REGISTERED",
+    "scmQueryText":  "[SC] EnumQueryServicesStatus:OpenService FAILED 1060:\r\n\r\nThe specified service does not exist as an installed service.\r\n",
+    "evidenceAuthority":  "NONE",
+    "elevatedOwnerPreflightPassed":  false,
+    "rootCreated":  false,
+    "serviceChanged":  false,
+    "keysReadOrChanged":  false,
+    "approvalIssued":  false,
+    "physicalStageExecuted":  false,
+    "securityAccepted":  false,
+    "productionAccepted":  false
+}

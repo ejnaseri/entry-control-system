@@ -1,0 +1,2 @@
+ALTER TABLE "MemberShift" ADD COLUMN "earlyAccessMinutes" INTEGER NOT NULL DEFAULT 15;
+ALTER TABLE "StaffGroupShift" ADD COLUMN "earlyAccessMinutes" INTEGER NOT NULL DEFAULT 15;

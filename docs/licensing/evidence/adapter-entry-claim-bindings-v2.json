@@ -1,0 +1,1160 @@
+{
+  "schemaVersion": 1,
+  "kind": "DRAFT_ADAPTER_EVIDENCE_INDEX_NOT_RUNTIME_AUTHORITY",
+  "revision": "0.2",
+  "record": "LIC-EV-0161",
+  "baseline": "b1ad38f2a5f289c52f1a9823fc6e197ce032d41c",
+  "sourceDiagnostic": {
+    "path": "out/lic008-retained-reconciliation-32eab98043c34f8bb70d44a4f3f12b11.json",
+    "sha256": "6919bad991a3817e54ca79ffe785a6c09a8c49dcace8b514f488b01cd7cde5b8",
+    "collectorSha256": "e91ae6c81f22b6c0f826c17ff4515a8fd54866b7ed57d4b803f1041855364bbd"
+  },
+  "requiredEvidenceExcludes": [
+    "V2"
+  ],
+  "reports": [
+    {
+      "id": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+      "namespace": "v4",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+      "experimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+      "relative": "app-reports/4630e211a11542c292370df295447d69.json",
+      "sha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+      "results": [
+        {
+          "id": "app.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "app.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "child.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.token-identity",
+          "status": "PASS"
+        },
+        {
+          "id": "app.child-probe-execution",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+      "namespace": "v4",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+      "experimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+      "relative": "app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+      "sha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+      "results": [
+        {
+          "id": "app.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "app.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "child.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.token-identity",
+          "status": "PASS"
+        },
+        {
+          "id": "app.child-probe-execution",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+      "namespace": "v4",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+      "experimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+      "relative": "guardian-reports/78eb581814e34b0e990c565727343851.json",
+      "sha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+      "results": [
+        {
+          "id": "guardian.restricted.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.restricted.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.envelope-negative-matrix",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+      "namespace": "v4",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+      "experimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+      "relative": "guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+      "sha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+      "results": [
+        {
+          "id": "guardian.restricted.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.restricted.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.envelope-negative-matrix",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v4/setup-reports/c4f2c4e719cb419b90683dc99de8506a.json",
+      "namespace": "v4",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+      "experimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+      "relative": "setup-reports/c4f2c4e719cb419b90683dc99de8506a.json",
+      "sha256": "c2fc9acdf5969949775a1a818ea80b78c87fc337698e547e7fc16a7efed27427",
+      "results": [
+        {
+          "id": "setup.restricted.delete-owned-key",
+          "status": "PASS"
+        },
+        {
+          "id": "setup.app-readable.delete-owned-key",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v4/setup-reports/f860e5ce878a4266897dadc38a7ef47c.json",
+      "namespace": "v4",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V4",
+      "experimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+      "relative": "setup-reports/f860e5ce878a4266897dadc38a7ef47c.json",
+      "sha256": "61b58565969f7921a50bd0759738e45e3d1dcb167f9b352e49e4b56b25918208",
+      "results": [
+        {
+          "id": "setup.restricted.create-rsa-wrapping-key",
+          "status": "PASS"
+        },
+        {
+          "id": "setup.app-readable.create-rsa-wrapping-key",
+          "status": "PASS"
+        },
+        {
+          "id": "setup.publish-control-set",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+      "sha256": "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+      "results": [
+        {
+          "id": "app.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "app.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "child.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.token-identity",
+          "status": "PASS"
+        },
+        {
+          "id": "app.child-probe-execution",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+      "sha256": "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+      "results": [
+        {
+          "id": "app.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "app.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.restricted.open",
+          "status": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "id": "child.app-readable.open-decrypt-control",
+          "status": "PASS"
+        },
+        {
+          "id": "child.token-identity",
+          "status": "PASS"
+        },
+        {
+          "id": "app.child-probe-execution",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/guardian-reports/88f7b426bdb44597b4ff534c25e6e61e.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "guardian-reports/88f7b426bdb44597b4ff534c25e6e61e.json",
+      "sha256": "535fb3fe68bc75e1e3d5cf071b67c57859d011ec82169649d4c8e3d201e939c4",
+      "results": [
+        {
+          "id": "guardian.restricted.reopen-policy-decrypt",
+          "status": "FAILED_OR_UNAVAILABLE"
+        },
+        {
+          "id": "guardian.restricted.private-export-denied",
+          "status": "FAILED_OR_UNAVAILABLE"
+        },
+        {
+          "id": "guardian.app-readable.reopen-policy-decrypt",
+          "status": "FAILED_OR_UNAVAILABLE"
+        },
+        {
+          "id": "guardian.app-readable.private-export-denied",
+          "status": "FAILED_OR_UNAVAILABLE"
+        },
+        {
+          "id": "guardian.envelope-negative-matrix",
+          "status": "FAILED_OR_UNAVAILABLE"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+      "sha256": "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+      "results": [
+        {
+          "id": "guardian.restricted.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.restricted.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.envelope-negative-matrix",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+      "sha256": "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+      "results": [
+        {
+          "id": "guardian.restricted.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.restricted.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.envelope-negative-matrix",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+      "sha256": "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+      "results": [
+        {
+          "id": "guardian.restricted.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.restricted.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.reopen-policy-decrypt",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.app-readable.private-export-denied",
+          "status": "PASS"
+        },
+        {
+          "id": "guardian.envelope-negative-matrix",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/setup-reports/0976d16a1c3c40d588856f5fc6ed6c93.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "setup-reports/0976d16a1c3c40d588856f5fc6ed6c93.json",
+      "sha256": "4c416275b5309f8be83d5b961944f183cfb67e1f412bc5327afab12b708c0725",
+      "results": [
+        {
+          "id": "setup.restricted.delete-owned-key",
+          "status": "PASS"
+        },
+        {
+          "id": "setup.app-readable.delete-owned-key",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "v5/setup-reports/ef164161de664ea085ec54bab83c67b9.json",
+      "namespace": "v5",
+      "scope": "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "relative": "setup-reports/ef164161de664ea085ec54bab83c67b9.json",
+      "sha256": "1f284545cff3d2dcd1b1fbf506bb61e43e10f9d3665ee3e7301c11e24c2e36e3",
+      "results": [
+        {
+          "id": "setup.restricted.create-rsa-wrapping-key",
+          "status": "PASS"
+        },
+        {
+          "id": "setup.app-readable.create-rsa-wrapping-key",
+          "status": "PASS"
+        },
+        {
+          "id": "setup.publish-control-set",
+          "status": "PASS"
+        }
+      ],
+      "custody": "EV0153_FILTERED_HASH_BOUND_METADATA",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    }
+  ],
+  "claims": [
+    {
+      "id": "AE-001",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/setup-reports/f860e5ce878a4266897dadc38a7ef47c.json",
+        "v5/setup-reports/ef164161de664ea085ec54bab83c67b9.json"
+      ],
+      "limitation": "Historical creation only, no signed product creator.",
+      "resultBindings": [
+        {
+          "reportId": "v4/setup-reports/f860e5ce878a4266897dadc38a7ef47c.json",
+          "reportSha256": "61b58565969f7921a50bd0759738e45e3d1dcb167f9b352e49e4b56b25918208",
+          "resultId": "setup.restricted.create-rsa-wrapping-key",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/setup-reports/f860e5ce878a4266897dadc38a7ef47c.json",
+          "reportSha256": "61b58565969f7921a50bd0759738e45e3d1dcb167f9b352e49e4b56b25918208",
+          "resultId": "setup.app-readable.create-rsa-wrapping-key",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/setup-reports/f860e5ce878a4266897dadc38a7ef47c.json",
+          "reportSha256": "61b58565969f7921a50bd0759738e45e3d1dcb167f9b352e49e4b56b25918208",
+          "resultId": "setup.publish-control-set",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/setup-reports/ef164161de664ea085ec54bab83c67b9.json",
+          "reportSha256": "1f284545cff3d2dcd1b1fbf506bb61e43e10f9d3665ee3e7301c11e24c2e36e3",
+          "resultId": "setup.restricted.create-rsa-wrapping-key",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/setup-reports/ef164161de664ea085ec54bab83c67b9.json",
+          "reportSha256": "1f284545cff3d2dcd1b1fbf506bb61e43e10f9d3665ee3e7301c11e24c2e36e3",
+          "resultId": "setup.app-readable.create-rsa-wrapping-key",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/setup-reports/ef164161de664ea085ec54bab83c67b9.json",
+          "reportSha256": "1f284545cff3d2dcd1b1fbf506bb61e43e10f9d3665ee3e7301c11e24c2e36e3",
+          "resultId": "setup.publish-control-set",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-002",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+        "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+        "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+        "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+        "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json"
+      ],
+      "limitation": "Recorded policy/identity check, not current DACL remeasurement or product SID proof.",
+      "resultBindings": [
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+          "reportSha256": "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+          "reportSha256": "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+          "reportSha256": "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-003",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+        "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+        "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+        "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+        "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json"
+      ],
+      "limitation": "Observed test envelope crypto, not final context/encoding or authoritative state.",
+      "resultBindings": [
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+          "reportSha256": "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+          "reportSha256": "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+          "reportSha256": "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+          "reportSha256": "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+          "reportSha256": "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+          "reportSha256": "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-004",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+        "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+        "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+        "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+        "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json"
+      ],
+      "limitation": "Bounded tested export mechanisms, not all possible export channels.",
+      "resultBindings": [
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.restricted.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.app-readable.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.restricted.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.app-readable.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+          "reportSha256": "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+          "resultId": "guardian.restricted.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+          "reportSha256": "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+          "resultId": "guardian.app-readable.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+          "reportSha256": "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+          "resultId": "guardian.restricted.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+          "reportSha256": "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+          "resultId": "guardian.app-readable.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+          "reportSha256": "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+          "resultId": "guardian.restricted.private-export-denied",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+          "reportSha256": "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+          "resultId": "guardian.app-readable.private-export-denied",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-005",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/app-reports/4630e211a11542c292370df295447d69.json",
+        "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+        "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+        "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json"
+      ],
+      "limitation": "Raw BAD_KEYSET plus same-run readable/App/child controls; no global denial reclassification.",
+      "resultBindings": [
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "app.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "app.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "child.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "child.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "child.token-identity",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "app.child-probe-execution",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "app.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "app.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "child.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "child.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "child.token-identity",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "app.child-probe-execution",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+          "reportSha256": "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+          "resultId": "app.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+          "reportSha256": "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+          "resultId": "app.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+          "reportSha256": "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+          "resultId": "child.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+          "reportSha256": "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+          "resultId": "child.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+          "reportSha256": "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+          "resultId": "child.token-identity",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/b801b6f83e814d50becdb8eb774ab022.json",
+          "reportSha256": "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+          "resultId": "app.child-probe-execution",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+          "reportSha256": "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+          "resultId": "app.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+          "reportSha256": "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+          "resultId": "app.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+          "reportSha256": "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+          "resultId": "child.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+          "reportSha256": "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+          "resultId": "child.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+          "reportSha256": "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+          "resultId": "child.token-identity",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json",
+          "reportSha256": "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+          "resultId": "app.child-probe-execution",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-006",
+      "status": "HISTORICAL_EXTERNAL_INDEX_PENDING_BINDING",
+      "reportRefs": [],
+      "limitation": "V3 filtered-admin observation only; separate standard account remains NOT_RUN.",
+      "resultBindings": [],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-007",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/app-reports/4630e211a11542c292370df295447d69.json",
+        "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+        "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+        "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json"
+      ],
+      "limitation": "V4 ordered reboot flags/checkpoint under EV0153; report order not inferred from filenames.",
+      "resultBindings": [
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "app.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "app.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "child.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/4630e211a11542c292370df295447d69.json",
+          "reportSha256": "566c671c7ae725bb909250b3205427a3f1fb01c16a8f8dfaf56e84cb14b12b45",
+          "resultId": "child.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "app.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "app.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "child.restricted.open",
+          "rawStatus": "OBSERVED_BAD_KEYSET"
+        },
+        {
+          "reportId": "v4/app-reports/62fc2cb5f0fd4c1ca2f732c100943089.json",
+          "reportSha256": "adcb0a30587bbb9a01b842727669e0a53fddb3b3f735a543e36c5f5602bdc951",
+          "resultId": "child.app-readable.open-decrypt-control",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": [
+        "DEP-V4-REBOOT"
+      ]
+    },
+    {
+      "id": "AE-008",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+        "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+        "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+        "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+        "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json"
+      ],
+      "limitation": "Six harness mutations only, not whole valid-envelope replay or strict production parser.",
+      "resultBindings": [
+        {
+          "reportId": "v4/guardian-reports/78eb581814e34b0e990c565727343851.json",
+          "reportSha256": "1dbc6dd514cc6ceb6a2f3adccf0d780d458934a93ac6ae4d56737037249188eb",
+          "resultId": "guardian.envelope-negative-matrix",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/guardian-reports/9cffef3f732c48ec845289f7cd972905.json",
+          "reportSha256": "bfcaa992e4042c4e97669bb60aa53da5787cbee426e1e97aca41c6ffaa77f876",
+          "resultId": "guardian.envelope-negative-matrix",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json",
+          "reportSha256": "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+          "resultId": "guardian.envelope-negative-matrix",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json",
+          "reportSha256": "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+          "resultId": "guardian.envelope-negative-matrix",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json",
+          "reportSha256": "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+          "resultId": "guardian.envelope-negative-matrix",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-009",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v5/guardian-reports/88f7b426bdb44597b4ff534c25e6e61e.json"
+      ],
+      "limitation": "V5 missing-key run bound to summary; FAILED_OR_UNAVAILABLE retained, not detailed taxonomy.",
+      "resultBindings": [
+        {
+          "reportId": "v5/guardian-reports/88f7b426bdb44597b4ff534c25e6e61e.json",
+          "reportSha256": "535fb3fe68bc75e1e3d5cf071b67c57859d011ec82169649d4c8e3d201e939c4",
+          "resultId": "guardian.restricted.reopen-policy-decrypt",
+          "rawStatus": "FAILED_OR_UNAVAILABLE"
+        },
+        {
+          "reportId": "v5/guardian-reports/88f7b426bdb44597b4ff534c25e6e61e.json",
+          "reportSha256": "535fb3fe68bc75e1e3d5cf071b67c57859d011ec82169649d4c8e3d201e939c4",
+          "resultId": "guardian.app-readable.reopen-policy-decrypt",
+          "rawStatus": "FAILED_OR_UNAVAILABLE"
+        }
+      ],
+      "metadataDependencies": [
+        "DEP-V5-MISSING-KEY"
+      ]
+    },
+    {
+      "id": "AE-010",
+      "status": "HISTORICAL_EXTERNAL_INDEX_PENDING_BINDING",
+      "reportRefs": [],
+      "limitation": "V6/V7 operator provenance indexed by separate historical records, not original reports reread here.",
+      "resultBindings": [],
+      "metadataDependencies": [
+        "DEP-V6-OPERATOR",
+        "DEP-V7-OPERATOR"
+      ]
+    },
+    {
+      "id": "AE-011",
+      "status": "HISTORICAL_SUPPORT_PENDING_ACCEPTANCE",
+      "reportRefs": [
+        "v4/setup-reports/c4f2c4e719cb419b90683dc99de8506a.json",
+        "v5/setup-reports/0976d16a1c3c40d588856f5fc6ed6c93.json"
+      ],
+      "limitation": "Owned test-key cleanup only, not product purge permission.",
+      "resultBindings": [
+        {
+          "reportId": "v4/setup-reports/c4f2c4e719cb419b90683dc99de8506a.json",
+          "reportSha256": "c2fc9acdf5969949775a1a818ea80b78c87fc337698e547e7fc16a7efed27427",
+          "resultId": "setup.restricted.delete-owned-key",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v4/setup-reports/c4f2c4e719cb419b90683dc99de8506a.json",
+          "reportSha256": "c2fc9acdf5969949775a1a818ea80b78c87fc337698e547e7fc16a7efed27427",
+          "resultId": "setup.app-readable.delete-owned-key",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/setup-reports/0976d16a1c3c40d588856f5fc6ed6c93.json",
+          "reportSha256": "4c416275b5309f8be83d5b961944f183cfb67e1f412bc5327afab12b708c0725",
+          "resultId": "setup.restricted.delete-owned-key",
+          "rawStatus": "PASS"
+        },
+        {
+          "reportId": "v5/setup-reports/0976d16a1c3c40d588856f5fc6ed6c93.json",
+          "reportSha256": "4c416275b5309f8be83d5b961944f183cfb67e1f412bc5327afab12b708c0725",
+          "resultId": "setup.app-readable.delete-owned-key",
+          "rawStatus": "PASS"
+        }
+      ],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-012",
+      "status": "NO_ACCEPTED_EVIDENCE",
+      "reportRefs": [],
+      "limitation": "Native Store/CAS/anchors/interruption unimplemented or unaccepted.",
+      "resultBindings": [],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-013",
+      "status": "NO_ACCEPTED_EVIDENCE",
+      "reportRefs": [],
+      "limitation": "TPM/NV/full-clone/rollback acceptance absent.",
+      "resultBindings": [],
+      "metadataDependencies": []
+    },
+    {
+      "id": "AE-014",
+      "status": "NO_ACCEPTED_EVIDENCE",
+      "reportRefs": [],
+      "limitation": "Full Windows/product acceptance matrix NOT_RUN.",
+      "resultBindings": [],
+      "metadataDependencies": []
+    }
+  ],
+  "operatorOnlyHistorical": [
+    {
+      "id": "V6",
+      "record": "EV0138/0139",
+      "document": "docs/licensing/plans/LICENSING_WRAPPING_UPGRADE_PLAN.md",
+      "summarySha256": "7b95d1e086b91de870445b7ed1e84c4f40fe83a6faa9c5e8fe20cf51de221517",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    },
+    {
+      "id": "V7",
+      "record": "EV0142/0143",
+      "document": "docs/licensing/evidence/wrapping-v7-operator-verification.md",
+      "summarySha256": "cc8d7464fedb6b20b9adeae2d0e34f1aff483b3f481b975a74a1632ef9ffb586",
+      "binarySourceEquivalence": "NOT_ESTABLISHED"
+    }
+  ],
+  "unresolved": [
+    "EXACT_ACCEPTED_PROFILE_AND_SOURCE_BINARY_MANIFEST_BINDING",
+    "NAMED_CASE_EXECUTION_OWNERS",
+    "SCOPED_INDEPENDENT_APPROVAL",
+    "FRESH_REQUIRED_NEGATIVE_EVIDENCE",
+    "FINAL_CONTEXT_ENCODING_AND_ANCHORS"
+  ],
+  "fullEvidenceReconciled": false,
+  "securityAccepted": false,
+  "productionAccepted": false,
+  "predecessor": {
+    "path": "docs/licensing/evidence/adapter-entry-claim-bindings-v1.json",
+    "sha256": "1e15afb69759594c2031a0c36f90a61ff7d358016fc94b76b6bb2ea12a4c02e0",
+    "commit": "317d3f7"
+  },
+  "dependencies": [
+    {
+      "id": "DEP-V4-REBOOT",
+      "namespace": "v4",
+      "experimentId": "94cfc6789fe94e8aafdd010cb12f9af5",
+      "sourceSummarySha256": "ae8698b7e6459a3aa1c3fbee17f5c424c679aeb9d7f60f64ce5d4c4e11ee9a6a",
+      "sourceCheckpointSha256": "7417aae3163e3a35e0103303619844adcda021388c1816f02e8d288f10be62ea",
+      "metadata": {
+        "normalRebootPassed": true,
+        "machineIdentityMatched": true,
+        "chronologyMatched": true
+      },
+      "verifiedBy": "EV0153_FILTERED_DIAGNOSTIC",
+      "limitation": "Historical ordered restart metadata; not fresh reboot or per-role temporal order inferred from filenames."
+    },
+    {
+      "id": "DEP-V5-MISSING-KEY",
+      "namespace": "v5",
+      "experimentId": "91fa20b415734ed0a9b7838c607ee709",
+      "sourceSummarySha256": "7a90250b5c520db757b27381b6cf995f90ce1486b03446d6314a8954de1734ef",
+      "sourceCheckpointSha256": "adb4aa66402c671f50d21bbcdca84dc619341ffc5108ea1c7bdcd7fb20a7b1d8",
+      "metadata": {
+        "missingKeyProbeRunId": "88f7b426bdb44597b4ff534c25e6e61e",
+        "missingKeyRepairRefused": true,
+        "keyRecreationAttempted": false,
+        "repairSimulationPassed": true,
+        "sameKeyIdentityVerified": true,
+        "sameEnvelopeBytesVerified": true,
+        "productionRepairTested": false
+      },
+      "verifiedBy": "EV0153_FILTERED_DIAGNOSTIC",
+      "limitation": "Controller and historical summary establish controlled test context, not exception-code classification or independent physical attestation."
+    },
+    {
+      "id": "DEP-V6-OPERATOR",
+      "sourceSummarySha256": "7b95d1e086b91de870445b7ed1e84c4f40fe83a6faa9c5e8fe20cf51de221517",
+      "verifiedBy": "HISTORICAL_OPERATOR_RECORD_ONLY",
+      "document": "docs/licensing/plans/LICENSING_WRAPPING_UPGRADE_PLAN.md",
+      "limitation": "No original result tuple or independent reread provided; does not satisfy missing detailed claim evidence."
+    },
+    {
+      "id": "DEP-V7-OPERATOR",
+      "sourceSummarySha256": "cc8d7464fedb6b20b9adeae2d0e34f1aff483b3f481b975a74a1632ef9ffb586",
+      "verifiedBy": "HISTORICAL_OPERATOR_RECORD_ONLY",
+      "document": "docs/licensing/evidence/wrapping-v7-operator-verification.md",
+      "limitation": "No original result tuple or independent reread provided; does not satisfy missing detailed claim evidence."
+    }
+  ]
+}

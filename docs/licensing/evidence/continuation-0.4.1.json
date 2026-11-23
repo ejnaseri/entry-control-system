@@ -1,0 +1,348 @@
+﻿{
+    "notTested":  [
+                      "REBOOT",
+                      "ORDINARY_USER",
+                      "TPM",
+                      "REPAIR_REINSTALL",
+                      "PRODUCTION_ACCEPTANCE"
+                  ],
+    "reports":  [
+                    {
+                        "schemaVersion":  2,
+                        "checklistId":  "LIC-6.2-008",
+                        "scope":  "TEST_ONLY_COMPARISON_V1",
+                        "role":  "guardian",
+                        "action":  "handoff",
+                        "runId":  "2ff9f5a792994bb9a302a054d2ae3c75",
+                        "runtime":  "10.0.11",
+                        "serviceIdentityMatched":  true,
+                        "token":  {
+                                      "UserSid":  "S-1-5-80-691799173-1855633879-2502259152-2798716133-3216230455",
+                                      "ExpectedSid":  "S-1-5-80-691799173-1855633879-2502259152-2798716133-3216230455",
+                                      "PrimaryIdentityMatched":  true,
+                                      "ServiceGroupAttributes":  null
+                                  },
+                        "binarySha256":  "3da09fd848d52f539c9419406e01b7163d2eeed96f4956d46e264d38481567fd",
+                        "osVersion":  "10.0.22000.0",
+                        "processId":  5916,
+                        "timeUtc":  "2026-09-19T14:59:11.3435126Z",
+                        "results":  [
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.check-machine-export-algorithm",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-machine-export-algorithm"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.check-signing-usage",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-signing-usage"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.compare-public-identity",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "compare-public-identity"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.sign-challenge",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "sign-challenge"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.verify-signature",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "verify-signature"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.read-key-dacl",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "read-key-dacl"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.check-ace-rights",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-ace-rights"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.check-ace-rights",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-ace-rights"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.check-allowed-principals",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-allowed-principals"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff.stage.check-protected-dacl",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-protected-dacl"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.retained-handoff",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        }
+                                    ],
+                        "notTested":  [
+                                          "TPM_SIGNING",
+                                          "NORMAL_REBOOT",
+                                          "DOMAIN_INVENTORY_EXTERNAL",
+                                          "TPM_WRAPPING",
+                                          "TPM_ATTESTATION",
+                                          "TPM_NV",
+                                          "ORDINARY_USER",
+                                          "REPAIR_REINSTALL",
+                                          "POWER_LOSS",
+                                          "NATIVE_FILE_INTAKE",
+                                          "PRODUCTION_STORE",
+                                          "WINDOWS_10_TPM_LESS_MATRIX"
+                                      ]
+                    },
+                    {
+                        "schemaVersion":  2,
+                        "checklistId":  "LIC-6.2-008",
+                        "scope":  "TEST_ONLY_COMPARISON_V1",
+                        "role":  "guardian",
+                        "action":  "verify",
+                        "runId":  "9b7ff54568d249318589f43e28c8e95f",
+                        "runtime":  "10.0.11",
+                        "serviceIdentityMatched":  true,
+                        "token":  {
+                                      "UserSid":  "S-1-5-80-691799173-1855633879-2502259152-2798716133-3216230455",
+                                      "ExpectedSid":  "S-1-5-80-691799173-1855633879-2502259152-2798716133-3216230455",
+                                      "PrimaryIdentityMatched":  true,
+                                      "ServiceGroupAttributes":  null
+                                  },
+                        "binarySha256":  "3da09fd848d52f539c9419406e01b7163d2eeed96f4956d46e264d38481567fd",
+                        "osVersion":  "10.0.22000.0",
+                        "processId":  16824,
+                        "timeUtc":  "2026-09-19T14:59:18.1368213Z",
+                        "results":  [
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.load-public-record",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "load-public-record"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.reopen-key",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "reopen-key"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.check-machine-export-algorithm",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-machine-export-algorithm"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.check-signing-usage",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-signing-usage"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.compare-public-identity",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "compare-public-identity"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.sign-challenge",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "sign-challenge"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.verify-signature",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "verify-signature"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.read-key-dacl",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "read-key-dacl"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.check-ace-rights",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-ace-rights"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.check-ace-rights",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-ace-rights"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.check-allowed-principals",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-allowed-principals"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl.stage.check-protected-dacl",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "check-protected-dacl"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.reopen-sign-policy-acl",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "guardian.software.private-export-denied.stage.reopen-for-export",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "reopen-for-export"
+                                        },
+                                        {
+                                            "Id":  "guardian.software.private-export-denied",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "guardian.protected-file-reopen",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        }
+                                    ],
+                        "notTested":  [
+                                          "TPM_SIGNING",
+                                          "NORMAL_REBOOT",
+                                          "DOMAIN_INVENTORY_EXTERNAL",
+                                          "TPM_WRAPPING",
+                                          "TPM_ATTESTATION",
+                                          "TPM_NV",
+                                          "ORDINARY_USER",
+                                          "REPAIR_REINSTALL",
+                                          "POWER_LOSS",
+                                          "NATIVE_FILE_INTAKE",
+                                          "PRODUCTION_STORE",
+                                          "WINDOWS_10_TPM_LESS_MATRIX"
+                                      ]
+                    },
+                    {
+                        "schemaVersion":  2,
+                        "checklistId":  "LIC-6.2-008",
+                        "scope":  "TEST_ONLY_COMPARISON_V1",
+                        "role":  "app",
+                        "action":  "verify",
+                        "runId":  "9b7ff54568d249318589f43e28c8e95f",
+                        "runtime":  "10.0.11",
+                        "serviceIdentityMatched":  true,
+                        "token":  {
+                                      "UserSid":  "S-1-5-80-2437221966-2593645755-621117414-2529101167-3807157683",
+                                      "ExpectedSid":  "S-1-5-80-2437221966-2593645755-621117414-2529101167-3807157683",
+                                      "PrimaryIdentityMatched":  true,
+                                      "ServiceGroupAttributes":  null
+                                  },
+                        "binarySha256":  "3da09fd848d52f539c9419406e01b7163d2eeed96f4956d46e264d38481567fd",
+                        "osVersion":  "10.0.22000.0",
+                        "processId":  8816,
+                        "timeUtc":  "2026-09-19T14:59:24.9902677Z",
+                        "results":  [
+                                        {
+                                            "Id":  "app.software.key-denied",
+                                            "Status":  "INCONCLUSIVE",
+                                            "Error":  "CryptographicException:0x80090016",
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "app.protected-read-denied",
+                                            "Status":  "PASS_ACCESS_DENIED",
+                                            "Error":  "UnauthorizedAccessException:0x80070005",
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "app.protected-write-denied",
+                                            "Status":  "PASS_ACCESS_DENIED",
+                                            "Error":  "UnauthorizedAccessException:0x80070005",
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "app.dpapi-ng-denied",
+                                            "Status":  "NOT_TESTED_PREREQUISITE",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "child.software.key-denied",
+                                            "Status":  "INCONCLUSIVE",
+                                            "Error":  "CryptographicException:0x80090016",
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "child.protected-read-denied",
+                                            "Status":  "PASS_ACCESS_DENIED",
+                                            "Error":  "UnauthorizedAccessException:0x80070005",
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "child.protected-write-denied",
+                                            "Status":  "PASS_ACCESS_DENIED",
+                                            "Error":  "UnauthorizedAccessException:0x80070005",
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "child.dpapi-ng-denied",
+                                            "Status":  "NOT_TESTED_PREREQUISITE",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        },
+                                        {
+                                            "Id":  "child.token-identity",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  "S-1-5-80-2437221966-2593645755-621117414-2529101167-3807157683"
+                                        },
+                                        {
+                                            "Id":  "app.child-probe-execution",
+                                            "Status":  "PASS",
+                                            "Error":  null,
+                                            "Stage":  null
+                                        }
+                                    ],
+                        "notTested":  [
+                                          "TPM_SIGNING",
+                                          "NORMAL_REBOOT",
+                                          "DOMAIN_INVENTORY_EXTERNAL",
+                                          "TPM_WRAPPING",
+                                          "TPM_ATTESTATION",
+                                          "TPM_NV",
+                                          "ORDINARY_USER",
+                                          "REPAIR_REINSTALL",
+                                          "POWER_LOSS",
+                                          "NATIVE_FILE_INTAKE",
+                                          "PRODUCTION_STORE",
+                                          "WINDOWS_10_TPM_LESS_MATRIX"
+                                      ]
+                    }
+                ],
+    "keyExperimentPassed":  false,
+    "retainedKeyRun":  "0d26c5c6d100431b88f6bbf5ecb31956",
+    "version":  "0.4.1",
+    "scope":  "TEST_ONLY_COMPARISON_V1",
+    "protectionExperiment":  "NOT_RUN",
+    "timeUtc":  "2026-09-19T14:59:25.2217825Z",
+    "manifestSha256":  "E11A40282B7EE884676DAD910979373EDE318D98BF12BF42E405DEB75BE88840"
+}

@@ -1,0 +1,74 @@
+; Entry Control System licensing protocol v1
+; Root type: a device-signed outbound Hybrid Lease request.
+
+lease-request = #6.18([
+  protected: bstr .cbor lease-request-protected,
+  unprotected: {},
+  payload: bstr .cbor lease-request-payload,
+  signature: bstr .size 64
+])
+
+lease-request-protected = {
+  1: -7,
+  3: "application/vnd.entry-control.lease-request+cbor;v=1",
+  4: key-id
+}
+
+lease-request-payload = {
+  lease-request-common,
+  (
+    "requestPurpose" => "CHECK_IN"
+  //
+    "requestPurpose" => "TIME_RECOVERY",
+    "incidentId": opaque-id,
+    "incidentNonce": nonce-256,
+    "preIncidentClockHighWater": utc-second
+  )
+}
+
+lease-request-common = (
+  "protocolVersion": 1,
+  "tokenType": "lease-request",
+  "requestId": opaque-id,
+  "requestNonce": nonce-256,
+  "keyId": key-id,
+  "httpMethod": "POST",
+  "httpPath": "/v1/licensing/leases",
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "edition": edition,
+  "licenseId": opaque-id,
+  "activationId": opaque-id,
+  "installationId": opaque-id,
+  "deviceKeyId": key-id,
+  "entitlementTokenId": opaque-id,
+  "entitlementGeneration": positive-counter,
+  "lastLeaseRevision": counter,
+  current-control-tuple,
+  "stateGeneration": counter,
+  "versionIdentitySha256": sha-256,
+  "buildIdentitySha256": sha-256,
+  "buildManifestSha256": sha-256,
+  ? "bindingRecoveryTokenId": opaque-id
+)
+
+edition = "FULL" / "ATTENDANCE"
+control-state = "OPERATIONAL" / "SUSPENDED" / "REVOKED"
+current-control-tuple = (
+  "controlRevision" => 0,
+  "controlState" => "OPERATIONAL",
+  "controlEffectiveAt" => 0,
+  "controlReasonCode" => 0
+//
+  "controlRevision" => positive-counter,
+  "controlState" => control-state,
+  "controlEffectiveAt" => utc-second,
+  "controlReasonCode" => 1..5
+)
+
+opaque-id = bstr .size 16
+nonce-256 = bstr .size 32
+sha-256 = bstr .size 32
+key-id = bstr .size 32
+counter = 0..9223372036854775807
+positive-counter = 1..9223372036854775807
+utc-second = 0..253402300799

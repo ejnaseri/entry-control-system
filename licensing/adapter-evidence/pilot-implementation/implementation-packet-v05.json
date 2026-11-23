@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "ADAPTER-PILOT-IMPLEMENTATION-01",
+  "revision": "0.5",
+  "date": "2026-10-16",
+  "status": "ISOLATED_NAMESPACE_INERT_IMPLEMENTATION_ONLY",
+  "base": {
+    "path": "licensing/adapter-evidence/pilot-implementation/implementation-packet-v04.json",
+    "sha256": "c25920687086f0ade2d90486aa02556212a5172e12b423df02ee0650ca69bd7b"
+  },
+  "references": [{
+    "path": "docs/licensing/plans/LICENSING_PILOT_ISOLATED_PLACEMENT_PLAN.md",
+    "sha256": "cfa351fc5e153e61c2d7837fa1a43d565368213a4ba99d4c1f923c62e4c1d123"
+  }],
+  "inheritance": "ALL_V04_RULES_UNCHANGED_EXCEPT_FIXED_EXPERIMENT_NAMESPACE",
+  "namespace": {
+    "root": "C:/ProgramData/Ecs.Lic008.EntryEvidenceV2",
+    "prefix": "Ecs.Lic008.EntryEvidenceV2",
+    "keyPrefix": "Ecs.Lic008.EntryEvidenceV2.TEST_ONLY.",
+    "services": {
+      "Setup": "S-1-5-80-1484505011-3519140652-1579809200-3421692943-3374733364",
+      "Guardian": "S-1-5-80-1925419286-2081043195-3517708708-3498839447-1988319315",
+      "App": "S-1-5-80-2047476140-866037033-1036749680-3124912352-2263112698"
+    }
+  },
+  "retainedV1Policy": "NO_MUTATION_NO_ADOPTION_NO_RETRY",
+  "physicalExecutionAuthorized": false,
+  "independentReviewSatisfied": false,
+  "securityAccepted": false,
+  "productionAccepted": false,
+  "runtimeAuthority": "NONE"
+}

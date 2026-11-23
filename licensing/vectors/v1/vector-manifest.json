@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "manifestVersion": 1,
+  "packageKind": "NON_PRODUCTION_GOLDEN_VECTORS",
+  "productId": "ENTRY_CONTROL_SYSTEM",
+  "protocolVersion": 1,
+  "protocolManifestSha256": "512534732dce759da424ba0e8d8838c3d9c294e3faa02a4017212ce482523eab",
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "c1c8146da99c651b6d472315fc91efd1bf526ecbe3c416dd1e8f17eb131c61a1",
+      "size": 3968
+    },
+    {
+      "path": "coverage/cross-type.json",
+      "sha256": "ef15a55ce54ce9d86fcda9107b76a18c15620af77123d20d814a5e2c0ad925bb",
+      "size": 82246
+    },
+    {
+      "path": "coverage/malformed-expanded.json",
+      "sha256": "4c2acc665e2eda4535a7f28f39e202d1d954e0ef668edc2393f2629b26541c63",
+      "size": 649128
+    },
+    {
+      "path": "dotnet/CarrierVerifier.cs",
+      "sha256": "c3d3438c0814fe00ed03c238bddebe3b4d62534926b4a8d04d4424813815d8d1",
+      "size": 15609
+    },
+    {
+      "path": "dotnet/CoseVerifier.cs",
+      "sha256": "a1de081557b1d8724361acf729e8a5fe9344f3323b9ab38a01b6e90605c36a1a",
+      "size": 14724
+    },
+    {
+      "path": "dotnet/CoverageValidator.cs",
+      "sha256": "fd26e9dee1e58820ac9b8ca16bb23426a407e320f560c15246c8ba82c32efcab",
+      "size": 31949
+    },
+    {
+      "path": "dotnet/EntryControl.GoldenVectors.csproj",
+      "sha256": "b6deb85d5c443556e4c8db263677cd584f9d10ee1836c81712f17958e2bc6762",
+      "size": 550
+    },
+    {
+      "path": "dotnet/JsonContract.cs",
+      "sha256": "20e2f93490de336c4dfb67d292d966225d25867e133fdd8700721458c22a8c41",
+      "size": 7986
+    },
+    {
+      "path": "dotnet/Program.cs",
+      "sha256": "b5e8ae78e164fba0496467e9b83a7c4544fc6bd46f00eccaf589e62d02724631",
+      "size": 49202
+    },
+    {
+      "path": "dotnet/README.md",
+      "sha256": "f9c976dbf10326f15e75b34dea44f8ef3d530f0299894fbc762d6f603f865af3",
+      "size": 1968
+    },
+    {
+      "path": "dotnet/StrictCbor.cs",
+      "sha256": "3517694a62625ac9761994f9e8999e4522c24dec5e036d4f4920828a6cb2ef41",
+      "size": 13243
+    },
+    {
+      "path": "dotnet/global.json",
+      "sha256": "c39786ab1a147662bbe4db015f900165178875ec4a872ddae53bc0c90771ac34",
+      "size": 105
+    },
+    {
+      "path": "fixtures/negative/neg-activation-object-too-large.cbor",
+      "sha256": "d281209cc72d47b090175b22621840d9eb8267d09cc05dc122bfaa759a82830f",
+      "size": 131073
+    },
+    {
+      "path": "fixtures/negative/neg-cose-array-extra.cbor",
+      "sha256": "b10c115c13cb56a75ef032f46de81098f1b41f11ce94bf3361a39801f59313e8",
+      "size": 1094
+    },
+    {
+      "path": "fixtures/negative/neg-denied-signer.cbor",
+      "sha256": "7c9c92780771bff4ca67fffee149c81eaf3d8141830e2f20b305775f17655726",
+      "size": 941
+    },
+    {
+      "path": "fixtures/negative/neg-detached-payload.cbor",
+      "sha256": "cac8493677764d4a9d39c013dbe52bf8523c79ed3ede0f7f20c03c95705aa0fb",
+      "size": 170
+    },
+    {
+      "path": "fixtures/negative/neg-duplicate-payload-key.cbor",
+      "sha256": "0dfd811721f75abf2100acd7a29317f2fceb322db73261821b1e8519f413a5e6",
+      "size": 206
+    },
+    {
+      "path": "fixtures/negative/neg-high-s.cbor",
+      "sha256": "00576d9ce10914bee35eba96763a228a1631614b5bf2859c45307f5a5b897d95",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-indefinite-payload-map.cbor",
+      "sha256": "66a08cb59eb871fbbf50526909d52dc5baa9ad69ac08ad66c58637eec0b6d1e7",
+      "size": 172
+    },
+    {
+      "path": "fixtures/negative/neg-kid-31-bytes.cbor",
+      "sha256": "aa70c0c0884355696b3c685b5e0aa68701eb1a451be813102dd1f81facb76459",
+      "size": 1092
+    },
+    {
+      "path": "fixtures/negative/neg-kid-text.cbor",
+      "sha256": "611e1b46c3a4ec6704cbca9528505a33b7e36d08b372a8977125a8ba3581cc89",
+      "size": 1073
+    },
+    {
+      "path": "fixtures/negative/neg-malformed-utf8.cbor",
+      "sha256": "afaa863e02507cf348a2a5a4f59b9aa05c082c7a103af37da5fba30feb3151f9",
+      "size": 174
+    },
+    {
+      "path": "fixtures/negative/neg-missing-alg.cbor",
+      "sha256": "cddf7a233463b4d84cef6742be9d9502026ca65e0057963e5d0134e99e4c6306",
+      "size": 1091
+    },
+    {
+      "path": "fixtures/negative/neg-missing-content-type.cbor",
+      "sha256": "91e928fb65c6d40e6156680748fb90e136118812e3b6fc4fde590fc36ac9b311",
+      "size": 1033
+    },
+    {
+      "path": "fixtures/negative/neg-missing-kid.cbor",
+      "sha256": "ebb51310259f2138fc05cc85fb487d477a7d7121263f61b045f401118bc2aa50",
+      "size": 1058
+    },
+    {
+      "path": "fixtures/negative/neg-missing-tag.cbor",
+      "sha256": "e40107f12021bca4b006c42ecd05d23db822a0be25b442596079003f0c3d0c7a",
+      "size": 1092
+    },
+    {
+      "path": "fixtures/negative/neg-non-minimal-integer.cbor",
+      "sha256": "813e7b27fe3cf5606446cef91ad5aa63242119584065f13b483084badbcde9a7",
+      "size": 189
+    },
+    {
+      "path": "fixtures/negative/neg-non-minimal-length.cbor",
+      "sha256": "94a815541c7fc93150dcaa35cfbdbe5a1b7c425c3e6fee5ac78280c072fb8a5a",
+      "size": 189
+    },
+    {
+      "path": "fixtures/negative/neg-out-of-order-payload-map.cbor",
+      "sha256": "68fe5bf9f48eea8b83917eda0165a0902e2d6e65784d7c7eeb9c7c486cd0de43",
+      "size": 218
+    },
+    {
+      "path": "fixtures/negative/neg-payload-bit-flip.cbor",
+      "sha256": "5c4daca5ff85ea6c10cdce0d1e8eb212d2b9cb06730c487f6913a2894358db3e",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-payload-kid-mismatch.cbor",
+      "sha256": "28bd33dede668d34f081e4f74ca582b8d82172e7e6e91f75946d80053e313b29",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-payload-not-bstr.cbor",
+      "sha256": "f36638250d42bdadc13c691b2a42b8c9d497bfa0a05d550e6a0598dd0624f935",
+      "size": 1090
+    },
+    {
+      "path": "fixtures/negative/neg-protected-extra.cbor",
+      "sha256": "731b5d3b70fbba763374be34cb61787625ddb22b85bba7bb1f19a0c9d1092946",
+      "size": 1096
+    },
+    {
+      "path": "fixtures/negative/neg-protected-not-bstr.cbor",
+      "sha256": "9aff8c97ed708727b3fe6251b09eb55266de474756dafb2fa2edcd48dfd2601a",
+      "size": 1091
+    },
+    {
+      "path": "fixtures/negative/neg-protocol-version-zero.cbor",
+      "sha256": "df5e16848718c6be3f23ae8077bc3cbe7f5af3784ab73eb05eb692ed1320e098",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-r-out-of-range.cbor",
+      "sha256": "42fbb612977965d69e8018e55a0adfb0ca7148df79074b38da721c5fb631c08c",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-r-zero.cbor",
+      "sha256": "16438887a4cfa3c14f508bff78de94334684b25166d548a3497cb7f6f152303c",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-s-out-of-range.cbor",
+      "sha256": "f92a0ec587bb0d233b0311daae08c94bd306f6e8e230b3551444ce28f09fda95",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-s-zero.cbor",
+      "sha256": "6d9a812cd56d776d973656aec51b5d7a79bb64b9a640b17ba9a8a00152f2e3e5",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-signature-63-bytes.cbor",
+      "sha256": "ac98158266ef5366ae6197874ee08b75a86d990bc9ee36d9b450b03619c9d210",
+      "size": 1092
+    },
+    {
+      "path": "fixtures/negative/neg-signature-before-denied.cbor",
+      "sha256": "196211b5b8b1e184ef1b2e0dfff1f411041b55d57294b02351cd1f78a1df0ec7",
+      "size": 941
+    },
+    {
+      "path": "fixtures/negative/neg-signature-before-wrong-environment.cbor",
+      "sha256": "4d25961ae6f345129f2dda9c61d88eaec35ba0ef44316a6b02272688cb9b8090",
+      "size": 883
+    },
+    {
+      "path": "fixtures/negative/neg-signature-before-wrong-purpose.cbor",
+      "sha256": "9be9a2e0af936ba6f329019894d4021f0fb87fed7408157dff8ecd991267fd68",
+      "size": 513
+    },
+    {
+      "path": "fixtures/negative/neg-signature-bit-flip.cbor",
+      "sha256": "6102de736140ce74e083fd1a62b404d4327a5c5f8f9f329653faeaac3dc8b6c6",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-signature-text.cbor",
+      "sha256": "b44af3b921d15bb3e06df8ca4da0c0c62bbf8061fb7ee07442b59b8289ba8a6d",
+      "size": 1043
+    },
+    {
+      "path": "fixtures/negative/neg-token-type-mismatch.cbor",
+      "sha256": "9d0afe4ab536bf92a497044f7b3eb0091c74e9ae143481ae7edf900acf6e45e5",
+      "size": 1088
+    },
+    {
+      "path": "fixtures/negative/neg-trailing-data.cbor",
+      "sha256": "4684b867570e33e4a1ef9430b6403302aa8687d42fcfa76e9bc73dd21ff917ac",
+      "size": 1094
+    },
+    {
+      "path": "fixtures/negative/neg-unknown-signer.cbor",
+      "sha256": "043f8ae44a749aa83b64a46f3f91b4e744b33dcbf78b8c4b1b9b646ccecce583",
+      "size": 941
+    },
+    {
+      "path": "fixtures/negative/neg-unprotected-nonempty.cbor",
+      "sha256": "e553b9829bea5d64944209abfe1e249d757995bd12b2c148224d4cb679a101db",
+      "size": 1128
+    },
+    {
+      "path": "fixtures/negative/neg-wrong-alg.cbor",
+      "sha256": "1e9bb491f06fa46e34321276a218f33b002ab5fcac2efec9561ee6e231d00777",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/negative/neg-wrong-content-type.cbor",
+      "sha256": "65c63408d9b0a4e700c534893cabe9449bab8c1071387b1c2a68419d1c76c94d",
+      "size": 1088
+    },
+    {
+      "path": "fixtures/negative/neg-wrong-environment.cbor",
+      "sha256": "f58dfe9e98de9843a9fc3145c7820f9a0f057c46d8f2a1b5472e15aab447c16f",
+      "size": 883
+    },
+    {
+      "path": "fixtures/negative/neg-wrong-purpose-signer.cbor",
+      "sha256": "d3933349a979ca8a07e8f32c92f6a900cac9bee845fb2157f202bae6be90ce38",
+      "size": 941
+    },
+    {
+      "path": "fixtures/negative/neg-wrong-tag.cbor",
+      "sha256": "11b3d65db770347daf2775040e7939fad9cef4549339d5131c8f9711f36decc1",
+      "size": 1094
+    },
+    {
+      "path": "fixtures/positive/pos-activation-activate-full.cbor",
+      "sha256": "611ae8d30fc904d1ff581cc692a66dcd8261587b10a19fd12167c421916f77f7",
+      "size": 928
+    },
+    {
+      "path": "fixtures/positive/pos-activation-activate-tpm.cbor",
+      "sha256": "2f574452248356109fed559dc4cef51b3ad286b54f894fa359e5d074ea6f8859",
+      "size": 1093
+    },
+    {
+      "path": "fixtures/positive/pos-activation-control.cbor",
+      "sha256": "c8fe0abd0be06856511dd07620f27c771c677dff1cb4e4c3366c599fb46d4451",
+      "size": 1056
+    },
+    {
+      "path": "fixtures/positive/pos-activation-reactivate.cbor",
+      "sha256": "d742f52b1de346235b596483e8f21a8a4277fab1896e9f282a20303be75e3a4a",
+      "size": 1264
+    },
+    {
+      "path": "fixtures/positive/pos-activation-rebind.cbor",
+      "sha256": "eda777a904a8dd7625547c4831a7f74d427c1460df78a262966511c6c5b5b0de",
+      "size": 1248
+    },
+    {
+      "path": "fixtures/positive/pos-activation-recover.cbor",
+      "sha256": "e4152655da6dd7dd3efde0b6a5b63a1e55ea5e78e67189727411a826de9a4f30",
+      "size": 1200
+    },
+    {
+      "path": "fixtures/positive/pos-activation-renew.cbor",
+      "sha256": "2eb2f4450b13a33ae76e45181af9f026a019e880c69aeabdbf3d6f51ca980d1f",
+      "size": 1025
+    },
+    {
+      "path": "fixtures/positive/pos-activation-time-correct.cbor",
+      "sha256": "f494dd6736558378f2a6470138ecdad39c6572b3933c3d2124bbdc7c37443302",
+      "size": 1104
+    },
+    {
+      "path": "fixtures/positive/pos-carrier-lease-challenge.cbor",
+      "sha256": "d177e0cbccdcda84145d68a761dd0a5d28aaadde2237894b7810e0936c79ff96",
+      "size": 111
+    },
+    {
+      "path": "fixtures/positive/pos-carrier-lease-response-complete.cbor",
+      "sha256": "77a44f32a9360e9bb978b29108751da1b1ba12f19480903b00b8d180aba888ac",
+      "size": 5882
+    },
+    {
+      "path": "fixtures/positive/pos-carrier-lease-response-control-only.cbor",
+      "sha256": "89e83799d3bb3c6cfb57a6d25f76f6bfccc76e18f69765768fc73112982f1a7e",
+      "size": 601
+    },
+    {
+      "path": "fixtures/positive/pos-carrier-lease-response-reactivation-only.cbor",
+      "sha256": "890e1ad3899a95ecef27d31467e759873768851fbd1a06501517ad95d9413c0d",
+      "size": 1000
+    },
+    {
+      "path": "fixtures/positive/pos-carrier-lease-response-time-recovery.cbor",
+      "sha256": "1cbe9ec11b3471a2b1a4a4344f90b3deba4e66ac1f0b3d7711d3ba6b0e621b8a",
+      "size": 1107
+    },
+    {
+      "path": "fixtures/positive/pos-carrier-trust-bundle.cbor",
+      "sha256": "49fec3aad8796d942327419c6efa2b48daaf8e8eb8fc018ce957f7ccb167c108",
+      "size": 3301
+    },
+    {
+      "path": "fixtures/positive/pos-control-request-unsuspend.cbor",
+      "sha256": "5de982ee6476272b922da841b9901f167eb62685637c340107f6ed0c500dfc11",
+      "size": 585
+    },
+    {
+      "path": "fixtures/positive/pos-control-vendor-revoke.cbor",
+      "sha256": "7cd8f3e38c7db24c13a34eabf558b0365f5b4fa9d923b0b0843070f0219570f1",
+      "size": 512
+    },
+    {
+      "path": "fixtures/positive/pos-control-vendor-suspend.cbor",
+      "sha256": "8dc9a7a09a2ba650b767d053099fd90ee7c6df2f26e42fe495795cd8dce78ac6",
+      "size": 513
+    },
+    {
+      "path": "fixtures/positive/pos-delegation-offline-control.cbor",
+      "sha256": "feb1bbd9eaa0f7eef03777a7ad0fdf9d41aa6ac4461e373a687b6f6fc148def3",
+      "size": 599
+    },
+    {
+      "path": "fixtures/positive/pos-delegation-offline-entitlement.cbor",
+      "sha256": "3a63d17e27f3e6510380eeacb3e626a91bd2868125ccc7bb24cfda84c09b9502",
+      "size": 631
+    },
+    {
+      "path": "fixtures/positive/pos-delegation-online-lease.cbor",
+      "sha256": "8cbdb2a451c358d56f6fa3e437bbf22e309abe29db651ad8f242ccdaf07c9460",
+      "size": 596
+    },
+    {
+      "path": "fixtures/positive/pos-delegation-recovery.cbor",
+      "sha256": "3f07cb32022b0e0d90f3f1ba29d57cbb9b4395120473c383a14249f73da33b08",
+      "size": 592
+    },
+    {
+      "path": "fixtures/positive/pos-denylist-revision-1.cbor",
+      "sha256": "80ed5c0f80d2c501691b6e173364970b68cf25b56b88259b50a93a0963a1c078",
+      "size": 392
+    },
+    {
+      "path": "fixtures/positive/pos-denylist-revision-2.cbor",
+      "sha256": "d92b68b381f934c90eddc76d0d30d2548d1f96d5cb76f37c46161521b746f9fc",
+      "size": 805
+    },
+    {
+      "path": "fixtures/positive/pos-entitlement-initial-full.cbor",
+      "sha256": "33b0a0848fd4b63c420d234d2912a4347cbee6f7006a2dc0f3cdf9984d93db9b",
+      "size": 1220
+    },
+    {
+      "path": "fixtures/positive/pos-entitlement-initial-hybrid.cbor",
+      "sha256": "bbb0b196e50abbd0f7544a8580e78a2acbc7e353c06218ff54a83fca07e8e14b",
+      "size": 980
+    },
+    {
+      "path": "fixtures/positive/pos-entitlement-initial-offline.cbor",
+      "sha256": "dc9631088f71cc5fda7233110832e8ce598dde67a09a285721b77a7bcb8eabf5",
+      "size": 941
+    },
+    {
+      "path": "fixtures/positive/pos-entitlement-reactivated.cbor",
+      "sha256": "51adce3648c1be6d5f9d05fc0dd3c646e36f0a31607ab55d5a47fb4e7534d642",
+      "size": 1028
+    },
+    {
+      "path": "fixtures/positive/pos-entitlement-renewal.cbor",
+      "sha256": "4a95d0c389556225ed1ea3090b5ef10bf929cec2628036e1c243d8ffe799e895",
+      "size": 937
+    },
+    {
+      "path": "fixtures/positive/pos-lease-full.cbor",
+      "sha256": "d2a64234237e0274a4e81e32d876068e290bf85c4501f764e53c7f364dcab7a9",
+      "size": 1266
+    },
+    {
+      "path": "fixtures/positive/pos-lease-initial-control.cbor",
+      "sha256": "6b7e085364a016bec5ba5fd72bde1978e975a397c8cabc4d1e7ce7786b464679",
+      "size": 1026
+    },
+    {
+      "path": "fixtures/positive/pos-lease-positive-control.cbor",
+      "sha256": "eb002e000f27a6b401f43b8c3c9b2525e16407a01a7133e5a8d552187728640a",
+      "size": 1028
+    },
+    {
+      "path": "fixtures/positive/pos-lease-rebind-reference.cbor",
+      "sha256": "c0dcfd88ff69b1d54f76c220de3ffd546723c140508c35ecff647edbf98b6db1",
+      "size": 1068
+    },
+    {
+      "path": "fixtures/positive/pos-lease-request-check-in-full.cbor",
+      "sha256": "52e80923095d86993a225305868fbc4beffacaf506a0413273b3de4dab6eccbf",
+      "size": 913
+    },
+    {
+      "path": "fixtures/positive/pos-lease-request-check-in-rebind.cbor",
+      "sha256": "66c55b18dfb269672af710699ad1105e4de9e619213ee99f134f4d7c509bde24",
+      "size": 959
+    },
+    {
+      "path": "fixtures/positive/pos-lease-request-check-in.cbor",
+      "sha256": "ed1ace0d7e8c62d5d81a75b34c83aeeb56fab382eb09552a8188d3c6e5ec0ce0",
+      "size": 919
+    },
+    {
+      "path": "fixtures/positive/pos-lease-request-time-recovery.cbor",
+      "sha256": "050067ad1f05d8387b39bce94ade4b897e766912a4d591aa7e3a5517d9d6f541",
+      "size": 1034
+    },
+    {
+      "path": "fixtures/positive/pos-reactivation-authorization.cbor",
+      "sha256": "2aa1dcbfd7bf3dd97653648617ebc198f17d95c370fea9145f0c04cc8511e2f4",
+      "size": 900
+    },
+    {
+      "path": "fixtures/positive/pos-recovery-clear-tamper.cbor",
+      "sha256": "4ea02db46bc07bee084c16bdeeb19dd6413fddf82f4055a3583f6727b80c7251",
+      "size": 883
+    },
+    {
+      "path": "fixtures/positive/pos-recovery-rebind-device.cbor",
+      "sha256": "4e9c557403347107fce3dda2d2c654071776cdd94c76f1d22a1947b638968f96",
+      "size": 1010
+    },
+    {
+      "path": "fixtures/positive/pos-recovery-repair-state.cbor",
+      "sha256": "daa9f6a55b5bcc3f0840e8b05861242853c736ad839394a5c877547dd4cb9c55",
+      "size": 890
+    },
+    {
+      "path": "fixtures/positive/pos-time-correction.cbor",
+      "sha256": "83eac221d2d5a2cfbec1761861a6cc741c357d52f34316f6a602ea913e89922a",
+      "size": 786
+    },
+    {
+      "path": "generate-vectors.mjs",
+      "sha256": "5783ed7848c889637b28db5a3bcb16513f38bdc436e3c8c77a60268469001e9f",
+      "size": 4695
+    },
+    {
+      "path": "keys/test-only-installation-device-primary.spki.der",
+      "sha256": "ef9fce3f9d262700ed4b60613ff2934ac45a42c23515f299eb53cf736451b4f2",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-installation-device-rebind.spki.der",
+      "sha256": "f0aebcce6bc4ab356184ca15bad68e04d731a11717bdeb0cf4988e752b536831",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-installation-device-wrong-env.spki.der",
+      "sha256": "234325dfdc63d4c2443b448a264b64a907d806943cd2fe51f5e5a24a9645de6e",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-offline-control-denied.spki.der",
+      "sha256": "db360932782c99c15cc4bac0e58405cce3177b5c5a8cfbc14059c2a550879ca7",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-offline-control-primary.spki.der",
+      "sha256": "35b837f91f24f52e936f60fbb6a2867c4cfd3fc304eb5528a089b82894eacec5",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-offline-control-wrong-env.spki.der",
+      "sha256": "472107d496fad7d7c62696007ce4bd15804dc01474f1e0e15d1d99cec09c919f",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-offline-entitlement-denied.spki.der",
+      "sha256": "8c3d78979c8234f3c25dac0f4a90c4ca58c5968342fba6a7d1ee214c8967d39f",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-offline-entitlement-primary.spki.der",
+      "sha256": "d96b73d9ac38d266561cb341db6fac515a1c2770738f403e40e6c18bf2524390",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-offline-entitlement-wrong-env.spki.der",
+      "sha256": "1f1b21e26d138bad00a23c002cf3bbbacf5a57c4ff47779645eaa089285f8168",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-online-lease-denied.spki.der",
+      "sha256": "f68bf6ef3be988a755b6554afa58c16e5b30ade98cd011b37b8a0c5d140927ab",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-online-lease-primary.spki.der",
+      "sha256": "a791a86a7fb134124e650ca721371956be8c10c62c61586039e401af66472901",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-online-lease-wrong-env.spki.der",
+      "sha256": "e46f8ad2a8b1f242c7dd0fcbcaf29ca002eafc6c1f7445dd2addcea816d6d323",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-prod-root-primary.spki.der",
+      "sha256": "b7031d52e0c9ce893d72da28d80826840604bbb02fee27eaeef220b045c0c913",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-prod-root-wrong-env.spki.der",
+      "sha256": "a1de343295e68f7afd00cff7b0312d28beec2a0e222d41f40be5e079da97763a",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-recovery-denied.spki.der",
+      "sha256": "1cadb092a565d1590b1129357176952d47aadae3d7d01a7f68ba65fa92492c9d",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-recovery-primary.spki.der",
+      "sha256": "0f19208a68826aef5342a18e1a2afef8d7016eee3a7faff8c119900de9d1ac71",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-recovery-wrong-env.spki.der",
+      "sha256": "71364084d288d9247970532568062d0b85d79b17f92d06e629a47ac0c98b56b8",
+      "size": 91
+    },
+    {
+      "path": "keys/test-only-unknown-signer.spki.der",
+      "sha256": "514bad918a390bde4b41598dc5e2ed959f96a8bd983c8e5b55c2f5cf99aa1464",
+      "size": 91
+    },
+    {
+      "path": "lib/build-vectors.mjs",
+      "sha256": "70e4d92d5855af901afa3d2d4d4fb93dcd508a9844c822ce94c82e0fe07fa069",
+      "size": 56153
+    },
+    {
+      "path": "lib/cbor.mjs",
+      "sha256": "d60db698c5b9949c89f6c83addb5f4481477e13fa4b6872b70c9d56629b1b2b2",
+      "size": 9276
+    },
+    {
+      "path": "lib/cose.mjs",
+      "sha256": "1fa36092a6c7b37ea2e6c4526a28a4dd3ef1bb4cdd673b2e687d58feee4676be",
+      "size": 13217
+    },
+    {
+      "path": "lib/ecdsa-rfc6979.mjs",
+      "sha256": "81712fc1c97b44f95e8b8b93b5d959ea4c865664cbc81c8f99b32a654eefa518",
+      "size": 5042
+    },
+    {
+      "path": "lib/strict-json.mjs",
+      "sha256": "bc60371d167d2c229a71a605b0fe3c887ac79e6ecdadca474a1eb90b6379755e",
+      "size": 903
+    },
+    {
+      "path": "node-verifier/cose-verifier.mjs",
+      "sha256": "62c4ff01ae4e4ddb11c9a965e85ff78fe640defab8047cff26f85055dbd7f4de",
+      "size": 21132
+    },
+    {
+      "path": "node-verifier/errors.mjs",
+      "sha256": "a69c5105d006e6504c04acf6f9f2cc33d738dd7c28ac6455a5d9808674078771",
+      "size": 304
+    },
+    {
+      "path": "node-verifier/strict-cbor.mjs",
+      "sha256": "ea6531198cf2a411233acd48eacac501b3de35f4406e482f4697e83f50ed4236",
+      "size": 7369
+    },
+    {
+      "path": "node-verifier/strict-json.mjs",
+      "sha256": "1b4b2f8abf5f2ccad6dd23335e6a7afb0722e76ac6ee49e0842b8e8321df2baa",
+      "size": 6111
+    },
+    {
+      "path": "reports/dotnet-verdict.json",
+      "sha256": "ed196d8f03b9f1b2285245592d61967f3293b290b18cdb4c32405408a48b1e5c",
+      "size": 57081
+    },
+    {
+      "path": "reports/node-verdict.json",
+      "sha256": "ed196d8f03b9f1b2285245592d61967f3293b290b18cdb4c32405408a48b1e5c",
+      "size": 57081
+    },
+    {
+      "path": "reports/vendor-verdict.json",
+      "sha256": "ed196d8f03b9f1b2285245592d61967f3293b290b18cdb4c32405408a48b1e5c",
+      "size": 57081
+    },
+    {
+      "path": "test-only/keys.mjs",
+      "sha256": "853e85d3dfa614462c3815f8faa418f2347257e6e312b3e89c7ecf320cd5ebb2",
+      "size": 2578
+    },
+    {
+      "path": "vectors-index.json",
+      "sha256": "b3c1a80cfdbbc80ffcb20403f9bd07419ff9f71bfe461a1b3c3ddb1d7dcbd597",
+      "size": 80755
+    },
+    {
+      "path": "verify-vectors.mjs",
+      "sha256": "8645a457e1222e4d72c0fdacc0414d230461f4b805c129a4135c670d3dd710cf",
+      "size": 46712
+    }
+  ]
+}

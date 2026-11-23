@@ -1,0 +1,100 @@
+﻿{
+    "vendorLifecycleNotRequired":  true,
+    "missingKeyRepairRefused":  true,
+    "timeUtc":  "2026-10-05T16:21:46.0956348Z",
+    "osCaption":  "Microsoft Windows 11 Pro",
+    "productionAccepted":  false,
+    "keyRecreationAttempted":  false,
+    "ordinaryUserNotTested":  true,
+    "hostFeasibilityPassed":  true,
+    "version":  "0.12.0",
+    "missingKeyProbeRunId":  "88f7b426bdb44597b4ff534c25e6e61e",
+    "platformPolicy":  "WINDOWS_10_11_X64_BUILD_14393_PLUS_NO_LIFECYCLE_GATE",
+    "sameKeyIdentityVerified":  true,
+    "evidenceFiles":  [
+                          {
+                              "sha256":  "0e5393bd2321d885043c181c77904404b903e6e71f3aa98d58f286a751b41c94",
+                              "relative":  "app-reports/b801b6f83e814d50becdb8eb774ab022.json"
+                          },
+                          {
+                              "sha256":  "15a3c0383057f8f051bf6eb459c30e271a0783ae868331c692a7238db023f66e",
+                              "relative":  "app-reports/ee50ed945ad245e5bdf9ff673f47d44a.json"
+                          },
+                          {
+                              "sha256":  "535fb3fe68bc75e1e3d5cf071b67c57859d011ec82169649d4c8e3d201e939c4",
+                              "relative":  "guardian-reports/88f7b426bdb44597b4ff534c25e6e61e.json"
+                          },
+                          {
+                              "sha256":  "e2072c3b9e091a582d2b1eff008d1c270549099e4f9eb42c44c4808d73b4ed1f",
+                              "relative":  "guardian-reports/91b6e923a3d04740a143905eb1bcc13d.json"
+                          },
+                          {
+                              "sha256":  "b1847249f9912c548c8645b89fac92a47da966d51981d2f38972d5e9fbd1d722",
+                              "relative":  "guardian-reports/de74e8bd89f34a4289828aeb2ab51efa.json"
+                          },
+                          {
+                              "sha256":  "dc8f5e15a915be6daad8e710b4c15cf2bfdff62c0c3f7bfad16ea9cce1cfd8b5",
+                              "relative":  "guardian-reports/f6249fbf23a24ffbb3e56072c7aa3691.json"
+                          },
+                          {
+                              "sha256":  "4c416275b5309f8be83d5b961944f183cfb67e1f412bc5327afab12b708c0725",
+                              "relative":  "setup-reports/0976d16a1c3c40d588856f5fc6ed6c93.json"
+                          },
+                          {
+                              "sha256":  "1f284545cff3d2dcd1b1fbf506bb61e43e10f9d3665ee3e7301c11e24c2e36e3",
+                              "relative":  "setup-reports/ef164161de664ea085ec54bab83c67b9.json"
+                          },
+                          {
+                              "sha256":  "50bf7fc8cb147d959be5fe8e6f0605d209ba6a6406298d5e570127a91a0a1b51",
+                              "relative":  "shared/app-readable-envelope.json"
+                          },
+                          {
+                              "sha256":  "a61d7d0e5c5342e2567806260987291bfadcc1dc79b9236c6d7d610eec740604",
+                              "relative":  "shared/app-readable-hash.json"
+                          },
+                          {
+                              "sha256":  "ccdb5d4fae963e8fe5f5eaad4b8f4264b6cdc859844841066659f993f79db697",
+                              "relative":  "shared/control-set.json"
+                          },
+                          {
+                              "sha256":  "a06cd519d377ee6804a7dbf4b1c216cc8b94b1ddd322344de3a80aa27b656c7c",
+                              "relative":  "shared/restricted-envelope.json"
+                          }
+                      ],
+    "displayVersion":  "21H2",
+    "productionRepairTested":  false,
+    "checkpointSha256":  "adb4aa66402c671f50d21bbcdca84dc619341ffc5108ea1c7bdcd7fb20a7b1d8",
+    "services":  [
+                     {
+                         "Name":  "Ecs.Lic008.WrappingV5.Guardian",
+                         "State":  "Stopped",
+                         "StartMode":  "Manual",
+                         "StartName":  "NT SERVICE\\Ecs.Lic008.WrappingV5.Guardian",
+                         "PathName":  "\"C:\\ProgramData\\Ecs.Lic008.WrappingV5\\bin-repaired\\Ecs.Lic008.WrappingV5.exe\" --service guardian"
+                     },
+                     {
+                         "Name":  "Ecs.Lic008.WrappingV5.App",
+                         "State":  "Stopped",
+                         "StartMode":  "Manual",
+                         "StartName":  "NT SERVICE\\Ecs.Lic008.WrappingV5.App",
+                         "PathName":  "\"C:\\ProgramData\\Ecs.Lic008.WrappingV5\\bin-repaired\\Ecs.Lic008.WrappingV5.exe\" --service app"
+                     },
+                     {
+                         "Name":  "Ecs.Lic008.WrappingV5.Setup",
+                         "State":  "Stopped",
+                         "StartMode":  "Manual",
+                         "StartName":  "LocalSystem",
+                         "PathName":  "\"C:\\ProgramData\\Ecs.Lic008.WrappingV5\\bin-repaired\\Ecs.Lic008.WrappingV5.exe\" --service setup"
+                     }
+                 ],
+    "repairedPackageManifestSha256":  "aa4b776de01e5008db2a025e79390bb99f14b314605d64ac6b1a700205aa712c",
+    "osBuild":  22000,
+    "originalPackageManifestSha256":  "aa4b776de01e5008db2a025e79390bb99f14b314605d64ac6b1a700205aa712c",
+    "securityAccepted":  false,
+    "scope":  "TEST_ONLY_SOFTWARE_KSP_WRAPPING_V5",
+    "repairSimulationPassed":  true,
+    "experimentId":  "91fa20b415734ed0a9b7838c607ee709",
+    "sameEnvelopeBytesVerified":  true,
+    "schemaVersion":  1,
+    "matrixAccepted":  false
+}

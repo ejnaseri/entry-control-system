@@ -1,0 +1,58 @@
+{
+    "schemaVersion":  1,
+    "toolVersion":  "0.1.0",
+    "checklistId":  "LIC-6.2-008",
+    "scope":  "READ_ONLY_INVENTORY_NOT_ACCEPTANCE",
+    "collectedAtUtc":  "2026-10-28T13:10:27.0018834Z",
+    "scriptSha256":  "64ad055510a05adeab10ffb28921c20827e701a13df585e48f8eec733a317d08",
+    "powershellVersion":  "5.1.22000.2538",
+    "process64Bit":  true,
+    "elevated":  false,
+    "os":  {
+               "status":  "OBSERVED",
+               "data":  {
+                            "caption":  "Microsoft Windows 11 Pro",
+                            "version":  "10.0.22000",
+                            "build":  "22000",
+                            "architecture":  "64-bit",
+                            "productType":  1
+                        }
+           },
+    "hardware":  {
+                     "status":  "OBSERVED",
+                     "data":  {
+                                  "ramGiB":  15.89,
+                                  "processors":  [
+                                                     {
+                                                         "name":  "Intel(R) Core(TM) i7-6600U CPU @ 2.60GHz",
+                                                         "architectureCode":  9,
+                                                         "cores":  2,
+                                                         "logicalProcessors":  4
+                                                     }
+                                                 ]
+                              }
+                 },
+    "systemVolume":  {
+                         "status":  "OBSERVED",
+                         "data":  {
+                                      "fileSystem":  "NTFS",
+                                      "sizeGiB":  138.12,
+                                      "freeGiB":  15.66
+                                  }
+                     },
+    "tpm":  {
+                "status":  "UNKNOWN",
+                "errorType":  "CimException"
+            },
+    "platformCandidate":  "WINDOWS_10_11_X64_CANDIDATE_ONLY",
+    "notTested":  [
+                      "CNG_KEY_CREATION_AND_ACL",
+                      "TPM_WRAPPING_AND_ATTESTATION",
+                      "DPAPI_NG_SERVICE_SID",
+                      "APP_CHILD_TOKEN_ISOLATION",
+                      "REPAIR_REINSTALL_REBOOT_CONTINUITY",
+                      "TPM_NV",
+                      "NATIVE_FILE_SAFETY",
+                      "PROTECTED_STORE_DURABILITY"
+                  ]
+}
