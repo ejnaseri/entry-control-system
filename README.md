@@ -10,7 +10,6 @@ The project originated in **Kandahar, Afghanistan**, and has been deployed for m
 
 > **Core idea:** Fingerprint / device event → Membership and policy validation → Access allowed or denied.
 >
-> **نکته اصلی:** اثر انگشت فقط برای ثبت حاضری نیست؛ سیستم وضعیت عضویت، پرداخت و مجوز ورود را هم بررسی می‌کند.
 
 ## Why ECS?
 
