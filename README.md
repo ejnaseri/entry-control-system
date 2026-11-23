@@ -1,48 +1,147 @@
 # Entry Control System (ECS)
 
-**Open-source, local-first access control and attendance management.**
+### Smart access control, membership validation & attendance management
 
-Entry Control System (ECS) helps organizations manage attendance, staff and member records, access permissions, connected devices, and operational reporting. It originated in Kandahar, Afghanistan, where the product has been deployed for paying customers. This public repository makes the project's source and technical documentation available to developers and contributors.
+**A fingerprint should do more than record attendance — it should help the system decide whether access is permitted.**
 
-**Status:** Actively developed. The repository includes working application features alongside experimental licensing, installer, and Windows hardening work. A successful source build or test is **not** proof of production installer, device, or licensing-security acceptance.
+ECS is a **local-first, open-source access-control and management platform** built for real organizations, particularly gyms and fitness centers. It combines device events, membership and payment status, access policies, attendance records and operational dashboards in one system.
 
-## What ECS offers
+The project originated in **Kandahar, Afghanistan**, and has been deployed for multiple paying customers. This repository contains the public source code, tests and technical documentation.
 
-- **Attendance:** clock-in/clock-out events, shift and schedule rules, daily views, and attendance reports.
-- **Access management:** member and staff records, access policies, entry/exit events, and administrative permissions.
-- **Device integration:** ZKTeco K40 connection, user and attendance-log workflows, diagnostics, and documented hardware tests.
-- **Operations:** audit trails, reporting/export workflows, backup management, and controlled restore procedures.
-- **Full-edition workflows:** membership, payments, expenses, and payroll-related modules.
-- **Two editions:** `FULL` and `ATTENDANCE`, with edition-specific capability boundaries.
+> **Core idea:** Fingerprint / device event → Membership and policy validation → Access allowed or denied.
+>
+> **نکته اصلی:** اثر انگشت فقط برای ثبت حاضری نیست؛ سیستم وضعیت عضویت، پرداخت و مجوز ورود را هم بررسی می‌کند.
 
-Features and hardware support vary by edition and release gate. Consult the [project checklist](docs/project/PROJECT_CHECKLIST.md) and [attendance edition checklist](docs/project/ATTENDANCE_EDITION_CHECKLIST.md) for implementation and acceptance status.
+## Why ECS?
 
-## Technology
+A conventional attendance terminal can tell you **who scanned**. A membership-aware access-control system must also answer:
+
+- Does this person have a **valid, active membership**?
+- Has the membership **expired**?
+- Is there an **unpaid balance / debtor restriction**?
+- Is the member **blocked or inactive**?
+- Is access permitted on **this day, at this time**, under their policy?
+- Should the system **allow entry, deny entry, record an event or trigger a compatible door relay**?
+
+ECS brings these checks together rather than treating every fingerprint scan as permission to enter.
+
+## How smart access decisions work
+
+```text
+        Fingerprint / device event
+                    |
+                    v
+       Match device user to member
+                    |
+                    v
+     Check membership and payment status
+                    |
+                    v
+    Check access rules / permitted schedule
+                    |
+           +--------+--------+
+           |                 |
+           v                 v
+      ACCESS ALLOWED     ACCESS DENIED
+           |                 |
+    Record event        Record rejection
+           |            and its reason
+    Trigger compatible
+    door control
+    when configured
+```
+
+The biometric matching happens on the **supported device**; ECS evaluates the mapped event against application data and policies. Actual physical door enforcement requires compatible, correctly configured hardware. Behavior differs between editions.
+
+### Example: gym entry eligibility
+
+| Member condition | Typical FULL-edition decision |
+| --- | --- |
+| Active membership, required payment completed, policy satisfied | ✅ Allow access |
+| Expired or inactive membership | ❌ Deny access |
+| Debtor / unpaid membership under the access rules | ❌ Deny access |
+| Blacklisted or inactive member | ❌ Deny access |
+| Entry outside permitted day or time | ❌ Deny access |
+| Valid member within the policy and configured limits | ✅ Allow access |
+
+These are **policy examples**, not a universal claim about every customer deployment or terminal. The final decision follows the implementation, membership status, configured rules and the selected edition.
+
+## Key features
+
+### 🔐 Membership-aware access control
+- Validate active, pending or expired membership state in the access workflow.
+- Apply payment/debt restrictions and member status checks.
+- Enforce configurable allowed days, times and certain entry limits.
+- Record allowed/denied events and the reason for refusal.
+- Optionally activate eligible pending memberships during the documented entry workflow.
+
+### 👆 Fingerprint terminal & device integration
+- ZKTeco K40 integration and documented real-device tests.
+- Map device users to application member records.
+- Process entry/exit events, deduplicate logs and inspect device health.
+- Integrate supported door-unlock or relay flows **when configured and authorized**.
+- Keep attendance recording separate from physical door permissions where required.
+
+### 📊 Management dashboard
+- Active memberships and members approaching expiry.
+- Debtors and outstanding membership/payment indicators.
+- Today's entries, authorized and denied attempts.
+- People currently inside, activity charts and peak entry periods.
+- Revenue/payment summaries, subject to the user's permissions.
+- Recent device activity and event details.
+
+Dashboard values come from the application database; any promotional examples or illustrations should use **synthetic demo data**, never customer records.
+
+### 👥 Members, staff & attendance
+- Member and employee registration and profile management.
+- Membership plans, renewals, payment tracking and member history.
+- Staff shifts, clock-in/clock-out records and daily attendance reporting.
+- Role-based administration, audit logs and access to management workflows.
+
+### 🧾 Operations, reports & recovery
+- Attendance and administrative reports with available export workflows.
+- Financial, expenses and payroll-related modules in the FULL edition.
+- Local-first PostgreSQL data storage, backup workflows and controlled restore procedures.
+- Windows packaging, licensing and release verification work tracked in technical documentation.
+
+## Editions and project status
+
+| Edition | Focus |
+| --- | --- |
+| **FULL** | Membership-aware access decisions, gym/member management, finances, reporting and relevant door-control workflows |
+| **ATTENDANCE** | Staff time-clock workflows and attendance records, with a strict boundary between recording a punch and granting door access |
+
+**Project status: Active development.** Application modules and tests coexist with experimental licensing, installer and Windows-hardening work. Certain production release and security acceptance gates are **not yet complete**. A successful source build is **not** a guarantee of certified door security or a finished production Windows installer.
+
+For exact scope, consult the [project checklist](docs/project/PROJECT_CHECKLIST.md), [attendance checklist](docs/project/ATTENDANCE_EDITION_CHECKLIST.md), and [Windows support matrix](docs/operations/WINDOWS_SUPPORT_MATRIX.md).
+
+## Technology stack
 
 | Layer | Main technologies |
 | --- | --- |
-| Client | React 19, TypeScript, Vite, Tailwind CSS |
-| API server | Node.js, Express 5, TypeScript, Zod |
-| Data | PostgreSQL, Prisma 7 |
-| Tests | Playwright, TypeScript and integration test scripts |
-| Windows/licensing research | C#/.NET, native Windows experiments, versioned protocol and test vectors |
+| Frontend | React 19, TypeScript, Vite, Tailwind CSS |
+| Backend | Node.js, Express 5, TypeScript, Zod |
+| Database | PostgreSQL, Prisma 7 |
+| Tests | Playwright, unit and integration test scripts |
+| Device integration | ZKTeco K40 and related event-processing workflows |
+| Licensing / Windows research | C# / .NET, native Windows experiments, test vectors |
 
-## Repository structure
+## Repository layout
 
 ```text
-client/       React frontend and UI tests
+client/       React application and frontend tests
 server/       Express API, Prisma schema/migrations, backend tests
-scripts/      Edition builds, verification and test tooling
-licensing/    Protocol definitions, fixtures and experimental adapters
-docs/         Architecture, project status, security and operations
-version.json  Canonical product/build identity
+scripts/      Edition build, verification and test utilities
+licensing/    Protocols, vectors and experimental adapters
+docs/         Architecture, features, project status and operations
+version.json  Canonical product/version/build identity
 ```
 
-## Local development (Windows PowerShell)
+## Quick start — local development (Windows PowerShell)
 
-**Prerequisites:** Node.js **24.19.0** (the pinned repository version), npm, and a locally accessible PostgreSQL instance. Native Windows and certain licensing tests have additional platform/.NET requirements; see the documentation below.
+**Prerequisites:** Node.js **24.19.0** (required by this repository's build contract), npm and a local PostgreSQL instance. Some Windows and licensing experiments additionally require a compatible .NET SDK and dedicated test environment.
 
-1. Clone the repository and install dependencies:
+**1. Clone and install dependencies**
 
 ```powershell
 git clone https://github.com/ejnaseri/entry-control-system.git
@@ -53,9 +152,11 @@ Copy-Item server/.env.example server/.env
 Copy-Item client/.env.example client/.env
 ```
 
-2. Create an **empty local development** PostgreSQL database and role. Edit `server/.env` to supply your own `DATABASE_URL` credentials instead of the `CHANGE_ME` example value. Keep device addresses and communication keys pointed at test hardware only. **Never commit `.env` or real customer information.**
+**2. Prepare a development database**
 
-3. Set up the database and start the API:
+Create an **empty, isolated PostgreSQL development database and role**. Edit `server/.env` to replace the sample `DATABASE_URL` and its `CHANGE_ME` password with your own credentials. Configure devices only in a safe test environment; the sample device addresses are documentation placeholders.
+
+**3. Start the API**
 
 ```powershell
 cd server
@@ -64,18 +165,18 @@ npx prisma migrate deploy
 npm run dev
 ```
 
-4. In a second terminal, start the frontend:
+**4. Start the frontend in another terminal**
 
 ```powershell
 cd client
 npm run dev
 ```
 
-Vite prints the local frontend URL; the example client API endpoint is `http://localhost:4000`. These are source-level development steps, **not** a production installation guide. Review database migrations before running them, and never point these commands at a customer database.
+Vite reports the local frontend URL. The example backend address is `http://localhost:4000`. These are **development instructions, not a production installation procedure**. Inspect migrations before applying them, and never use a real customer database for development.
 
-## Edition builds and verification
+## Building and testing
 
-From the repository root, using the pinned Node.js version and installed dependencies:
+Use Node.js **24.19.0**, install the project dependencies and run from the repository root:
 
 ```powershell
 npm run build:full
@@ -87,30 +188,29 @@ npm run test:license-protocol-v1
 npm run test:license-golden-vectors
 ```
 
-Build outputs are separated into `release/FULL` and `release/ATTENDANCE`. The documented Phase 6.1 outputs are **unsigned development artifacts**, not a fully accepted Windows installer. Certain independent licensing checks require the pinned .NET SDK; see the [licensing documentation](docs/licensing/README.md).
+Edition artifacts are produced in `release/FULL` and `release/ATTENDANCE`. Documented Phase 6.1 outputs are **unsigned development builds**, not accepted signed production installers. Some licensing test consumers require the project's pinned .NET environment.
 
-## Documentation
+## Technical documentation
 
-- [Documentation index](docs/README.md)
-- [Project progress and quality gates](docs/project/PROJECT_CHECKLIST.md)
-- [Attendance edition progress](docs/project/ATTENDANCE_EDITION_CHECKLIST.md)
-- [Security architecture](docs/architecture/security-design.md)
-- [ZKTeco K40 hardware setup and test notes](docs/operations/k40-setup.md)
-- [Local backup and restore policy](docs/operations/backup-restore.md)
-- [Windows platform support matrix](docs/operations/WINDOWS_SUPPORT_MATRIX.md)
+- [Project documentation index](docs/README.md)
+- [Current development and quality checklist](docs/project/PROJECT_CHECKLIST.md)
+- [Attendance edition and safety boundaries](docs/project/ATTENDANCE_EDITION_CHECKLIST.md)
+- [Security design](docs/architecture/security-design.md)
+- [ZKTeco K40 setup and physical test evidence](docs/operations/k40-setup.md)
+- [Backup and restore policy](docs/operations/backup-restore.md)
+- [Windows compatibility and support scope](docs/operations/WINDOWS_SUPPORT_MATRIX.md)
 - [Licensing design, experiments and acceptance status](docs/licensing/README.md)
-- [Licensing protocol v1](licensing/protocol/v1/README.md)
 
 ## Contributing
 
-Bug reports, documentation improvements, tests, and well-scoped pull requests are welcome. Before proposing changes, check the linked project checklists and edition boundaries. Please avoid including real personal, biometric, customer, device-credential, or access-control data in public issues and test fixtures.
+Contributions to documentation, tests, device compatibility and application reliability are welcome. Please review the project's edition boundaries before proposing changes. Use synthetic test fixtures only; **do not publish member photos, fingerprints, real names, credentials, customer databases or device secrets** in issues or pull requests.
 
-## Security and responsible use
+## Security note
 
-ECS handles access-control and attendance information. Use **synthetic data and isolated test devices** when evaluating this source. Do not expose the development server directly to the internet or operate real door hardware from unreviewed development builds. If you find a potentially exploitable vulnerability, do not post secrets or exploitation details in a public issue; contact the maintainer to arrange a private report.
+ECS handles identity, physical-access and attendance information. Do **not** expose a development deployment to the public internet or connect unreviewed builds to production door hardware. If you find a vulnerability, avoid posting sensitive exploitation details publicly; contact the maintainer to arrange a private report.
 
 ## License
 
-Released under the [MIT License](LICENSE). Third-party dependencies retain their own licenses. Contributions and reuse must respect applicable privacy, hardware, and customer-data obligations.
+This repository is released under the [MIT License](LICENSE). Third-party libraries retain their own licenses. Commercial deployments remain subject to appropriate privacy, hardware and customer-data safeguards.
 
 **Maintainer:** [Eraj Naseri](https://github.com/ejnaseri)
